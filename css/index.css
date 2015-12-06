@@ -1,26 +1,129 @@
+body{
+	margin: 0px;
+}
 .container{
 	width: 100%;
+	/*position: relative;*/
 }
 .hearder{
 	width: 100%;
-	height: 90px;
+	height: 80px;
 	background-color: #54baec;
 	margin-bottom: 5px;
+	z-index: 99;
 }
-.hearder-logo{
-	position: absolute;
-	top: 10px;
-	width: 270px;
-}
-.content{
+.hearder-content,.content{
 	width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 }
-.am-slider{
-	/*margin-top: 50px;*/
+.hearder-logo{
+	position: relative;
+	top: 15px;
+	width: 200px;
 }
-.am-slides li img{
+#slidebox{
+	width: 100%;
+	padding-top: 10px;
+}
+.items{
+	width: 100%;
+}
+.items li{
+	width: 100%;
+}
+.slideBoxPic{
 	width: 100%;
 	height: 400px;
 }
+.ServerContent{
+	margin-top: 15px;
+	width: 100%;
+}
+.ServerContentJuxing{
+	width: 15px;
+	height: 48px;
+	background-color: #e05c49;
+	position: absolute;
+}
+.ServerContentText{
+	position: relative;
+	left: 20px;
+	font: 1em;
+}
+.ServerContentText span:nth-child(1){
+	color: #E05C49;
+	font-weight: 800;
+	font-size: 1.1em;
+}
+.ServerContentText span:last-child{
+	color: #E05C49;
+	font-weight: 200;
+}
+.SellBuyList{
+	width: 100%;
+	margin-top: 15px;
+}
+.SellBuyListTable{
+	width: 100%;
+	padding: 0;
+}
+.SellBuyList tr{
+	width: 100%;
+}
+.SellBuyList tr td{
+	height: 130px;
+	padding: 0px;
+}
+.SellBuyList tr td:nth-child(1){
+	width: 303px;
+	background-color: #E05C49;
+	border-right: 30px solid white;
+}
+.SellBuyList tr td:nth-child(2){
+	background-color: #54BAEC;
+	width: 304px;
+	border-right:15px solid white;
+	border-left:15px solid white;
+}
+.SellBuyList tr td:nth-child(3){
+	width: 303px;
+	background-color: lightgrey;
+	border-left:30px solid white;
+}
+.OurService,.OurDynamic{
+	margin-top: 15px;
+	width: 100%;
+}
+.OurServiceText,.OurDynamicText{
+	font-weight: 600;
+	width: 100%;
+}
+.OurServiceJuxing,.OurDynamicJuxing{
+	margin-top: 3px;
+	width: 100%;
+	height: 3px;
+	border: 1px solid #E05C49;
+}
+.OurServiceJuxingTianchong,.OurDynamicJuxingTianchong{
+	width: 100px;
+	background-color: #E05C49;
+	height: inherit;
+}
+.OurDynamicContent{
+	margin-top: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
+	/*text-indent: 2em;*/
+}
+.OurDynamicContent:first-letter{
+	font-size: 2em;
+}
+
+
+
+
+
+
+
+

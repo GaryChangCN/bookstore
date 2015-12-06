@@ -5,33 +5,98 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-		<script src="http://cdn.amazeui.org/amazeui/2.5.0/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="http://cdn.amazeui.org/amazeui/2.5.0/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>-->
 		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.5.0/css/amazeui.min.css" type="text/css" />
+		<script src="js/jquery.slideBox.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.5.0/css/amazeui.min.css" type="text/css" />-->
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.slideBox.css" />
 	</head>
 
 	<body>
 		<div class="container">
+			<!--hearder-->
 			<div class="hearder">
-				<img class="hearder-logo" src="img/icon/booklbook-logo.png" />
+				<div class="hearder-content">
+					<img class="hearder-logo" src="img/icon/booklbook-logo.png" />
+				</div>
 			</div>
+			<!--conent内容-->
 			<div class="content">
-				<div data-am-widget="slider" class="am-slider am-slider-b1 " data-am-slider='{&quot;controlNav&quot;:false}'>
-					<ul class="am-slides">
+				<!--轮播-->
+				<div id="slidebox" class="slideBox">
+					<ul class="items">
 						<li>
-							<img src="img/ad/微信截图_20151206194740.jpg">
-
+							<a href="" title="测试轮播"></a>
+							<img class="slideBoxPic" src="img/ad/微信截图_20151206194740.jpg">
 						</li>
 						<li>
-							<img src="img/ad/微信截图_20151206194814.jpg">
+							<a href="" title="测试轮播2"></a>
+							<img class="slideBoxPic" src="img/ad/微信截图_20151206194814.jpg">
 						</li>
 					</ul>
 				</div>
+				<!--服务内容-->
+				<div class="ServerContent">
+					<div class="ServerContentJuxing">
+					</div>
+					<div class="ServerContentText">
+						<span>服务内容</span>
+						<br /> 我们能为你做什么？
+						<span>What can we do for you?</span>
+					</div>
+				</div>
+				<!--我要买书，我要买书，问题反馈-->
+				<div class="SellBuyList">
+					<table class="SellBuyListTable">
+						<tr>
+						<td>
+							<span style="color: white;font-size: 2.2em;position: relative;top: -30px;left: 20px;">我要卖书</span>
+							<span style="color: white;font-size: 2.0em;position: relative;top: 30px;left: 90px;">Sell</span>
+						</td>
+						<td>
+							<span style="color: white;font-size: 2.2em;position: relative;top: -30px;left: 20px;">我要买书</span>
+							<span style="color: white;font-size: 2.0em;position: relative;top: 30px;left: 90px;">Buy</span>
+						</td>
+						<td>
+							<span style="color: white;font-size: 2.2em;position: relative;top: -30px;left: 20px;">我要卖书</span>
+							<span style="color: white;font-size: 2.0em;position: relative;top: 30px;left: 90px;">Sell</span>
+						</td>
+					</tr>
+					</table>
+				</div>
+				<!--我们的动态-->
+				<div class="OurDynamic">
+					<div class="OurDynamicText">
+						我们的动态
+						<span style="position: relative;left: 883px; font-weight: 100;font-size: 0.8em;top: 3px;">more</span>
+					</div>
+					<div class="OurDynamicJuxing">
+						<div class="OurDynamicJuxingTianchong">
+							
+						</div>
+					</div>
+					<!--我们的动态实时更新可编辑-->
+					<div class="OurDynamicContent">
+						这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态
+					</div>
+				</div>
+				<!--我们的服务-->
+				<div class="OurService">
+					<div class="OurServiceText">
+						我们的服务
+					</div>
+					<div class="OurServiceJuxing">
+						<div class="OurServiceJuxingTianchong">
+							
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="footer">
-                 <button id="btn">click</button>
+			<div class="footer" style="height: 500px;">
+
 			</div>
 		</div>
 	</body>
+
 </html>
