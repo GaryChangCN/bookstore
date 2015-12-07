@@ -42,7 +42,7 @@ body {
 	text-align: center;
 	width: 80px;
 	margin: 0px;
-	border-left: 1px dashed dimgrey;
+	border-left: 1px dashed #0392dc;
 	transform: skew(-25deg, 0deg);
 	-ms-transform: skew(-25deg, 0deg);
 	/* IE 9 */
@@ -65,7 +65,7 @@ body {
 	-moz-transform: skew(25deg, 0deg);
 }
 .HearderContentTable tr td:last-child{
-	border-right: 1px dashed dimgrey;
+	border-right: 1px dashed #0392dc;
 }
 #slidebox {
 	width: 100%;
@@ -100,7 +100,7 @@ body {
 .ServerContentText {
 	position: relative;
 	left: 20px;
-	font: 1em;
+	font-size: 1em;
 }
 
 .ServerContentText span:nth-child(1) {

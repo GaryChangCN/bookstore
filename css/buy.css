@@ -1,0 +1,183 @@
+body,
+div {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+.container {
+	width: 100%;
+	/*position: relative;*/
+}
+
+.hearder {
+	width: 100%;
+	height: 80px;
+	background-color: #54baec;
+	margin-bottom: 5px;
+	z-index: 99;
+}
+
+.hearder-content,
+.content {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hearder-content {
+	height: 80px;
+}
+
+.hearder-logo {
+	position: relative;
+	top: 15px;
+	width: 200px;
+}
+
+.HearderContentTable {
+	position: relative;
+	float: right;
+	height: inherit;
+}
+
+.HearderContentTable tr td {
+	text-align: center;
+	width: 80px;
+	margin: 0px;
+	border-left: 1px dashed #0392dc;
+	transform: skew(-25deg, 0deg);
+	-ms-transform: skew(-25deg, 0deg);
+	/* IE 9 */
+	-webkit-transform: skew(-25deg, 0deg);
+	/* Safari and Chrome */
+	-o-transform: skew(-25deg, 0deg);
+	/* Opera */
+	-moz-transform: skew(-25deg, 0deg);
+}
+
+.HearderContentTable tr td div {
+	font-weight: 100;
+	color: black;
+	transform: skew(25deg, 0deg);
+	-ms-transform: skew(25deg, 0deg);
+	/* IE 9 */
+	-webkit-transform: skew(25deg, 0deg);
+	/* Safari and Chrome */
+	-o-transform: skew(25deg, 0deg);
+	/* Opera */
+	-moz-transform: skew(25deg, 0deg);
+}
+
+.HearderContentTable tr td:last-child {
+	border-right: 1px dashed #0392dc;
+}
+
+#slidebox {
+	width: 100%;
+	padding-top: 10px;
+}
+
+.items {
+	width: 100%;
+}
+
+.items li {
+	width: 100%;
+}
+
+.slideBoxPic {
+	width: 100%;
+	height: 400px;
+}
+
+.footer {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #54BAEC;
+}
+
+.BuyersNotice {
+	width: 100%;
+	margin-top: 15px;
+}
+
+.BuyersNoticeJuxing {
+	width: 7.5px;
+	height: 30px;
+	background-color: #E05C49;
+	position: absolute;
+}
+
+.BuyersNoticeText {
+	position: relative;
+	left: 20px;
+	font-size: 1em;
+	color: #E05C49;
+	font-weight: 500;
+	font-size:1.8em;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 5px;
+}
+
+.BuyersNoticeContent {
+	margin-top: 10px;
+	border: 1px solid #E05C49;
+	width: 970px;
+	padding: 15px 15px 10px 15px;
+	text-indent: 2em;
+}
+
+.BuyersNoticeSlide {
+	float: right;
+	font-weight: 700;
+	font-size: 1em;
+	padding-right: 10px;
+	padding-top: 15px;
+	opacity: 0.4;
+}
+.BuyersNoticeSlideDown{
+transform: rotate(180deg);
+-ms-transform: rotate(180deg);		/* IE 9 */
+-webkit-transform: rotate(180deg);	/* Safari and Chrome */
+-o-transform: rotate(180deg);		/* Opera */
+-moz-transform: rotate(180deg);		/* Firefox */
+}
+.SelectPopular,.SelectPopularTable,.SelectPopularTable tr{
+	width: 100%;
+}
+.SelectPopular{
+	margin-top: 15px;
+}
+.SelectPopularTable tr td{
+	padding: 0px;
+	background-color: darkgrey;
+}
+.SelectPopularTable tr td:nth-child(1){
+	width: 25%;
+}
+.SelectPopularTable tr td:nth-child(2){
+	width: 75%;
+}
+.PopularGoodJuxing,.YearMajorJuxing{
+	height: 30px;
+	border-left: 7.5px solid #E05C49;
+	padding-left: 15px;
+	color: #E05C49;
+	line-height: 30px;
+	font-size: 1.5em;
+}
+.YearMajorContentContaniner{
+	width: 245px;
+	margin-top: 5px;
+	height: 500px;
+}
+.PopularGoodContentContainer{
+	width: 741px;
+	margin-top: 5px;
+	height: 500px;
+}.YearMajorContentContaniner ul li{
+	list-style: none;
+}
