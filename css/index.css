@@ -1,129 +1,233 @@
-body{
+body {
 	margin: 0px;
 }
-.container{
+
+.container {
 	width: 100%;
 	/*position: relative;*/
 }
-.hearder{
+
+.hearder {
 	width: 100%;
 	height: 80px;
 	background-color: #54baec;
 	margin-bottom: 5px;
 	z-index: 99;
 }
-.hearder-content,.content{
+
+.hearder-content,
+.content {
 	width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 }
-.hearder-logo{
+
+.hearder-content {
+	height: 80px;
+}
+
+.hearder-logo {
 	position: relative;
 	top: 15px;
 	width: 200px;
 }
-#slidebox{
+
+.HearderContentTable {
+	position: relative;
+	float: right;
+	height: inherit;
+}
+
+.HearderContentTable tr td {
+	text-align: center;
+	width: 80px;
+	margin: 0px;
+	border-left: 1px dashed dimgrey;
+	transform: skew(-25deg, 0deg);
+	-ms-transform: skew(-25deg, 0deg);
+	/* IE 9 */
+	-webkit-transform: skew(-25deg, 0deg);
+	/* Safari and Chrome */
+	-o-transform: skew(-25deg, 0deg);
+	/* Opera */
+	-moz-transform: skew(-25deg, 0deg);
+}
+.HearderContentTable tr td div{
+	font-weight: 100;
+	color: black;
+	transform: skew(25deg, 0deg);
+	-ms-transform: skew(25deg, 0deg);
+	/* IE 9 */
+	-webkit-transform: skew(25deg, 0deg);
+	/* Safari and Chrome */
+	-o-transform: skew(25deg, 0deg);
+	/* Opera */
+	-moz-transform: skew(25deg, 0deg);
+}
+.HearderContentTable tr td:last-child{
+	border-right: 1px dashed dimgrey;
+}
+#slidebox {
 	width: 100%;
 	padding-top: 10px;
 }
-.items{
+
+.items {
 	width: 100%;
 }
-.items li{
+
+.items li {
 	width: 100%;
 }
-.slideBoxPic{
+
+.slideBoxPic {
 	width: 100%;
 	height: 400px;
 }
-.ServerContent{
+
+.ServerContent {
 	margin-top: 15px;
 	width: 100%;
 }
-.ServerContentJuxing{
+
+.ServerContentJuxing {
 	width: 15px;
 	height: 48px;
 	background-color: #e05c49;
 	position: absolute;
 }
-.ServerContentText{
+
+.ServerContentText {
 	position: relative;
 	left: 20px;
 	font: 1em;
 }
-.ServerContentText span:nth-child(1){
+
+.ServerContentText span:nth-child(1) {
 	color: #E05C49;
 	font-weight: 800;
 	font-size: 1.1em;
 }
-.ServerContentText span:last-child{
+
+.ServerContentText span:last-child {
 	color: #E05C49;
 	font-weight: 200;
 }
-.SellBuyList{
+
+.SellBuyList {
 	width: 100%;
 	margin-top: 15px;
 }
-.SellBuyListTable{
+
+.SellBuyListTable {
 	width: 100%;
 	padding: 0;
 }
-.SellBuyList tr{
+
+.SellBuyList tr {
 	width: 100%;
 }
-.SellBuyList tr td{
+
+.SellBuyList tr td {
 	height: 130px;
 	padding: 0px;
 }
-.SellBuyList tr td:nth-child(1){
+
+.SellBuyList tr td:nth-child(1) {
 	width: 303px;
 	background-color: #E05C49;
 	border-right: 30px solid white;
 }
-.SellBuyList tr td:nth-child(2){
+
+.SellBuyList tr td:nth-child(2) {
 	background-color: #54BAEC;
 	width: 304px;
-	border-right:15px solid white;
-	border-left:15px solid white;
+	border-right: 15px solid white;
+	border-left: 15px solid white;
 }
-.SellBuyList tr td:nth-child(3){
+
+.SellBuyList tr td:nth-child(3) {
 	width: 303px;
 	background-color: lightgrey;
-	border-left:30px solid white;
+	border-left: 30px solid white;
 }
-.OurService,.OurDynamic{
+
+.OurService,
+.OurDynamic {
 	margin-top: 15px;
 	width: 100%;
 }
-.OurServiceText,.OurDynamicText{
+
+.OurServiceText,
+.OurDynamicText {
 	font-weight: 600;
 	width: 100%;
 }
-.OurServiceJuxing,.OurDynamicJuxing{
+
+.OurServiceJuxing,
+.OurDynamicJuxing {
 	margin-top: 3px;
 	width: 100%;
 	height: 3px;
 	border: 1px solid #E05C49;
 }
-.OurServiceJuxingTianchong,.OurDynamicJuxingTianchong{
+
+.OurServiceJuxingTianchong,
+.OurDynamicJuxingTianchong {
 	width: 100px;
 	background-color: #E05C49;
 	height: inherit;
 }
-.OurDynamicContent{
+
+.OurDynamicContent {
 	margin-top: 3px;
 	padding-left: 15px;
 	padding-right: 15px;
 	/*text-indent: 2em;*/
 }
-.OurDynamicContent:first-letter{
+
+.OurDynamicContent:first-letter {
 	font-size: 2em;
 }
 
+.OurServiceList,
+.OurServiceListTable,
+.OurServiceListTable tr {
+	width: 100%;
+}
 
+.OurServiceListTable tr td {
+	width: 25%;
+	padding: 0px;
+	padding: 15px;
+	text-align: center;
+	border: 1px solid teal;
+	border: 0px;
+}
 
+.OurServiceListTable tr td div:nth-child(odd) {
+	width: 70px;
+	height: 70px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+	background-color: #E05C49;
+	margin-bottom: 10px;
+	margin-top: 25px;
+	color: white;
+	line-height: 70px;
+}
 
+.OurServiceListTable tr td div:nth-child(even) {
+	height: 200px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-top: 5px;
+}
 
-
-
-
+.footer {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #54BAEC;
+}
