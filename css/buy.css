@@ -1,5 +1,5 @@
 body,
-div {
+div,ul,li,td,tr {
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
@@ -92,6 +92,7 @@ div {
 }
 
 .footer {
+	margin-top: 1200px;
 	height: 40px;
 	line-height: 40px;
 	text-align: center;
@@ -125,7 +126,7 @@ div {
 .BuyersNoticeContent {
 	margin-top: 10px;
 	border: 1px solid #E05C49;
-	width: 970px;
+	width: 968px;
 	padding: 15px 15px 10px 15px;
 	text-indent: 2em;
 }
@@ -145,39 +146,156 @@ transform: rotate(180deg);
 -o-transform: rotate(180deg);		/* Opera */
 -moz-transform: rotate(180deg);		/* Firefox */
 }
-.SelectPopular,.SelectPopularTable,.SelectPopularTable tr{
-	width: 100%;
-}
 .SelectPopular{
+	width: 1000px;
 	margin-top: 15px;
 }
-.SelectPopularTable tr td{
-	padding: 0px;
-	background-color: darkgrey;
+.SelectMajor{
+	width: 245px;
+	float: left;
+	margin-right: 5px;
 }
-.SelectPopularTable tr td:nth-child(1){
-	width: 25%;
+.PopularGood{
+	width: 745px;
+	float: right;
+	margin-left: 5px;
 }
-.SelectPopularTable tr td:nth-child(2){
-	width: 75%;
-}
-.PopularGoodJuxing,.YearMajorJuxing{
+.SelectMajorJuxing,.SearchJuxing,.SellBook{
+	width:210px;
 	height: 30px;
+	padding-left: 5px;
 	border-left: 7.5px solid #E05C49;
-	padding-left: 15px;
-	color: #E05C49;
 	line-height: 30px;
+	color: #E05C49;
+	font-size: 1.4em;
+	font-weight: 400;
+}
+.SelectMajorContent,.SearchContent,.SellBookContent{
+	border: 2px solid #E05C49;
+	padding: 10px 5px 10px 5px;
+	width: 231px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+.PopularGoodJuxing{
+	height: 30px;
+	padding-left: 5px;
+	border-left: 7.5px solid #E05C49;
+	line-height: 30px;
+	color: #E05C49;
+	font-size: 1.4em;
+	font-weight: 400;
+	width: 710px;
+}
+.PopularGoodContent{
+	border: 2px solid #E05C49;
+	padding: 10px 5px 10px 15px;
+	width: 721px;
+	margin-top: 5px;
+}
+.SelectMajorContent ul li{
+	list-style-type: none;
+	border-bottom: 1px dashed lightgrey;
+	font-weight: 100;
+	padding-top: 5px;
+	padding-bottom: 2px;
+}
+li.SelectMajorContentFirst{
+	padding-left: 5px;
+	font-size: 1.2em;
+	font-weight: 300;
+}
+li.SelectMajorContentSecond{
+	margin-left: 30px;
+	font-size: 1.1em;
+	
+}
+li.SelectMajorContentThird{
+	margin-left: 60px;	
+}
+#search{
+	border: 1px dashed #E05C49;
+	border-right: 0px;
+	height: 30px;
+	padding: 0;
+	margin: 10px 0px 10px 20px;
+    padding-left: 5px;
+    width: 130px;
+}
+#SearchSubmit{
+	border: 1px dashed #E05C49;
+	background-color: #E05C49;
+	height: 32px;
+	border-left: 0px;
+	padding: 0;
+	position: relative;
+	right: 5px;
+	padding-right: 2.5px;
+	padding-left: 2.5px;
+	color: white;
+}
+.SellBookPic{
+	width: 231px;
+	height: 231px;
+}
+.BuyContentList{
+	border-bottom: 1px solid #E05C49;
+	padding-bottom: 7px;
+	margin-bottom: 7px;
+}
+.BuyContentListPic{
+	width: 120px;
+	height: 160px;
+}
+.BuyContentListMore{
+	width: 280px;
+	height: 160px;
+	margin-left: 40px;
+}
+.BookTitle{
 	font-size: 1.5em;
 }
-.YearMajorContentContaniner{
-	width: 245px;
-	margin-top: 5px;
-	height: 500px;
+.BookHot{
+	border: 2px solid #E05C49;
+	color: #FFFFFF;
+	background-color: #E05C49;
+	position: relative;
+	right: 180px;
+	top: 130px;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: 100;
+	padding: 0px 3px 0px 3px;
 }
-.PopularGoodContentContainer{
-	width: 741px;
+.BuyContentListPrice{
+	width: 280px;
+	height: 150px;
+	padding-top: 10px;
+	line-height: 1.5;
+}
+.BookEditor,.BookIsbn,.BookStock,.BookPublish{
+	line-height: 2;
+}
+.OldPriceBefore,.NewPriceBefore{
+	text-decoration: line-through;
+}
+.OldPriceAfter,.NewPriceAfter{
+	font-size:3em;
+	color: #E05C49;
+}
+.PageNumber{
+	padding: 10px 5px 10px 15px;
+	width: 725px;
 	margin-top: 5px;
-	height: 500px;
-}.YearMajorContentContaniner ul li{
-	list-style: none;
+}
+.PageNumber ul li {
+	list-style-type: none;
+	float: right;
+	border:1px solid #E05C49;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	margin-left: 10px;
 }

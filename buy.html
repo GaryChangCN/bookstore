@@ -74,40 +74,251 @@
 				</div>
 				<!--选择学期专业和热销商品-->
 				<div class="SelectPopular">
-					<table class="SelectPopularTable">
-						<tr>
-							<td>
-								<!--学期专业-->
-								<div class="YearMajor">
-									<div class="YearMajorJuxing">
-										学期专业
-									</div>
-									<!--选择学期专业具体内容-->
-									<div class="YearMajorContentContaniner">
-										<ul>
-											<li></li>
-										</ul>
-									</div>
-								</div>
-							</td>
-							<td>
-								<!--热销商品-->
-								<div class="PopularGood">
-									<div class="PopularGoodJuxing">
-										热销商品
-									</div>
-									<!--热销商品具体内容-->
-									<div class="PopularGoodContentContainer">
-										
-									</div>
-								</div>
-							</td>
-						</tr>
-					</table>
+					<div class="SelectMajor">
+						<!--学期专业矩形-->
+						<div class="SelectMajorJuxing">
+							学期专业
+						</div>
+						<!--学期专业content-->
+						<div class="SelectMajorContent">
+							<!--ul-li列表 first代表一级。。。。\
+								SMCFirst  表示ul标签等级
+							-->
+							<ul >
+								<li class="SelectMajorContentFirst">大一上</li>
+								<li class="SelectMajorContentFirst">大一下</li>
+								<ul class="SMCFirst">
+									<li class="SelectMajorContentSecond">信息学院</li>
+									<li class="SelectMajorContentSecond">海洋学院</li>
+									<ul class="SMCSecond">
+										<li class="SelectMajorContentThird">计算机科学与技术</li>
+										<li class="SelectMajorContentThird">信息与计算科学</li>
+									</ul>
+									<li class="SelectMajorContentSecond">海洋学院</li>
+								</ul>
+								</li>
+								<li class="SelectMajorContentFirst">大二上</li>
+								<ul class="SMCFirst">
+									<li class="SelectMajorContentSecond">信息学院</li>
+									<ul class="SMCSecond">
+										<li class="SelectMajorContentThird">计算机科学与技术</li>
+										<li class="SelectMajorContentThird">信息与计算科学</li>
+									</ul>
+									<li class="SelectMajorContentSecond">海洋学院</li>
+									<ul class="SMCSecond">
+										<li class="SelectMajorContentThird">计算机科学与技术</li>
+										<li class="SelectMajorContentThird">信息与计算科学</li>
+									</ul>
+									<li class="SelectMajorContentSecond">海洋学院</li>
+								</ul>
+								</li>
+							</ul>
+						</div>
+						<!--搜索部分-->
+						<div class="SearchJuxing">
+							搜索书籍
+						</div>
+						<div class="SearchContent">
+							<input type="text" name="search" id="search" placeholder="请输入的书籍名" />
+							<button id="SearchSubmit">搜索</button>
+						</div>
+						<!--我要卖书-->
+						<div class="SellBook">
+							我要卖书
+						</div>
+						<div class="SellBookContent">
+							<img class="SellBookPic" src="img/icon/卖书.gif" alt="点击去卖书"/>
+						</div>
+					</div>
+					<!--热销商品栏-->
+					<div class="PopularGood">
+						<!--热销商品矩形-->
+						<div class="PopularGoodJuxing">
+							热销商品
+						</div>
+						<!--热销商品content-->
+						<div class="PopularGoodContent">
+							<!--书目详情-------------------------------------------------------->
+							<div class="BuyContentList">
+								<table >
+									<tr>
+										<td>
+											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic"/>
+										</td>
+										<td>
+											<!--名称出版社之类-->
+											<div class="BuyContentListMore">
+							                   <span class="BookTitle">管理学概论</span>
+							                   <br />
+							                   <span class="BookEditor">作者：12345</span>	
+							                   <br />
+							                   <span class="BookPublish">出版社：没有出版社</span>
+							                   <br />
+							                   <span class="BookIsbn">ISBN码：465468448</span>
+							                   <br />
+							                   <span class="BookStock">库存：充足</span>
+											</div>
+										</td>
+										<td>
+											<!--价格书本-->
+											<div class="BuyContentListPrice">
+												旧书：<span class="OldPriceBefore">12.00</span>元
+												<span class="OldPriceAfter">10.00</span>元
+												<br />
+												新书：<span class="NewPriceBefore">15.00</span>元
+												<span class="NewPriceAfter">13.00</span>元
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="BuyContentList">
+								<table >
+									<tr>
+										<td>
+											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic"/>
+										</td>
+										<td>
+											<!--名称出版社之类-->
+											<div class="BuyContentListMore">
+							                   <span class="BookTitle">管理学概论</span>
+							                   <span class="BookHot">热</span>
+							                   <br />
+							                   <span class="BookEditor">作者：12345</span>	
+							                   <br />
+							                   <span class="BookPublish">出版社：没有出版社</span>
+							                   <br />
+							                   <span class="BookIsbn">ISBN码：465468448</span>
+							                   <br />
+							                   <span class="BookStock">库存：充足</span>
+											</div>
+										</td>
+										<td>
+											<!--价格书本-->
+											<div class="BuyContentListPrice">
+												旧书：<span class="OldPriceBefore">12.00</span>元
+												<span class="OldPriceAfter">10.00</span>元
+												<br />
+												新书：<span class="NewPriceBefore">15.00</span>元
+												<span class="NewPriceAfter">13.00</span>元
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="BuyContentList">
+								<table >
+									<tr>
+										<td>
+											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic"/>
+										</td>
+										<td>
+											<!--名称出版社之类-->
+											<div class="BuyContentListMore">
+							                   <span class="BookTitle">管理学概论</span>
+							                   <br />
+							                   <span class="BookEditor">作者：12345</span>	
+							                   <br />
+							                   <span class="BookPublish">出版社：没有出版社</span>
+							                   <br />
+							                   <span class="BookIsbn">ISBN码：465468448</span>
+							                   <br />
+							                   <span class="BookStock">库存：充足</span>
+											</div>
+										</td>
+										<td>
+											<!--价格书本-->
+											<div class="BuyContentListPrice">
+												旧书：<span class="OldPriceBefore">12.00</span>元
+												<span class="OldPriceAfter">10.00</span>元
+												<br />
+												新书：<span class="NewPriceBefore">15.00</span>元
+												<span class="NewPriceAfter">13.00</span>元
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="BuyContentList">
+								<table >
+									<tr>
+										<td>
+											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic"/>
+										</td>
+										<td>
+											<!--名称出版社之类-->
+											<div class="BuyContentListMore">
+							                   <span class="BookTitle">管理学概论</span>
+							                   <br />
+							                   <span class="BookEditor">作者：12345</span>	
+							                   <br />
+							                   <span class="BookPublish">出版社：没有出版社</span>
+							                   <br />
+							                   <span class="BookIsbn">ISBN码：465468448</span>
+							                   <br />
+							                   <span class="BookStock">库存：充足</span>
+											</div>
+										</td>
+										<td>
+											<!--价格书本-->
+											<div class="BuyContentListPrice">
+												旧书：<span class="OldPriceBefore">12.00</span>元
+												<span class="OldPriceAfter">10.00</span>元
+												<br />
+												新书：<span class="NewPriceBefore">15.00</span>元
+												<span class="NewPriceAfter">13.00</span>元
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="BuyContentList">
+								<table >
+									<tr>
+										<td>
+											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic"/>
+										</td>
+										<td>
+											<!--名称出版社之类-->
+											<div class="BuyContentListMore">
+							                   <span class="BookTitle">管理学概论</span>
+							                   <br />
+							                   <span class="BookEditor">作者：12345</span>	
+							                   <br />
+							                   <span class="BookPublish">出版社：没有出版社</span>
+							                   <br />
+							                   <span class="BookIsbn">ISBN码：465468448</span>
+							                   <br />
+							                   <span class="BookStock">库存：充足</span>
+											</div>
+										</td>
+										<td>
+											<!--价格书本-->
+											<div class="BuyContentListPrice">
+												旧书：<span class="OldPriceBefore">12.00</span>元
+												<span class="OldPriceAfter">10.00</span>元
+												<br />
+												新书：<span class="NewPriceBefore">15.00</span>元
+												<span class="NewPriceAfter">13.00</span>元
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<!--页码-->
+						<div class="PageNumber">
+							<ul>
+								<li>1</li>
+								<li>1</li>
+								<li>1</li>
+								<li>1</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 			<!--footer-->
-			<div style="height: 500px;"></div>
 			<div class="footer">
 				booklbook卜克卜客®版权所有
 			</div>
