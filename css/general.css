@@ -1,0 +1,94 @@
+body,
+div,ul,li,td,tr {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	font-family: "黑体";
+	font-weight: 100;
+}
+
+.container {
+	width: 100%;
+	/*position: relative;*/
+}
+
+.hearder {
+	width: 100%;
+	height: 80px;
+	background-color: #54baec;
+	margin-bottom: 5px;
+	z-index: 99;
+}
+
+.hearder-content,
+.content {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hearder-content {
+	height: 80px;
+}
+
+.hearder-logo {
+	position: relative;
+	top: 15px;
+	width: 200px;
+}
+
+.HearderContentTable {
+	position: relative;
+	float: right;
+	height: inherit;
+}
+
+.HearderContentTable tr td {
+	text-align: center;
+	width: 80px;
+	margin: 0px;
+	border-left: 1px dashed #0392dc;
+	transform: skew(-25deg, 0deg);
+	-ms-transform: skew(-25deg, 0deg);
+	/* IE 9 */
+	-webkit-transform: skew(-25deg, 0deg);
+	/* Safari and Chrome */
+	-o-transform: skew(-25deg, 0deg);
+	/* Opera */
+	-moz-transform: skew(-25deg, 0deg);
+}
+
+.HearderContentTable tr td div {
+	font-weight: 100;
+	color: black;
+	transform: skew(25deg, 0deg);
+	-ms-transform: skew(25deg, 0deg);
+	/* IE 9 */
+	-webkit-transform: skew(25deg, 0deg);
+	/* Safari and Chrome */
+	-o-transform: skew(25deg, 0deg);
+	/* Opera */
+	-moz-transform: skew(25deg, 0deg);
+}
+
+.HearderContentTable tr td:last-child {
+	border-right: 1px dashed #0392dc;
+}
+
+#slidebox {
+	width: 100%;
+	padding-top: 10px;
+}
+
+.items {
+	width: 100%;
+}
+
+.items li {
+	width: 100%;
+}
+
+.slideBoxPic {
+	width: 100%;
+	height: 400px;
+}

@@ -1,13 +1,3 @@
-jQuery(function($){
-    $('#slidebox').slideBox();
-    $('#slidebox').slideBox({
-        direction : 'left',//left,top#方向
-        duration : 1,//滚动持续时间，单位：秒
-        easing : 'swing',//swing,linear//滚动特效
-        delay : 5,//滚动延迟时间，单位：秒
-        startIndex : 1//初始焦点顺序
-    });
-});
 //DOM页面加载完成函数==========================================================
 $(document).ready(function(){
 //	导航栏随着滚动放大缩小
@@ -53,6 +43,6 @@ $(document).ready(function(){
     	window.location.href="buy.html";
     });
     $(".HearderContentTable tr td:nth-child(4)").click(function(){
-      	window.open("shopcar.html");
+      	window.location.reload();
     });
 })
