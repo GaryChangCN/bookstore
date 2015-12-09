@@ -8,6 +8,7 @@ div.slideBox {
 	width: 670px;
 	height: 300px;
 	overflow: hidden;
+	z-index: 98;
 }
 
 div.slideBox ul.items {

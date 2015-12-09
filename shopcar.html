@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/shopcar.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="css/general.css"/>
-		<link rel="stylesheet" type="text/css" href="css/shopcar.css"/>
+		<link rel="stylesheet" type="text/css" href="css/general.css" />
+		<link rel="stylesheet" type="text/css" href="css/shopcar.css" />
 		<title></title>
 	</head>
+
 	<body>
 		<div class="container">
 			<!--hearder-->
@@ -33,35 +35,50 @@
 				</div>
 			</div>
 			<div class="content">
+				<!--购物车文字矩形-->
+				<div class="ShopCarJuxing">
+					购物车
+				</div>
+				<!--购物车商品列表-->
 				<div class="ShopCarList">
+					<!--商品单个！-->
 					<div class="ShopCarListX">
-						<table border="0" >
+						<table border="0">
 							<tr>
 								<td>
-									<img class="ShopCarListPic" src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg"/>
+									<img class="ShopCarListPic" src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" />
 								</td>
 								<td>
 									<div class="BookXiangQing">
 										<span class="BookName">
 											管理学概论
 										</span>
-										<br />
+										<br />作者：
 										<span class="BookEditor">
-											作者：回复额度
+											回复额度
 										</span>
-										<br />
+										<br />出版社：
 										<span class="BookPublish">
-											出版社：高等教育
+											高等教育
 										</span>
-										<br />
+										<br />ISBN:
 										<span class="BookIsbn">
-											ISBN:123234
+											123234
 										</span>
 									</div>
 								</td>
 								<td>
+									<div class="BookPrice">
+										<span class="SinglePrice">单价</span>
+										<br />新书：
+										<span>15.00</span>
+										<br />旧书：
+										<span>16.00</span>
+									</div>
+								</td>
+								<td>
 									<div class="BookKind">
-										<span class="BookName">
+										<span class="BookKinds">
 											选择种类
 										</span>
 										<div>
@@ -72,7 +89,28 @@
 										</div>
 									</div>
 								</td>
-								<td></td>
+								<td>
+									<div class="BookNumber">
+										<span class="BookNumbers">数量</span>
+										<br />
+										<div>
+											<table border="0">
+												<tr>
+													<td>-</td>
+													<td>1</td>
+													<td>+</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="CountPrice">
+										<span class="CountPrices">价格</span>
+										<br />
+										<span class="Price">0.00</span>
+									</div>
+								</td>
 							</tr>
 						</table>
 					</div>

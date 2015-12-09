@@ -1,13 +1,22 @@
+.ShopCarJuxing{
+	border-left: 7.5px solid #E05C49;
+	height: 30px;
+	line-height: 30px;
+	color: #E05C49;
+	font-size: 1.8em;
+	margin-top: 15px;
+	padding-left: 5px;
+}
 .ShopCarList{
-	width: 1000px;
-	margin-top: 30px;
-	height: 127px;
-	padding-bottom: 15px;
-	border-bottom: 1px dashed #E05C49;
+	border: 1px solid #E05C49;
+	padding: 15px 10px 15px 10px;
+	margin: 5px 0px 10px 0px;
+	width: 958px;
 }
 .ShopCarListX{
-	padding: 5px 10px 5px 10px;
-	width: 980px;
+	padding: 0px 10px 5px 10px;
+	width: 938px;
+	border-bottom: 1px dashed #E05C49;
 }
 .ShopCarListPic{
 	width: 90px;
@@ -15,20 +24,32 @@
 }
 .BookXiangQing{
 	height: 120px;
-	background-color: thistle;
-	padding-left: 30px;
+	margin-left: 30px;
+	width: 270px;
 }
-.BookName{
+.BookPrice{
+	height: 120px;
+	width: 100px;
+	text-align: center;
+}
+.BookName,.CountPrices{
 	color: #E05C49;
 	font-size: 1.5em;
+}
+.BookKinds,.BookNumbers,.SinglePrice{
+	color: #E05C49;
+	font-size: 1em;
 }
 .BookEditor,.BookPublish,.BookIsbn{
 	line-height: 1.9em;
 }
+.BookPrice span:nth-child(2),.BookPrice span:nth-child(3){
+	line-height: 3.9em;
+}
 .BookKind{
 	height: 120px;
-	background-color: bisque;
-	padding-left: 50px;
+	text-align: center;
+	margin-left: 50px;
 }
 .BookKind div{
 	width: 70px;
@@ -40,4 +61,35 @@
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;	
+}
+.BookNumber{
+	height: 120px;
+	margin-left: 50px;
+	width: 100px;
+	text-align: center;
+}
+.BookNumber div{
+	width: 70px;
+	margin: 35px auto 0px auto;
+}
+.BookNumber div table tr td:nth-child(odd){
+	border: 1px solid black;
+	width: 16px;
+	height: 16px;
+	font-size: 0.5em;
+}
+.BookNumber div table tr td:nth-child(2){
+	padding: 0px 5px 0px 5px;
+}
+.CountPrice{
+	height: 120px;
+	text-align: center;
+	margin-left: 50px;
+	width: 100px;
+}
+.Price{
+	color: #E05C49;
+	font-weight: 800;
+	font-size: 2em;
+	line-height: 80px;
 }
