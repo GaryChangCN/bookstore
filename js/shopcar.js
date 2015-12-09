@@ -48,20 +48,53 @@ $(document).ready(function() {
 	//购物车操控函数-----------------------
 	//选择新旧书 而 变颜色
 	$(".BookKind").on("click", "div", function() {
-		$(".BookKind div").css("border-color", "gainsboro");
-		$(this).css("border-color", "#E05C49");
-		var b=15;
-		var a=$(this).parents(".ShopCarListX").find(".BookPrice").children("span:contains(b)").text();
-	    alert(a);
+		//		$(".BookKind div").css("border-color", "gainsboro");
+		//		$(this).css("border-color", "#E05C49");
+		if ($(this).attr('class') == "BookOld") {
+			$(this).css("border-color", "#E05C49").next().css("border-color", "gainsboro");
+			var danjia1 = $(this).parents(".ShopCarListX").find(".BookPrice").children("#book1").text();
+			var shuliang1 = $(this).parents(".ShopCarListX").find(".shuliang").text();
+			var jiage1 = (parseFloat(danjia1) * parseInt(shuliang1)).toFixed(2);
+			$(this).parents(".ShopCarListX").find(".Price").text(jiage1);
+		} else if ($(this).attr('class') == "BookNew") {
+			$(this).css("border-color", "#E05C49").prev().css("border-color", "gainsboro");
+			var danjia = $(this).parents(".ShopCarListX").find(".BookPrice").children("#book2").text();
+			var shuliang = $(this).parents(".ShopCarListX").find(".shuliang").text();
+			var jiage = (parseFloat(danjia) * parseInt(shuliang)).toFixed(2);
+			$(this).parents(".ShopCarListX").find(".Price").text(jiage);
+		}
 	});
 	//加减数量===函数
-	$(".BookNumber div table tr td:nth-child(3)").on("click",function(){
-		FigureAdd();
+	$(".BookNumber div table tr td:nth-child(3)").on("click", function() {
+		var a = $(this).prev().text();
+		$(this).prev().text(parseInt(a) + 1);
+		if ($(this).parents(".ShopCarListX").find(".BookOld").css('border-color') == "rgb(224, 92, 73)") {
+			var danjia1 = $(this).parents(".ShopCarListX").find(".BookPrice").children("#book1").text();
+			var shuliang1 = $(this).parents(".ShopCarListX").find(".shuliang").text();
+			var jiage1 = (parseFloat(danjia1) * parseInt(shuliang1)).toFixed(2);
+			$(this).parents(".ShopCarListX").find(".Price").text(jiage1);
+		} else if ($(this).parents(".ShopCarListX").find(".BookOld").css('border-color') == "rgb(220, 220, 220)") {
+			var danjia = $(this).parents(".ShopCarListX").find(".BookPrice").children("#book2").text();
+			var shuliang = $(this).parents(".ShopCarListX").find(".shuliang").text();
+			var jiage = (parseFloat(danjia) * parseInt(shuliang)).toFixed(2);
+			$(this).parents(".ShopCarListX").find(".Price").text(jiage);
+		}
 	});
-    $(".BookNumber div table tr td:nth-child(1)").on("click",function(){
-    	var a = $(".BookNumber div table td:nth-child(2)").text();
+	$(".BookNumber div table tr td:nth-child(1)").on("click", function() {
+		var a = parseInt($(this).next().text());
 		if (a > 1) {
-			FigureMinus();
+			$(this).next().text(a - 1);
+			if ($(this).parents(".ShopCarListX").find(".BookOld").css('border-color') == "rgb(224, 92, 73)") {
+				var danjia1 = $(this).parents(".ShopCarListX").find(".BookPrice").children("#book1").text();
+				var shuliang1 = $(this).parents(".ShopCarListX").find(".shuliang").text();
+				var jiage1 = (parseFloat(danjia1) * parseInt(shuliang1)).toFixed(2);
+				$(this).parents(".ShopCarListX").find(".Price").text(jiage1);
+			} else if ($(this).parents(".ShopCarListX").find(".BookOld").css('border-color') == "rgb(220, 220, 220)") {
+				var danjia = $(this).parents(".ShopCarListX").find(".BookPrice").children("#book2").text();
+				var shuliang = $(this).parents(".ShopCarListX").find(".shuliang").text();
+				var jiage = (parseFloat(danjia) * parseInt(shuliang)).toFixed(2);
+				$(this).parents(".ShopCarListX").find(".Price").text(jiage);
+			}
 		} else if (a == 1) {
 			var r = confirm("确认要删除这样商品名么");
 			if (r == true) {
@@ -70,18 +103,11 @@ $(document).ready(function() {
 				//document.write("You pressed Cancel!")
 			}
 		}
-   });
-	function FigureAdd() {
-		var a = $(".BookNumber div table td:nth-child(2)").text();
-		$(".BookNumber div table td:nth-child(2)").text(parseInt(a) + 1);
-	}
-
-	function FigureMinus() {
-		var a = $(".BookNumber div table td:nth-child(2)").text();
-		$(".BookNumber div table td:nth-child(2)").text(parseInt(a) - 1);
-	}
-//	function CountPrice(){
-//		var a=$(this).parents(".ShopCarListX").find(".BookPrice").children("span#aaa").text();
-//	   alert(a);
-//	}
+	});
+	//每个商品单独总价格
+	$(".Price").each(function() {
+		var danjia = $(this).parents(".ShopCarListX").find(".BookPrice").children("#book1").text();
+		var shuliang = $(this).parents(".ShopCarListX").find(".shuliang").text();
+		$(this).text((parseFloat(danjia) * parseInt(shuliang)).toFixed(2));
+	})
 });
