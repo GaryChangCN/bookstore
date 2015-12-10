@@ -20,7 +20,7 @@ $(document).ready(function(){
 				width:'100px',
 				top:"8px"
 			},"fast");
-			$(".hearder-content").stop().animate({
+			$(".HearderContentTable").stop().animate({
 				height:'40px'
 			},"fast");
 		}else{
@@ -31,14 +31,17 @@ $(document).ready(function(){
 				width:'200px',
 				top:"15px"
 			},"fast");
-			$(".hearder-content").stop().animate({
+			$(".HearderContentTable").stop().animate({
 				height:'80px'
 			},"fast");
 		}
 	});
 //	导航栏鼠标悬浮变色
     $(".HearderContentTable tr td").mouseover(function(){
-    	$(this).css('background-color',"#05A2EF");
+    	$(this).css({
+    		'background-color':"#05A2EF",
+    		'cursor':"pointer"
+    	});
     }).mouseleave(function(){
     	$(this).css('background-color','#54BAEC');
     });

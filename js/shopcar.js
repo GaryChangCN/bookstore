@@ -110,4 +110,5 @@ $(document).ready(function() {
 		var shuliang = $(this).parents(".ShopCarListX").find(".shuliang").text();
 		$(this).text((parseFloat(danjia) * parseInt(shuliang)).toFixed(2));
 	})
-});
+});//===============================================
+
