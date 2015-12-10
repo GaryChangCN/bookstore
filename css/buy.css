@@ -84,7 +84,7 @@ transform: rotate(180deg);
 	margin-top: 5px;
 	margin-bottom: 15px;
 }
-.PopularGoodJuxing{
+.PopularGoodJuxing,.DivideGroupJuxing{
 	height: 30px;
 	padding-left: 5px;
 	border-left: 7.5px solid #E05C49;
@@ -94,11 +94,12 @@ transform: rotate(180deg);
 	font-weight: 400;
 	width: 710px;
 }
-.PopularGoodContent{
+.PopularGoodContent,.DivideGroupContent{
 	border: 2px solid #E05C49;
 	padding: 10px 5px 10px 15px;
 	width: 721px;
 	margin-top: 5px;
+	margin-bottom: 15px;
 }
 .SelectMajorContent ul li{
 	list-style-type: none;

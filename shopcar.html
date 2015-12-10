@@ -13,7 +13,7 @@
 	<body>
 		<div class="container">
 			<div class="zhegai">
-					<!--这是一个遮盖图层-->
+				<!--这是一个遮盖图层-->
 			</div>
 			<!--hearder-->
 			<div class="hearder">
@@ -193,10 +193,45 @@
 						</table>
 					</div>
 				</div>
+				<!--收货地址区域-->
+				<div class="ReceiveAddress">
+					<div class="ReceiveAddressJuxing">
+						收货信息
+					</div>
+					<div class="ReceiveAddressText" id="InputSubmit">
+						<span>
+								手机：
+						</span>
+						<input type="text" name="phonenumber" id="phonenumber" value="" placeholder="唯一联系方式请仔细填写" />
+						<br />
+						<span>
+								小区：
+							</span>
+						<input type="text" name="xiaoqu" id="xiaoqu" value="" placeholder="例：9小区" />
+						<br />
+						<span>
+								楼道：
+							</span>
+						<input type="text" name="loudao" id="loudao" value="" placeholder="例：a073" />
+						<br />
+						<span>
+								寝室：
+							</span>
+						<input type="text" name="qinshi" id="qinshi" value="" placeholder="例：301" />
+						<br />
+						<span>
+								备注：
+							</span>
+						<input id="remark" placeholder="备注信息" />
+						<br />
+						<input type="submit" value="提交"/>
+					</div>
+				</div>
 			</div>
 			<div class="footer">
 				booklbook卜克卜客®版权所有
 			</div>
 		</div>
 	</body>
+	<script src="js/input.js" type="text/javascript" charset="utf-8"></script>
 </html>

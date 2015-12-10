@@ -46,6 +46,9 @@ $(document).ready(function(){
     	$(this).css('background-color','#54BAEC');
     });
 //   导航栏上面点击事件
+    $(".hearder-logo").click(function(){
+		window.location.href = "index.html"
+	});
     $(".HearderContentTable tr td:nth-child(1)").click(function(){
     	window.location.href="index.html"
     });

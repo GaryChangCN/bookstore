@@ -1,9 +1,6 @@
 //全局变量区域
 
-//增加mouseover鼠标指针变化事件
-$(document).on('mousemove', '.book1,.book2,.BookNumber div table td:nth-child(odd)', function() {
-	$(this).css('cursor', 'pointer');
-});
+
 //计算总价函数
 function CountPrice(){
 	var cp = 0;
@@ -12,6 +9,9 @@ function CountPrice(){
 		cp = cp + b;
 	});
 	$("#CountPrice").text(cp.toFixed(2));
+	if ($(".ShopCarList").children().length==0) {
+		$(".ShopCarList").html("<div class='ShopCarEmpty'>购物车是空的~</div>")
+	}
 };
 //DOM页面加载完成函数==========================================================
 $(document).ready(function() {
@@ -24,16 +24,17 @@ $(document).ready(function() {
 				$(".zhegai").removeClass("ZhegaiShadow");
 			}
 		})
-		//  $(".hearder-logo").click(function(){
-		//  	alert($(window).scrollTop());
-		//  })
 		//	导航栏鼠标悬浮变色
 	$(".HearderContentTable tr td").mouseover(function() {
 		$(this).css('background-color', "#05A2EF");
+		$(this).css('cursor','pointer');
 	}).mouseleave(function() {
 		$(this).css('background-color', '#54BAEC');
 	});
 	//   导航栏上面点击事件
+	$(".hearder-logo").click(function(){
+		window.location.href = "index.html"
+	});
 	$(".HearderContentTable tr td:nth-child(1)").click(function() {
 		window.location.href = "index.html"
 	});
@@ -119,4 +120,9 @@ $(document).ready(function() {
 		$(this).text((parseFloat(danjia) * parseInt(shuliang)).toFixed(2));
 	});
 	CountPrice();
+    $(".ReceiveAddressText input").on('focus',function(){
+    	//alert("ooo");
+    	var a=$(".ShopCarList").css('height');
+    	$(window).scrollTop(parseInt(a)+70);
+    })
 }); //===============================================
