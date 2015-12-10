@@ -1,0 +1,53 @@
+body,div,ul,li,table,tr,td,form,span,iframe{
+	border: 0;
+	padding: 0;
+	margin: 0;
+	font-family: "黑体";
+}
+.container{
+	width: 100%;
+}
+.hearder{
+	width: 100%;
+	padding: 0px 0px 0px 50px;
+	font-size: 2em;
+	height: 60px;
+	line-height: 60px;
+	border-left: 2px solid white;
+	color: white;
+	background-color: #54BAEC;
+	box-shadow: 0px 2px 2px 0px dimgrey;
+	z-index: 93;
+}
+.content{
+	width: 1200px;
+	margin-left: 0px;
+	margin-right: auto;
+	z-index: 90;
+}
+.BigTable,.BigTable tr{
+	width: 1200px;
+}
+.BigTable tr td:nth-child(1){
+	width: 200px;
+	background-color: #05A2EF;
+}
+.BigTable tr td:nth-child(2){
+	width: 1000px;
+	background-color:  aliceblue;
+	vertical-align: top;
+}
+.left ul li{
+	width: 170px;
+	text-align: center;
+	height: 35px;
+	border-left: 15px solid #05A2EF;
+	border-right: 15px solid #05A2EF;
+	line-height:35px;
+	border-bottom: 1px dashed darkgrey;
+	padding-bottom: 5px;
+}
+.right{
+	width: 1000px;
+}
+

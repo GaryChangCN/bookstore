@@ -37,21 +37,19 @@
 	padding: 15px 15px 10px 15px;
 	text-indent: 2em;
 }
-
 .BuyersNoticeSlide {
 	float: right;
-	font-weight: 700;
-	font-size: 1em;
-	padding-right: 10px;
-	padding-top: 15px;
-	opacity: 0.4;
+	padding-right: 17px;
+	padding-top: 10px;
 }
-.BuyersNoticeSlideDown{
-transform: rotate(180deg);
--ms-transform: rotate(180deg);		/* IE 9 */
--webkit-transform: rotate(180deg);	/* Safari and Chrome */
--o-transform: rotate(180deg);		/* Opera */
--moz-transform: rotate(180deg);		/* Firefox */
+.BuyersNoticeSlide img{
+	width: 30px;
+}
+.down{
+	display:none;
+}
+.top{
+	display: ;
 }
 .SelectPopular{
 	width: 1000px;

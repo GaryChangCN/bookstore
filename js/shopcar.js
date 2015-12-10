@@ -119,10 +119,14 @@ $(document).ready(function() {
 		var shuliang = $(this).parents(".ShopCarListX").find(".shuliang").text();
 		$(this).text((parseFloat(danjia) * parseInt(shuliang)).toFixed(2));
 	});
+	//网页载入时候计算总价格
 	CountPrice();
+	//填写收货信息网页滚动
     $(".ReceiveAddressText input").on('focus',function(){
     	//alert("ooo");
     	var a=$(".ShopCarList").css('height');
     	$(window).scrollTop(parseInt(a)+70);
-    })
+    });
+    //jcarousellite展示
+   
 }); //===============================================

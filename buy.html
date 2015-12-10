@@ -5,10 +5,11 @@
 		<meta charset="utf-8">
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.slideBox.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.jcarousellite.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/General.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/buy.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="css/jquery.slideBox.css" />
-		<link rel="stylesheet" type="text/css" href="css/general.css"/>
+		<link rel="stylesheet" type="text/css" href="css/general.css" />
 		<link rel="stylesheet" type="text/css" href="css/buy.css" />
 		<title></title>
 	</head>
@@ -63,8 +64,9 @@
 					</div>
 					<div class="BuyersNoticeText">
 						买家须知
-						<span class="BuyersNoticeSlide" id="BuyersNoticeSlide">
-							^
+						<span class="BuyersNoticeSlide">
+							<img src="img/icon/top.gif" class="top"/>
+							<img src="img/icon/down.gif" class="down"/>
 						</span>
 					</div>
 					<!--动态折叠的买家须知-->
@@ -85,7 +87,7 @@
 							<!--ul-li列表 first代表一级。。。。\
 								SMCFirst  表示ul标签等级
 							-->
-							<ul >
+							<ul>
 								<li class="SelectMajorContentFirst">大一上</li>
 								<li class="SelectMajorContentFirst">大一下</li>
 								<ul class="SMCFirst">
@@ -128,21 +130,36 @@
 							我要卖书
 						</div>
 						<div class="SellBookContent">
-							<img class="SellBookPic" src="img/icon/卖书.gif" alt="点击去卖书"/>
+							<img class="SellBookPic" src="img/icon/卖书.gif" alt="点击去卖书" />
 						</div>
 					</div>
 					<!--热销商品栏-->
 					<div class="PopularGood">
 						<!--热销商品矩形-->
-						<div class="PopularGoodJuxing">
-							热销商品
-						</div>
+						<!--<div class="PopularGoodJuxing">
+							书籍推荐
+						</div>-->
 						<!--热销商品content-->
-						<div class="PopularGoodContent">
-							<div class="">
-								广告部分
+						<!--<div class="PopularGoodContent">
+							<div class="PopularGoodContentList">
+								<div id="slidebox1" class="slideBox">
+									<ul class="items">
+										<li>
+											
+											<img class="slideBoxPic" src="img/ad/4.png">
+										</li>
+										<li>
+											
+											<img class="slideBoxPic" src="img/ad/3.png">
+										</li>
+										<li>
+											
+											<img class="slideBoxPic" src="img/ad/4.png">
+										</li>
+									</ul>
+								</div>
 							</div>
-						</div>
+						</div>-->
 						<!--详细分组矩形-->
 						<div class="DivideGroupJuxing">
 							分类图书
@@ -150,23 +167,23 @@
 						<div class="DivideGroupContent">
 							<!--书目详情-------------------------------------------------------->
 							<div class="BuyContentList">
-								<table >
+								<table>
 									<tr>
 										<td>
-											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic"/>
+											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic" />
 										</td>
 										<td>
 											<!--名称出版社之类-->
 											<div class="BuyContentListMore">
-							                   <span class="BookTitle">管理学概论</span>
-							                   <br />
-							                   <span class="BookEditor">作者：12345</span>	
-							                   <br />
-							                   <span class="BookPublish">出版社：没有出版社</span>
-							                   <br />
-							                   <span class="BookIsbn">ISBN码：465468448</span>
-							                   <br />
-							                   <span class="BookStock">库存：充足</span>
+												<span class="BookTitle">管理学概论</span>
+												<br />
+												<span class="BookEditor">作者：12345</span>
+												<br />
+												<span class="BookPublish">出版社：没有出版社</span>
+												<br />
+												<span class="BookIsbn">ISBN码：465468448</span>
+												<br />
+												<span class="BookStock">库存：充足</span>
 											</div>
 										</td>
 										<td>
@@ -174,8 +191,8 @@
 											<div class="BuyContentListPrice">
 												旧书：<span class="OldPriceBefore">12.00</span>元
 												<span class="OldPriceAfter">10.00</span>元
-												<br />
-												新书：<span class="NewPriceBefore">15.00</span>元
+												<br /> 新书：
+												<span class="NewPriceBefore">15.00</span>元
 												<span class="NewPriceAfter">13.00</span>元
 											</div>
 										</td>
@@ -183,24 +200,24 @@
 								</table>
 							</div>
 							<div class="BuyContentList">
-								<table >
+								<table>
 									<tr>
 										<td>
-											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic"/>
+											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic" />
 										</td>
 										<td>
 											<!--名称出版社之类-->
 											<div class="BuyContentListMore">
-							                   <span class="BookTitle">管理学概论</span>
-							                   <span class="BookHot">热</span>
-							                   <br />
-							                   <span class="BookEditor">作者：12345</span>	
-							                   <br />
-							                   <span class="BookPublish">出版社：没有出版社</span>
-							                   <br />
-							                   <span class="BookIsbn">ISBN码：465468448</span>
-							                   <br />
-							                   <span class="BookStock">库存：充足</span>
+												<span class="BookTitle">管理学概论</span>
+												<span class="BookHot">热</span>
+												<br />
+												<span class="BookEditor">作者：12345</span>
+												<br />
+												<span class="BookPublish">出版社：没有出版社</span>
+												<br />
+												<span class="BookIsbn">ISBN码：465468448</span>
+												<br />
+												<span class="BookStock">库存：充足</span>
 											</div>
 										</td>
 										<td>
@@ -208,8 +225,8 @@
 											<div class="BuyContentListPrice">
 												旧书：<span class="OldPriceBefore">12.00</span>元
 												<span class="OldPriceAfter">10.00</span>元
-												<br />
-												新书：<span class="NewPriceBefore">15.00</span>元
+												<br /> 新书：
+												<span class="NewPriceBefore">15.00</span>元
 												<span class="NewPriceAfter">13.00</span>元
 											</div>
 										</td>
@@ -217,23 +234,23 @@
 								</table>
 							</div>
 							<div class="BuyContentList">
-								<table >
+								<table>
 									<tr>
 										<td>
-											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic"/>
+											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic" />
 										</td>
 										<td>
 											<!--名称出版社之类-->
 											<div class="BuyContentListMore">
-							                   <span class="BookTitle">管理学概论</span>
-							                   <br />
-							                   <span class="BookEditor">作者：12345</span>	
-							                   <br />
-							                   <span class="BookPublish">出版社：没有出版社</span>
-							                   <br />
-							                   <span class="BookIsbn">ISBN码：465468448</span>
-							                   <br />
-							                   <span class="BookStock">库存：充足</span>
+												<span class="BookTitle">管理学概论</span>
+												<br />
+												<span class="BookEditor">作者：12345</span>
+												<br />
+												<span class="BookPublish">出版社：没有出版社</span>
+												<br />
+												<span class="BookIsbn">ISBN码：465468448</span>
+												<br />
+												<span class="BookStock">库存：充足</span>
 											</div>
 										</td>
 										<td>
@@ -241,8 +258,8 @@
 											<div class="BuyContentListPrice">
 												旧书：<span class="OldPriceBefore">12.00</span>元
 												<span class="OldPriceAfter">10.00</span>元
-												<br />
-												新书：<span class="NewPriceBefore">15.00</span>元
+												<br /> 新书：
+												<span class="NewPriceBefore">15.00</span>元
 												<span class="NewPriceAfter">13.00</span>元
 											</div>
 										</td>
@@ -250,23 +267,23 @@
 								</table>
 							</div>
 							<div class="BuyContentList">
-								<table >
+								<table>
 									<tr>
 										<td>
-											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic"/>
+											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic" />
 										</td>
 										<td>
 											<!--名称出版社之类-->
 											<div class="BuyContentListMore">
-							                   <span class="BookTitle">管理学概论</span>
-							                   <br />
-							                   <span class="BookEditor">作者：12345</span>	
-							                   <br />
-							                   <span class="BookPublish">出版社：没有出版社</span>
-							                   <br />
-							                   <span class="BookIsbn">ISBN码：465468448</span>
-							                   <br />
-							                   <span class="BookStock">库存：充足</span>
+												<span class="BookTitle">管理学概论</span>
+												<br />
+												<span class="BookEditor">作者：12345</span>
+												<br />
+												<span class="BookPublish">出版社：没有出版社</span>
+												<br />
+												<span class="BookIsbn">ISBN码：465468448</span>
+												<br />
+												<span class="BookStock">库存：充足</span>
 											</div>
 										</td>
 										<td>
@@ -274,8 +291,8 @@
 											<div class="BuyContentListPrice">
 												旧书：<span class="OldPriceBefore">12.00</span>元
 												<span class="OldPriceAfter">10.00</span>元
-												<br />
-												新书：<span class="NewPriceBefore">15.00</span>元
+												<br /> 新书：
+												<span class="NewPriceBefore">15.00</span>元
 												<span class="NewPriceAfter">13.00</span>元
 											</div>
 										</td>
@@ -283,23 +300,23 @@
 								</table>
 							</div>
 							<div class="BuyContentList">
-								<table >
+								<table>
 									<tr>
 										<td>
-											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic"/>
+											<img src="img/book/3b7bb923-38eb-4ce0-810c-7c6215a863d6.jpg" class="BuyContentListPic" />
 										</td>
 										<td>
 											<!--名称出版社之类-->
 											<div class="BuyContentListMore">
-							                   <span class="BookTitle">管理学概论</span>
-							                   <br />
-							                   <span class="BookEditor">作者：12345</span>	
-							                   <br />
-							                   <span class="BookPublish">出版社：没有出版社</span>
-							                   <br />
-							                   <span class="BookIsbn">ISBN码：465468448</span>
-							                   <br />
-							                   <span class="BookStock">库存：充足</span>
+												<span class="BookTitle">管理学概论</span>
+												<br />
+												<span class="BookEditor">作者：12345</span>
+												<br />
+												<span class="BookPublish">出版社：没有出版社</span>
+												<br />
+												<span class="BookIsbn">ISBN码：465468448</span>
+												<br />
+												<span class="BookStock">库存：充足</span>
 											</div>
 										</td>
 										<td>
@@ -307,8 +324,8 @@
 											<div class="BuyContentListPrice">
 												旧书：<span class="OldPriceBefore">12.00</span>元
 												<span class="OldPriceAfter">10.00</span>元
-												<br />
-												新书：<span class="NewPriceBefore">15.00</span>元
+												<br /> 新书：
+												<span class="NewPriceBefore">15.00</span>元
 												<span class="NewPriceAfter">13.00</span>元
 											</div>
 										</td>
