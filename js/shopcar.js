@@ -128,6 +128,10 @@ $(document).ready(function() {
     	var a=$(".ShopCarList").css('height');
     	$(window).scrollTop(parseInt(a)+70);
     });
-    //jcarousellite展示
-   
-}); //===============================================
+//  $(".PayMethodsText input").on('click',function(){
+//  	$(".PayMethodsText input").removeAttr("checked");
+//  	$(this).attr("checked","checked");
+//  })
+}); 
+//=====================================================================================
+//===================================================================================
