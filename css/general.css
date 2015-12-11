@@ -6,7 +6,9 @@ div,ul,li,td,tr {
 	font-family: "黑体";
 	font-weight: 100;
 }
-
+tr,td,ul,li{
+	cursor: pointer;
+}
 .container {
 	width: 100%;
 	/*position: relative;*/

@@ -137,10 +137,10 @@
 	font-size: 2em;
 	line-height: 80px;
 }
-.ReceiveAddress{
+.ReceiveAddress,.PayMethods{
 	width: 1000px;
 }
-.ReceiveAddressJuxing{
+.ReceiveAddressJuxing,.PayMethodsJuxing{
 	border-left:7.5px solid #E05C49 ;
 	height: 30px;
 	line-height: 30px;
@@ -149,7 +149,7 @@
 	padding-left: 5px;
 	margin-top: 15px;
 }
-.ReceiveAddressText{
+.ReceiveAddressText,.PayMethodsText{
 	width: 1000px;
 	border:1px solid #E05C49;
 	margin-top: 10px;
@@ -165,11 +165,20 @@
 	padding-left: 10px;
 	color: black;
 }
-.ReceiveAddressText input:last-child{
+.PayMethodsText{
+	color: #E05C49;
+}
+.EnterBuy{
+	width: 1000px;
+	text-align: center;
+	margin-top: 15PX;
+}
+.EnterBuy input{
 	background-color: #e07262;
 	margin-top: 15px;
 	width:400px;
 	color: white;
 	font-size: 1.8em;
 	font-weight: 100;
+	border: 1px dashed #E05C49;
 }
