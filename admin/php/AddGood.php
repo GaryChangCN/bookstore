@@ -1,4 +1,0 @@
-<?php
-    include"conn.php";
-	
-	?>

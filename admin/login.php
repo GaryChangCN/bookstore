@@ -11,11 +11,11 @@ if (in_array($name1, $dbNames)) {
 	$dbpassword = mysql_query("select password from b_admin where name ='$name1'", $link);
 	$row = mysql_fetch_array($dbpassword);
 	if ($password == $row['password']) {
-		//setcookie("user",$name1);//username为cookie id
-		session_id($name1);
-		session_start();
-		$_SESSION['password']=$password;
-		echo "<a href='../index.php'>点击去管理页面</a>";
+		setcookie("name",$name1,time()+1200);
+		setcookie("mima",$password,time()+1200);
+        echo '<script type="text/javascript">
+	location.href="index.php";
+</script>';
 	} else {
 		echo "抱歉不能让你登陆";
 	}

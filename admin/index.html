@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<title>后台管理</title>
 		<style type="text/css">
-			*{
+			* {
 				font-family: "黑体";
 			}
-			input{
+			
+			input {
 				border: 1px dashed #05A2EF;
 				height: 40px;
 				padding-left: 10px;
 				margin-top: 20px;
 				width: 400px;
 			}
-			input:last-child{
+			input:last-child {
 				background-color: #05A2EF;
 				color: white;
 			}
 		</style>
 	</head>
+
 	<body style="background-color: gainsboro;border: 0px;margin: 0px;">
 		<div style="width: 100%;color: white;background-color: #05A2EF;font-size: 2em;height: 80px;line-height: 80px;padding-left: 50px;">
 			Booklbook后台管理
 		</div>
 		<div style="width: 500px;margin: 50px auto 0px auto;">
-			<form action="php/login.php" method="post" style="text-align: center;">
+			<form action="login.php" method="post" style="text-align: center;">
 				用户名
-				<input type="text" name="username" id="name" value="" /><br />
-				密码&nbsp;&nbsp;&nbsp;
-				<input type="password" name="password" id="password" value="" /><br />
-				<input type="submit" value="登陆"/>
+				<input type="text" name="username" id="name" value="" />
+				<br /> 密码&nbsp;&nbsp;&nbsp;
+				<input type="password" name="password" id="password" value="" />
+				<br />
+				<input type="submit" value="登陆" />
 			</form>
 		</div>
 	</body>
+	<script type="text/javascript">
+		window.onload = function() {
+			var NameOfCookie = "name";
+			var c = document.cookie.indexOf(NameOfCookie + "=");
+			if (c >=0) {
+				location.href = "index.php";
+			}
+		}
+	</script>
+
 </html>
