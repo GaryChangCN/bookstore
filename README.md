@@ -44,7 +44,7 @@
     * index.html `主页`
     * sell.html `卖书页面`
     * shopcar.html `购物车页面`
----    
+
 ### 2015-12-12 ###
  数据库搭建完毕，后台登陆设计完毕，默认后台账号为admin密码同账号，重新书写了README --!
  。同时此刻我在思考是php输出html好还是html嵌套php好
