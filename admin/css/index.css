@@ -4,6 +4,12 @@ body,div,ul,li,table,tr,td,form,span,iframe{
 	margin: 0;
 	font-family: "黑体";
 }
+li{
+	cursor: pointer;
+}
+body{
+	background-color: aliceblue;
+}
 .container{
 	width: 100%;
 }
@@ -50,4 +56,10 @@ body,div,ul,li,table,tr,td,form,span,iframe{
 .right{
 	width: 1000px;
 }
-
+.RightTop{
+	width: 1000px;
+}
+.iframe{
+	width: 1000px;
+	height: 1200px;
+}

@@ -1,0 +1,15 @@
+form{
+	text-align: center;
+}
+form input{
+	width: 300px;
+	height: 30px;
+	border: 1px dashed #54BAEC;
+	margin-top: 5px;
+	padding-left: 5px;
+}
+form input:last-child{
+  background-color: #05A2EF;
+  margin-top: 15px;
+  color: white;
+}
