@@ -27,7 +27,7 @@ CREATE TABLE `b_category_major` (
 ###创建年级类别表 ###
 CREATE TABLE `b_category_grade` (
  `id` int(5) NOT NULL AUTO_INCREMENT,
- `garde` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+ `grade` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 ###创建学院类别表 ###

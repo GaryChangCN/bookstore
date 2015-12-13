@@ -13,12 +13,19 @@
             * input.css `input css`
         * frame
             * AddGood.html `添加商品html`
+            * GroupManage.html `管理分组的iframe`
         * js
             * index.js `后台主页js`
+            * GroupManage.js `管理分组js`
         * AddGood.php `添加商品php`
+        * certain.php `通过cookie判断是否登陆`
         * conn.php `连接数据库php`
-        * index.html `后台默认登录`
+        * GroupManageAdd.php `管理分组->添加分组`
+        * GroupManageChange.php `管理分组->更改分组名`
+        * GroupManageSelect.php `管理分组->查询分组详情`
+        * index.html `后台默认登录页面`
         * index.php `后台首页`
+        * judge.php `ajax目标简单防护未登陆情况`
         * login.php `登录php`
     * css `前台样式表`
         * buy.css  `我要买书 css`
@@ -44,7 +51,8 @@
     * index.html `主页`
     * sell.html `卖书页面`
     * shopcar.html `购物车页面`
-
+### 2015-12-13 ###
+优化后台登陆，添加了上架商品（商品可以重复），添加了管理多级分组（添加分组，修改分组，删除分组等），修改了数据库的bug（b_category_grade表中grade列拼写错误）
 ### 2015-12-12 ###
  数据库搭建完毕，后台登陆设计完毕，默认后台账号为admin密码同账号，重新书写了README --!
  。同时此刻我在思考是php输出html好还是html嵌套php好

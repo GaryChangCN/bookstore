@@ -7,13 +7,13 @@
 		<link rel="stylesheet" type="text/css" href="../css/input.css"/>
 	</head>
 	<body>
-		<form action="../php/AddGood.php" method="post">
+		<form action="../AddGood.php" method="post" enctype="multipart/form-data" style="display: none;">
 			书名&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="text" name="" id="BookName" value="" /><br/>
+			<input type="text" name="BookName" id="BookName" value="" /><br/>
 			出版社&nbsp;&nbsp;&nbsp;
 			<input type="text" name="BookPublish" id="BookPUblish" value="" /><br/>
 			作者&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="text" name="" id="BookEditor" value="" /><br/>
+			<input type="text" name="BookEditor" id="BookEditor" value="" /><br/>
 			ISBN码&nbsp;&nbsp;&nbsp;
 			<input type="text" name="BookIsbn" id="BookIsbn" value="" /><br/>
 			新书价格&nbsp;&nbsp;
@@ -29,11 +29,31 @@
 			旧书库存&nbsp;&nbsp;
 			<input type="text" name="BookStockOld" id="BookStockOld" value="" /><br/>
 			是否热销&nbsp;&nbsp;
-			<input type="text" name="BookHot" id="BookHot" value="" /><br/>
+			<!--<input type="text" name="BookHot" id="BookHot" value="" /><br/>-->
+			<select name="BookHot">
+				<option value="1">是</option>
+				<option value="0">否</option>
+			</select><br />
 			上传图片&nbsp;&nbsp;
-			<input type="file" name="BookPicName" id="BookPicName" value="" /><br/>
+			<input type="file" name="file" id="BookPicName" value="" /><br/>
 			<input type="submit" value="确认"/>
 		</form>
 	</body>
-	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajax({
+				type:"post",
+				url:"../judge.php",
+				async:false,
+				success:function(data){
+					if (data=="success") {
+						$("form").css('display','block');
+					} else{
+						$("form").remove();
+						$("body").html("请先<a href='../index.html'>登录</a>");
+					}
+				}
+			});
+		})
+	</script>
 </html>

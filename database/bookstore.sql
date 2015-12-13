@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `b_category_college` (
 
 CREATE TABLE IF NOT EXISTS `b_category_grade` (
   `id` int(5) NOT NULL,
-  `garde` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+  `grade` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------

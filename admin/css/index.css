@@ -13,6 +13,11 @@ body{
 .container{
 	width: 100%;
 }
+.HearderSpan{
+	float: right;
+	font-size: 0.6em;
+	padding-right: 130px;
+}
 .hearder{
 	width: 100%;
 	padding: 0px 0px 0px 50px;
@@ -34,11 +39,13 @@ body{
 .BigTable,.BigTable tr{
 	width: 1200px;
 }
-.BigTable tr td:nth-child(1){
+.BigTableTd1{
 	width: 200px;
+	height: 1000px;
 	background-color: #05A2EF;
+	vertical-align: top;
 }
-.BigTable tr td:nth-child(2){
+.BigTableTd2{
 	width: 1000px;
 	background-color:  aliceblue;
 	vertical-align: top;
@@ -57,9 +64,28 @@ body{
 	width: 1000px;
 }
 .RightTop{
-	width: 1000px;
+	width: 600px;
+	margin: 0px auto 0px auto;
 }
 .iframe{
 	width: 1000px;
 	height: 1200px;
+}
+.FenzuGuanli{
+	width: 540px;
+	margin:0px auto 0px auto;
+	margin-top: 30px;
+	padding-bottom: 15px;
+	padding-left: 60px;
+	border-bottom: 1px dashed #54BAEC;
+	display: none;
+}
+.FenzuGuanli tr td div{
+	background-color: transparent;
+	border: 1px dashed #05A2EF;
+	text-align: center;
+	margin:6px;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
 }

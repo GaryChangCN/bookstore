@@ -2,20 +2,24 @@
 include "conn.php";
 $name1 = $_POST['username'];
 $password = $_POST['password'];
-mysql_select_db("bookstore", $link);
+//mysql_select_db("bookstore", $link);
 $namequery = mysql_query("select name from b_admin", $link);
 while ($dbUserName = mysql_fetch_array($namequery)) {//$adUserName是数据库已经注册的用户名
 	$dbNames[] = $dbUserName['name'];
 }
 if (in_array($name1, $dbNames)) {
-	$dbpassword = mysql_query("select password from b_admin where name ='$name1'", $link);
+	$dbpassword = mysql_query("select name,password from b_admin where name ='$name1'", $link);
 	$row = mysql_fetch_array($dbpassword);
 	if ($password == $row['password']) {
-		setcookie("name",$name1,time()+1200);
-		setcookie("mima",$password,time()+1200);
+		setcookie("name",$name1,time()+1200,"/");
+		setcookie("mima",$password,time()+1200,"/");
+//      session_id();
+//      session_start();
+//		$_SESSION['name']=$name1;
+//		$_SESSION['password']=$password;
         echo '<script type="text/javascript">
-	location.href="index.php";
-</script>';
+	            location.href="index.php";
+             </script>';
 	} else {
 		echo "抱歉不能让你登陆";
 	}

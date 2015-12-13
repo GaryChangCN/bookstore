@@ -10,30 +10,28 @@
 		</title>
 	</head>
 	<body>
-		<?php
-		include "conn.php";
-		if (isset($_COOKIE['name'])) {
-			$name = $_COOKIE['name'];
-			mysql_select_db("bookstore", $link);
-			$password = mysql_query("select password from b_admin where name='$name'", $link);
-			$passworda = mysql_fetch_array($password);
-			if ($_COOKIE['mima'] == $passworda['password']) {
-				echo '
-		<div class="container">
+		<div class="container" style="display: none;">
 			<div class="hearder">
-				管理系统
+				<span id="hearder-logo">
+					booklbook管理系统
+				</span>
+				<span class="HearderSpan">
+					<?php
+					echo "欢迎您：" . $_COOKIE['name'];
+					?>
+				</span>
 			</div>
 			<div class="content">
 				<table border="0" class="BigTable">
 					<tr>
-						<td style="vertical-align: top;">
+						<td class="BigTableTd1">
 							<div class="left">
 								<ul>
 									<li>
 										上架商品
 									</li>
 									<li>
-										1
+										分组管理
 									</li>
 									<li>
 										1
@@ -53,9 +51,51 @@
 								</ul>
 							</div>
 						</td>
-						<td>
+						<td class="BigTableTd2">
 							<div class="right">
 								<div class="RightTop">
+									<table border="0" class="FenzuGuanli">
+										<tr>
+											<td>
+												修改分组：
+											</td>
+											<td>
+												<div>
+													修改一级分组名
+												</div>
+											</td>
+											<td>
+												<div>
+													修改二级分组名
+												</div>
+											</td>
+											<td>
+												<div>
+													修改三级分组名
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												添加分组：
+											</td>
+											<td>
+												<div>
+													添加一级分组
+												</div>
+											</td>
+											<td>
+												<div>
+													添加二级分组
+												</div>
+											</td>
+											<td>
+												<div>
+													添加三级分组
+												</div>
+											</td>
+										</tr>
+									</table>
 								</div>
 								<iframe src="" width="1000px" class="iframe">
 								</iframe>
@@ -64,14 +104,25 @@
 					</tr>
 				</table>
 			</div>
-		</div>';
+		</div>
+		<?php
+		include "conn.php";
+		if (isset($_COOKIE['name'])) {
+			$name = $_COOKIE['name'];
+//			mysql_select_db("bookstore", $link);
+			$password = mysql_query("select password from b_admin where name='$name'", $link);
+			$passworda = mysql_fetch_array($password);
+			mysql_close();	 
+			if ($_COOKIE['mima'] == $passworda['password']) {
+				echo '<script type="text/javascript">
+                     $(".container").css("display","block");
+                      </script>'; 
+			} else {
+				echo "打开失败请联系管理员";
+			}
 		} else {
-		echo "打开失败请联系管理员";
+			echo '请先登录<a href="index.html">登录</a>';
 		}
-		} else {
-		echo '请先登录<a href="index.html">登录</a>';
-		}
-
 		?>
 	</body>
 </html>
