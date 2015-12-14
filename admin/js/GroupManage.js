@@ -136,9 +136,9 @@ $(document).ready(function() {
 	}
 
 	function ContentGroup(data) { //分组容器显示每级目录列表
-		var first="";
-		var second=new Array;
-		second[0]="0";
+		var first = "";
+		var second = new Array;
+		second[0] = "0";
 		$("form").css('display', 'none');
 		$(".LiContainer").css('display', 'none');
 		$(".TdContainer").css('display', 'block');
@@ -156,34 +156,45 @@ $(document).ready(function() {
 		$(".TdContainer table tr td:eq(0) ul").on("click", "li", function() { //分组容器显示每级目录列表 First！！！！！
 			$(this).parent("ul").children("li").css('background-color', "transparent");
 			$(this).css("background-color", "#D3D3D3");
-			first=$(this).text();
+			first = $(this).text();  //储存first值
 			switch (data) {
 				case "1":
-                    GetList("2");
+					GetList("2");
 					break;
 				case "2":
-                    GetList("3");
+					GetList("3");
 					break;
 				case "3":
-                    alert("shumu");
+                    GetGoodList();
 					break;
 				default:
 					break;
 			}
-			function GetList(list) {   //从商品分组GroupManageSelect获取分组信息
+
+			function GetList(list) { //从商品分组GroupManageSelect获取分组信息显示在 Second！
 				$.ajax({
 					type: "post",
 					url: "../GroupManageSelect.php",
 					async: false,
-                    data:{
-                    	"name":list
-                    },
-                    success:function(data1){
-                    	$(".TdContainer table tr td:eq(1)").children("ul").html(data1);
-                    }
+					data: {
+						"name": list
+					},
+					success: function(data1) {
+						$(".TdContainer table tr td:eq(1)").children("ul").html(data1);
+					}
+				});
+			}
+			function GetGoodList() {//从商品分组GroupManageSelect获取图书！！！信息显示在 Second！
+				$.ajax({
+					type: "post",
+					url: "../SelectGood.php",
+					async: false,
+					success: function(data1) {
+						$(".TdContainer table tr td:eq(1)").children("ul").html(data1);
+					}
 				});
 			}
 		});
-		
+
 	}
 })

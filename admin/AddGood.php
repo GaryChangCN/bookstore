@@ -19,7 +19,7 @@
 			$name1 = iconv("UTF-8", "GBK", $_FILES['file']['name']);
 			$name2 = $_FILES['file']['name'];
 			if (file_exists("../img/book/" . $_FILES['file']['name'])) {
-				echo $name1 . "图片已存在,无需上传";
+				echo $name1 . "图片名已存在请更名后长传";
 			} else {
 				move_uploaded_file($_FILES['file']["tmp_name"], "../img/book/" . $name1);
 //				mysql_select_db("bookstore", $link);

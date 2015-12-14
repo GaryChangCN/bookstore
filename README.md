@@ -10,7 +10,8 @@
     * admin `后台管理目录`
         * css `后台样式表`
             * index.css `后台主页 css`
-            * input.css `input css`
+            * AddGood.css `主要是input样式`
+            * GroupManage.css `GroupManage css`
         * frame
             * AddGood.html `添加商品html`
             * GroupManage.html `管理分组的iframe`
@@ -27,6 +28,7 @@
         * index.php `后台首页`
         * judge.php `ajax目标简单防护未登陆情况`
         * login.php `登录php`
+        * SelectGood.php `输出所有图书列表`
     * css `前台样式表`
         * buy.css  `我要买书 css`
         * general.css `通用 css`
@@ -54,6 +56,8 @@
 
 
 
+### 2015-12-14 ###
+增加添加分组内容 该商城有三级目录 用关系表联系起来
 ### 2015-12-13 ###
 优化后台登陆，添加了上架商品（商品可以重复），添加了管理多级分组（添加分组，修改分组，删除分组等），修改了数据库的bug（b_category_grade表中grade列拼写错误）
 ### 2015-12-12 ###
