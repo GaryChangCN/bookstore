@@ -3,6 +3,7 @@ body,div,ul,li,table,tr,td,form,span,iframe{
 	padding: 0;
 	margin: 0;
 	font-family: "黑体";
+	list-style-type: none;
 }
 li{
 	cursor: pointer;

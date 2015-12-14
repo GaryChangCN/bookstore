@@ -1,0 +1,31 @@
+*{
+	list-style-type: none;
+	font-family: "黑体" ;
+}
+form{
+	text-align: center;
+	padding-top: 15px;
+	display: none;
+}
+form input{
+	width: 300px;
+	height: 30px;
+	border: 1px dashed #54BAEC;
+	margin-top: 5px;
+	padding-left: 5px;
+}
+form input:last-child{
+  background-color: #05A2EF;
+  margin-top: 15px;
+  color: white;
+}
+select{
+	width: 307px;
+	height: 30px;
+	border: 1px dashed #54BAEC;
+	margin-top: 5px;
+	padding-left: 5px;
+}
+option{
+	height: 20px;
+}

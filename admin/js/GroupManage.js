@@ -26,8 +26,6 @@ $(document).ready(function() {
 			urlid = "三";
 			Addgroup(3);
 			break;
-		default:
-			break;
 		case "6":
 			SelectGroup("1");
 			DeleteGroup("grade");
@@ -40,10 +38,22 @@ $(document).ready(function() {
 			SelectGroup("3");
 			DeleteGroup("major");
 			break;
+		case "9":
+			ContentGroup("1");
+			break;
+		case "10":
+			ContentGroup("2");
+			break;
+		case "11":
+			ContentGroup("3");
+			break;
+		default:
+			break;
 	}
 
 	function Addgroup(data) { //添加分组函数
 		$("form").css('display', 'block');
+		$(".TdContainer").css('display', 'none');
 		$(".LiContainer").css('display', 'none');
 		$("#level").text(urlid + "级分组名");
 		$("#enter").click(function() {
@@ -65,6 +75,7 @@ $(document).ready(function() {
 
 	function SelectGroup(data) { //修改分组名函数---显示分组详情列表
 		$("form").css('display', 'none');
+		$(".TdContainer").css('display', 'none');
 		$(".LiContainer").css('display', 'block');
 		$.ajax({
 			type: "post",
@@ -100,27 +111,79 @@ $(document).ready(function() {
 			}
 		})
 	}
-	
-	function DeleteGroup(data){
-		$(".LiContainer ul").on("click","li",function(){
-			var name=confirm("确定删除此分组？");
-			if (name==true) {
-				var name=$(this).text();
+
+	function DeleteGroup(data) { //删除分组函数
+		$(".LiContainer ul").on("click", "li", function() {
+			var name = confirm("确定删除此分组？");
+			if (name == true) {
+				var name = $(this).text();
 				$.ajax({
-					type:"post",
-					url:"../GroupManageDelete.php",
-					async:false,
-					data:{
-						"name":name,
-						"type":data
+					type: "post",
+					url: "../GroupManageDelete.php",
+					async: false,
+					data: {
+						"name": name,
+						"type": data
 					},
-					success:function(data1){
+					success: function(data1) {
 						document.write(data1 + "<a href=' '>返回</a>");
 					}
 				});
-			} else{
-				
+			} else {
+
 			}
 		})
+	}
+
+	function ContentGroup(data) { //分组容器显示每级目录列表
+		var first="";
+		var second=new Array;
+		second[0]="0";
+		$("form").css('display', 'none');
+		$(".LiContainer").css('display', 'none');
+		$(".TdContainer").css('display', 'block');
+		$.ajax({
+			type: "post",
+			url: "../GroupManageSelect.php",
+			async: false,
+			data: {
+				"name": data
+			},
+			success: function(data1) {
+				$(".TdContainer table tr td:eq(0)").children("ul").html(data1);
+			}
+		});
+		$(".TdContainer table tr td:eq(0) ul").on("click", "li", function() { //分组容器显示每级目录列表 First！！！！！
+			$(this).parent("ul").children("li").css('background-color', "transparent");
+			$(this).css("background-color", "#D3D3D3");
+			first=$(this).text();
+			switch (data) {
+				case "1":
+                    GetList("2");
+					break;
+				case "2":
+                    GetList("3");
+					break;
+				case "3":
+                    alert("shumu");
+					break;
+				default:
+					break;
+			}
+			function GetList(list) {   //从商品分组GroupManageSelect获取分组信息
+				$.ajax({
+					type: "post",
+					url: "../GroupManageSelect.php",
+					async: false,
+                    data:{
+                    	"name":list
+                    },
+                    success:function(data1){
+                    	$(".TdContainer table tr td:eq(1)").children("ul").html(data1);
+                    }
+				});
+			}
+		});
+		
 	}
 })
