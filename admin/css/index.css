@@ -58,7 +58,8 @@ body{
 	border-right: 15px solid #05A2EF;
 	line-height:35px;
 	border-bottom: 1px dashed darkgrey;
-	padding-bottom: 5px;
+	color: whitesmoke;
+	font-size: 1.2em;
 }
 .right{
 	width: 1000px;

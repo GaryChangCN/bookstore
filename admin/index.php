@@ -95,6 +95,26 @@
 												</div>
 											</td>
 										</tr>
+										<tr>
+											<td>
+												删除分组：
+											</td>
+											<td>
+												<div>
+													删除一级分组
+												</div>
+											</td>
+											<td>
+												<div>
+													删除二级分组
+												</div>
+											</td>
+											<td>
+												<div>
+													删除三级分组
+												</div>
+											</td>
+										</tr>
 									</table>
 								</div>
 								<iframe src="" width="1000px" class="iframe">
