@@ -137,8 +137,7 @@ $(document).ready(function() {
 
 	function ContentGroup(data) { //分组容器显示每级目录列表
 		var first = "";
-		var second = new Array;
-		second[0] = "0";
+		var second = "0";
 		$("form").css('display', 'none');
 		$(".LiContainer").css('display', 'none');
 		$(".TdContainer").css('display', 'block');
@@ -156,7 +155,7 @@ $(document).ready(function() {
 		$(".TdContainer table tr td:eq(0) ul").on("click", "li", function() { //分组容器显示每级目录列表 First！！！！！
 			$(this).parent("ul").children("li").css('background-color', "transparent");
 			$(this).css("background-color", "#D3D3D3");
-			first = $(this).text();  //储存first值
+			first = $(this).text(); //储存first值
 			switch (data) {
 				case "1":
 					GetList("2");
@@ -165,7 +164,7 @@ $(document).ready(function() {
 					GetList("3");
 					break;
 				case "3":
-                    GetGoodList();
+					GetGoodList();
 					break;
 				default:
 					break;
@@ -184,7 +183,8 @@ $(document).ready(function() {
 					}
 				});
 			}
-			function GetGoodList() {//从商品分组GroupManageSelect获取图书！！！信息显示在 Second！
+
+			function GetGoodList() { //从商品分组GroupManageSelect获取图书！！！信息显示在 Second！
 				$.ajax({
 					type: "post",
 					url: "../SelectGood.php",
@@ -195,6 +195,36 @@ $(document).ready(function() {
 				});
 			}
 		});
+		$(".TdContainer table tr td:eq(1) ul").on("click", "li", function() { //Second栏点击函数
+			if ($(this).css('background-color') == "rgb(211, 211, 211)") {
+				$(this).css('background-color', "transparent");
+			} else {
+				$(this).css("background-color", "#D3D3D3");
+			}
+			second = "0";
+			$(this).parent("ul").children("li").each(function() {
+				if ($(this).css("background-color") == "rgb(211, 211, 211)") {
+					var a = $(this).text();
+					second = second + "*" + a;
+				} else {
 
+				}
+			})
+		});
+		$("#SubmitAdd").click(function(){
+			$.ajax({
+				type:"post",
+				url:"../GroupManageContent.php",
+				async:false,
+				data:{
+					"type":data,
+					"first":first,
+					"second":second
+				},
+				success:function(){
+					
+				}
+			});
+		})
 	}
 })
