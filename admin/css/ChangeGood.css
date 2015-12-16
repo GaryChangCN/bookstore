@@ -1,0 +1,41 @@
+*{
+	list-style-type: none;
+	font-family: "黑体" ;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+table{
+	width: 1000px;
+}
+table tr td{
+	width: 500px;
+}
+table tr:nth-child(1) td{
+	height: 30px;
+	text-align: center;
+	color: #0392DC;
+	font-size: 1.3em;
+	padding-bottom: 5px;
+	line-height: 30px;
+	border-bottom: 3px dashed #54BAEC;
+}
+#ulLeft li{
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+	margin: 15px 30px 0px 30px;
+	width: 440px;
+	color: #0392DC;
+	font-size: 1.1em;
+	cursor: pointer;
+}
+#ulLeft li:nth-child(odd){
+	border-left: 10px solid #05A2EF;
+	border-bottom: 1px solid #05A2EF;
+}
+#ulLeft li:nth-child(even){
+	border-left: 10px solid  #E05C49;
+	border-bottom: 1px solid #E05C49;
+	color: #E05C49;
+}

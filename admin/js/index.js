@@ -12,6 +12,10 @@ $(document).ready(function(){
 		$(".iframe").css('display','none');
 		$(".FenzuGuanli").css('display','block');
 	});
+	$(".left ul li:eq(2)").click(function(){
+		$(".RightTop").children().css('display','none');
+		$(".iframe").attr('src','frame/ChangeGood.html').css('display','block');
+	})
 	$(".FenzuGuanli").find("div").click(function(){
 		$(".FenzuGuanli").find("div").css({
 			"background-color":"transparent",
