@@ -11,6 +11,9 @@ table{
 table tr td{
 	width: 500px;
 }
+table tr:nth-child(2) td:nth-child(1){
+	vertical-align: top;
+}
 table tr:nth-child(1) td{
 	height: 30px;
 	text-align: center;
@@ -20,21 +23,24 @@ table tr:nth-child(1) td{
 	line-height: 30px;
 	border-bottom: 3px dashed #54BAEC;
 }
-#ulLeft li{
-	text-align: center;
+#ulLeft li,#ulRight li{
 	height: 20px;
 	line-height: 20px;
 	margin: 15px 30px 0px 30px;
-	width: 440px;
+	width: 410px;
+	padding: 0px 0px 0px 30px;
 	color: #0392DC;
 	font-size: 1.1em;
 	cursor: pointer;
 }
-#ulLeft li:nth-child(odd){
+#ulLeft li:nth-child(odd),#ulRight li:nth-child(even){
 	border-left: 10px solid #05A2EF;
 	border-bottom: 1px solid #05A2EF;
 }
-#ulLeft li:nth-child(even){
+#ulRight li:first-child{
+	display: none;
+}
+#ulLeft li:nth-child(even),#ulRight li:nth-child(odd){
 	border-left: 10px solid  #E05C49;
 	border-bottom: 1px solid #E05C49;
 	color: #E05C49;

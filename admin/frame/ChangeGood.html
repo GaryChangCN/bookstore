@@ -9,7 +9,9 @@
 	<body>
 		<table border="0" >
 			<tr>
-				<td>选择图书</td>
+				<td>选择图书（书名#ISBN）<br />
+					<span style="font-size: 0.7em;color: #E05C49;">双击删除此商品</span>
+				</td>
 				<td>在这栏点击修改</td>
 			</tr>
 			<tr>
@@ -19,23 +21,10 @@
 				</td>
 				<td>
 					<ul id="ulRight">
-						<li></li>
 					</ul>
 				</td>
 			</tr>
 		</table>
 	</body>
-	<script type="text/javascript">
-		$.ajax({
-			type:"post",
-			url:"../SelectGood.php",
-			async:false,
-			success:function(data){
-				$("#ulLeft").html(data);
-			}
-		});
-		$("#ulLeft").on("click","li",function(){
-			
-		})
-	</script>
+	<script src="../js/ChangeGood.js" type="text/javascript" charset="utf-8"></script>
 </html>
