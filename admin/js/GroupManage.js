@@ -209,20 +209,20 @@ $(document).ready(function() {
 				} else {
 
 				}
-			})
+			});
 		});
 		$("#SubmitAdd").click(function(){
 			$.ajax({
 				type:"post",
 				url:"../GroupManageContent.php",
-				async:false,
+				async:true,
 				data:{
 					"type":data,
 					"first":first,
 					"second":second
 				},
-				success:function(){
-					
+				success:function(a){
+					alert(a);
 				}
 			});
 		})
