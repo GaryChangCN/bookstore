@@ -14,7 +14,7 @@ CREATE TABLE `b_product` (
  `b_price_show_old` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
  `b_stock_new` int(5) NOT NULL,
  `b_stock_old` int(5) NOT NULL,
- `b_hot` int(5) NOT NULL DEFAULT '0',
+ `b_hot` varchar(5) NOT NULL DEFAULT '0',
  `b_pic_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci

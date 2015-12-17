@@ -7,6 +7,7 @@
 }
 table{
 	width: 1000px;
+	z-index: 50;
 }
 table tr td{
 	width: 500px;
@@ -44,4 +45,51 @@ table tr:nth-child(1) td{
 	border-left: 10px solid  #E05C49;
 	border-bottom: 1px solid #E05C49;
 	color: #E05C49;
+}
+.alert{
+	position: fixed;
+	left: 350px;
+	top: 200px;
+	width: 300px;
+	border: 2px solid #05A2EF;
+	background-color: white;
+	box-shadow: 0px 2px 1px 1px darkgray;
+	text-align: center;
+	padding: 15px 0px 20px 0px;
+	display: none;
+	z-index: 80;
+}
+.alert div{
+	margin: 0px 40px 0px 40px;
+	padding: 10px 0px 10px 0px;
+	border-bottom: 1px dashed #0392DC;
+	cursor: pointer;
+	background-color: white;
+	opacity: 0.9;
+}
+.cover{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: darkgray;
+	opacity: 0.3;
+	z-index: 70;
+	display: none;
+}
+.alert form input{
+	width: 200px;
+	border: 1px dashed #54BAEC;
+	height: 30px;
+}
+.alert form{
+	display: none;
+}
+.alert form input:first-child{
+	display: none;
+}
+.alert form input:last-child{
+	margin-top: 10px;
+	width: 100px;
+	background-color: #54BAEC;
+	border-radius: 30px;
 }

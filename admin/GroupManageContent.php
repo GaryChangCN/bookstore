@@ -5,9 +5,6 @@ include "conn.php";
 	$second=$_POST['second'];
 	$secondArr=explode("*", $second);
 	$number=count($secondArr);
-//$type = "1";
-//$first = "大一上";
-//$second = "0*信息学院*经管学院";
 switch ($type) {
 	case '1' :
 		//第一列为学期grade

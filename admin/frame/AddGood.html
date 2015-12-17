@@ -29,10 +29,9 @@
 			旧书库存
 			<input type="text" name="BookStockOld" id="BookStockOld" value="" /><br/>
 			是否热销
-			<!--<input type="text" name="BookHot" id="BookHot" value="" /><br/>-->
 			<select name="BookHot">
-				<option value="1">是</option>
-				<option value="0">否</option>
+				<option value="是">是</option>
+				<option value="否">否</option>
 			</select><br />
 			上传图片&nbsp;&nbsp;
 			<input type="file" name="file" id="BookPicName" value="" /><br/>
@@ -50,7 +49,7 @@
 						$("form").css('display','block');
 					} else{
 						$("form").remove();
-						$("body").html("请先<a href='../index.html'>登录</a>");
+						$("body").html("请先登录");
 					}
 				}
 			});
