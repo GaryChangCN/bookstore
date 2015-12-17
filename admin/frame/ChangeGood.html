@@ -1,43 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<title></title>
 		<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="../css/ChangeGood.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/ChangeGood.css" />
 	</head>
+
 	<body>
-		<div class="alert">
-			<div>是</div>
-			<div>否</div>
-			<form action="../ChangeGood.php" method="post" enctype="multipart/form-data">
-				<input type="text" name="type" value="3" /><br />
-				<input type="text" name="id" id="inputid" value="" style="display: none;">
-				<input type="file" name="file" id="" value="" /><br />
-				<input type="submit" value="确定"/>
-			</form>
+		<div class="container">
+			<div class="alert">
+				<div>是</div>
+				<div>否</div>
+				<form action="../ChangeGood.php" method="post" enctype="multipart/form-data">
+					<input type="text" name="type" value="3" />
+					<br />
+					<input type="text" name="id" id="inputid" value="" style="display: none;">
+					<input type="file" name="file" id="" value="" />
+					<br />
+					<input type="submit" value="确定" />
+				</form>
+			</div>
+			<div class="cover">
+
+			</div>
+			<table border="0">
+				<tr>
+					<td>选择图书（书名#ISBN）
+						<br />
+						<span style="font-size: 0.7em;color: #E05C49;">双击删除此商品</span>
+					</td>
+					<td>在这栏点击修改</td>
+				</tr>
+				<tr>
+					<td>
+						<ul id="ulLeft">
+						</ul>
+					</td>
+					<td>
+						<ul id="ulRight">
+						</ul>
+					</td>
+				</tr>
+			</table>
 		</div>
-		<div class="cover">
-			
-		</div>
-		<table border="0" >
-			<tr>
-				<td>选择图书（书名#ISBN）<br />
-					<span style="font-size: 0.7em;color: #E05C49;">双击删除此商品</span>
-				</td>
-				<td>在这栏点击修改</td>
-			</tr>
-			<tr>
-				<td>
-					<ul id="ulLeft">
-					</ul>
-				</td>
-				<td>
-					<ul id="ulRight">
-					</ul>
-				</td>
-			</tr>
-		</table>
 	</body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: "post",
+				url: "../judge.php",
+				async: false,
+				success: function(data) {
+					if (data == "success") {
+						$(".container").css('display', 'block');
+					} else {
+						$(".container").remove();
+						$(".container").html("请先登录");
+					}
+				}
+			});
+		})
+	</script>
 	<script src="../js/ChangeGood.js" type="text/javascript" charset="utf-8"></script>
+
 </html>

@@ -28,6 +28,7 @@
         * GroupManageAdd.php `管理分组->添加分组`
         * GroupManageChange.php `管理分组->更改分组名`
         * GroupManageContent.php `管理分组->添加每个分组的子分组！`
+         * GroupManageContentDelete.php `管理分组->删除每个分组的子分组！`
         * GroupManageDelete.php `管理分组->删除每个分组中蒜素`
         * GroupManageSelect.php `管理分组->查询分组详情`
         * index.html `后台默认登录页面`
@@ -63,6 +64,8 @@
 
 
 
+### 2015-12-17 ###
+添加了更改商品是否热卖和更改商品图片功能 完善12-16日更新
 ### 2015-12-16 ###
 完善了12-16的更新，增加了更改商品详情，删除商品等，忘记做删除每级分组删除其子分组，一门考试结束，开始加快速度了。
 ### 2015-12-15 ###

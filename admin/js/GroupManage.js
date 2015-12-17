@@ -47,6 +47,15 @@ $(document).ready(function() {
 		case "11":
 			ContentGroup("3");
 			break;
+		case "12":
+			ContentGroupDelete("1");
+			break;
+		case "13":
+			ContentGroupDelete("2");
+			break;
+		case "14":
+			ContentGroupDelete("3");
+			break;	
 		default:
 			break;
 	}
@@ -141,6 +150,8 @@ $(document).ready(function() {
 		$("form").css('display', 'none');
 		$(".LiContainer").css('display', 'none');
 		$(".TdContainer").css('display', 'block');
+		$("#div1").css('display','block');
+		$("#div2").css('display','none');
 		$.ajax({
 			type: "post",
 			url: "../GroupManageSelect.php",
@@ -226,5 +237,21 @@ $(document).ready(function() {
 				}
 			});
 		})
+	}
+	
+	function ContentGroupDelete(data){  //删除每级分组内容
+		$("#div2").css('display','block');
+		$("#div1").css('display','none');
+		$.ajax({
+			type: "post",
+			url: "../GroupManageSelect.php",
+			async: false,
+			data: {
+				"name": data
+			},
+			success: function(data1) {
+				$(".TdContainer table tr td:eq(0)").children("ul").html(data1);
+			}
+		});
 	}
 })
