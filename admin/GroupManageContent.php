@@ -3,8 +3,6 @@ include "conn.php";
 	$type=$_POST['type'];
 	$first=$_POST['first'];
 	$second=$_POST['second'];
-	$secondArr=explode("*", $second);
-	$number=count($secondArr);
 switch ($type) {
 	case '1' :
 		//第一列为学期grade
@@ -25,7 +23,7 @@ switch ($type) {
 function AddContent($e, $f, $g, $h, $i, $j,$second1) {
 	$secondArr = explode("*", $second1);
 	$number = count($secondArr);
-	$query = mysql_query("SELECT * FROM $e WHERE $f='$g'");
+	$query = mysql_query("SELECT id FROM $e WHERE $f='$g'");
 	while ($row = mysql_fetch_array($query)) {
 		$id1 = $row['id'];
 	}
@@ -34,7 +32,7 @@ function AddContent($e, $f, $g, $h, $i, $j,$second1) {
 		while ($row2 = mysql_fetch_array($query2)) {
 			$id2 = $row2['id'];
 		}
-		mysql_query("INSERT INTO $j VALUES('','$id1','$id2')");
+		mysql_query("INSERT INTO $j VALUES('','$id2','$id1')");
 	}
 	mysql_close();
 	echo "提交成功";
@@ -42,18 +40,18 @@ function AddContent($e, $f, $g, $h, $i, $j,$second1) {
 function AddContentBook($f,$second1){
 	$secondArr=explode("*", $second1);
 	$number=count($secondArr);
-	$query = mysql_query("SELECT * FROM b_category_major WHERE major='$f'");
+	$query = mysql_query("SELECT id FROM b_category_major WHERE major='$f'");
 	while ($row = mysql_fetch_array($query)) {
 		$id1 = $row['id'];
 	}
 	for ($x = 1; $x < $number; $x++) {
 		$a=$secondArr[$x];
 		$b=explode("#", $a);
-		$query2 = mysql_query("SELECT * FROM b_product WHERE b_isbn='$b[1]'");
+		$query2 = mysql_query("SELECT id FROM b_product WHERE b_isbn='$b[1]'");
 		while ($row2 = mysql_fetch_array($query2)) {
 			$id2 = $row2['id'];
 		}
-		mysql_query("INSERT INTO b_rel_pro_maj VALUES('','$id1','$id2')");
+		mysql_query("INSERT INTO b_rel_pro_maj VALUES('','$id2','$id1')");
 	}
 	mysql_close();
 	echo "提交成功";

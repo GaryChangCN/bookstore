@@ -21,5 +21,6 @@ function selectGroup($e,$f) {
 	while ($row = mysql_fetch_array($query)) {
 		echo "<li>" . $row[$f] . "</li>";
 	}
+	mysql_close();
 }
 ?>

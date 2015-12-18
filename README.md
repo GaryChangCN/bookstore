@@ -28,8 +28,9 @@
         * GroupManageAdd.php `管理分组->添加分组`
         * GroupManageChange.php `管理分组->更改分组名`
         * GroupManageContent.php `管理分组->添加每个分组的子分组！`
-         * GroupManageContentDelete.php `管理分组->删除每个分组的子分组！`
-        * GroupManageDelete.php `管理分组->删除每个分组中蒜素`
+        * GroupManageContentDelete.php `管理分组->删除每个分组的子分组！`
+        * GroupManageContentSelect.php `管理分组->删除分组->查看每级分组下已有的子分组`
+        * GroupManageDelete.php `管理分组->删除每个分组中元素以及在关系表中删除关于此分组下子分组`
         * GroupManageSelect.php `管理分组->查询分组详情`
         * index.html `后台默认登录页面`
         * index.php `后台首页`
@@ -64,6 +65,8 @@
 
 
 
+### 2015-12-18 ###
+添加了分组管理，删除每级分组下的子分组，删除整个分组等，修复了一些bug。
 ### 2015-12-17 ###
 添加了更改商品是否热卖和更改商品图片功能 完善12-16日更新
 ### 2015-12-16 ###
