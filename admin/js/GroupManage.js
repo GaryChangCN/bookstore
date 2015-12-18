@@ -253,5 +253,8 @@ $(document).ready(function() {
 				$(".TdContainer table tr td:eq(0)").children("ul").html(data1);
 			}
 		});
+		$(".TdContainer table tr td:eq(0)").children("ul").on("click","li",function(){
+			
+		})
 	}
 })
