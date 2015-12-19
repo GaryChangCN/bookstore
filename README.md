@@ -14,15 +14,20 @@
             * ChangeGood.css `更改商品样式`
             * GroupManage.css `GroupManage css`
         * frame
-            * AddGood.html `添加商品html`
+            * AddGood.html `添加商品iframe`
+            * Administrator `修改管理员的iframe`
+            * BestSell `最热销产品，即默认广告`
             * GroupManage.html `管理分组的iframe`
             * ChangeGood.html `更改商品详情的frame`
         * js
+            * BestSell.js `热销产品js`
             * index.js `后台主页js`
             * ChangeGood.js `更改商品详情的js`
             * GroupManage.js `管理分组js`
         * AddGood.php `添加商品php`
+        * Administrator.php `修改管理员所有权限账号密码等`
         * certain.php `通过cookie判断是否登陆`
+        * ChangeGood.php `修改商品的所有属性`
         * conn.php `连接数据库php`
         * DeleteGood.php `删除商品和图片的`
         * GroupManageAdd.php `管理分组->添加分组`
@@ -36,6 +41,7 @@
         * index.php `后台首页`
         * judge.php `ajax目标简单防护未登陆情况`
         * login.php `登录php`
+        * logout.php `登出、注销`
         * SelectGood.php `输出所有图书列表`
         * SelectGoodDetails.php `输出图书列表的详情`
     * css `前台样式表`
@@ -65,6 +71,9 @@
 
 
 
+### 2015-12-19 ###
+添加了最热销产品的管理，包括上架、下架等，增加了后台管理员管理页面，包括添加删除，修改信息、权限等，设置了管理员权限和客服权限，增加了注销功能，
+把管理员密码由明文转成MD5加密。
 ### 2015-12-18 ###
 添加了分组管理，删除每级分组下的子分组，删除整个分组等，修复了一些bug。
 ### 2015-12-17 ###

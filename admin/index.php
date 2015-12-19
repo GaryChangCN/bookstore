@@ -178,7 +178,7 @@
 		$(".container").css("display","block");
 		</script>';
 		} else {
-		echo "打开失败请联系管理员";
+		echo "打开失败请联系管理员<a href='index.html'>返回</a>";
 		}
 		} else {
 		echo '请先登录<a href="index.html">登录</a>';

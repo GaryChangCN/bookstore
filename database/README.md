@@ -86,6 +86,8 @@ CREATE TABLE `b_admin` (
  `power` int(3) NOT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+### 默认要建立超级管理员###
+INSERT INTO b_admin VALUES('','admin','21232f297a57a5a743894a0e4a801fc3','0')
 ###反馈表 ###
 CREATE TABLE `b_feedback` (
  `id` int(5) NOT NULL AUTO_INCREMENT,
