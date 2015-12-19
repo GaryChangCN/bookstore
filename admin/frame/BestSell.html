@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/ChangeGood.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<table border="0">
+				<tr>
+					<td>选择热销图书（书名#ISBN）
+						<br />
+						<span id="submitadd" style="font-size: 0.7em;color: #E05C49;cursor: pointer;text-decoration: underline; ">选中后点击这里添加</span>
+						<span style="font-size: 0.5em;">（可多选）</span>
+					</td>
+					<td>已经添加的热销图书
+						<br />
+						<span id=""style="font-size: 0.7em;color: #E05C49;cursor: pointer;">双击删除</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<ul id="ulLeft">
+						</ul>
+					</td>
+					<td>
+						<ul id="ulRight">
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: "post",
+				url: "../judge.php",
+				async: false,
+				success: function(data) {
+					if (data == "success") {
+						$(".container").css('display', 'block');
+					} else {
+						$(".container").remove();
+						$(".container").html("请先登录");
+					}
+				}
+			});
+		})
+	</script>
+	<script src="../js/BestSell.js" type="text/javascript" charset="utf-8"></script>
+</html>

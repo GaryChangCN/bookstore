@@ -1,6 +1,7 @@
 <?php
 include "certain.php";
-if ($certain == 'success') {
+if ($certain == 'admin') {
+	include "conn.php";
 	$bookname = $_POST['BookName'];
 	$bookpublish = $_POST['BookPublish'];
 	$bookeditor = $_POST['BookEditor'];
@@ -30,6 +31,8 @@ if ($certain == 'success') {
 	} else {
 		echo "您的上传信息没有填写完整或者图片格式不对或者过大（图片仅限gif/jpg/jpeg/png格式且图片不超过3M）" . "<a href='frame/AddGood.html'>返回</a>";
 	}
+} else if ($certain == 'server') {
+	echo "对不起你没有权限";
 } else {
 	echo "请先<a href='index.html'>登录</a>";
 }

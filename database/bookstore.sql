@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `b_ad` (
 CREATE TABLE IF NOT EXISTS `b_admin` (
   `id` int(5) NOT NULL,
   `name` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `power` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

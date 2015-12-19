@@ -9,17 +9,17 @@
 	<body>
 		<form action="../AddGood.php" method="post" enctype="multipart/form-data" style="display: none;">
 			书名
-			<input type="text" name="BookName" id="BookName" value="" /><br/>
+			<input type="text" name="BookName" id="BookName" value="" /><span style="color: red;">&nbsp;*</span><br/>
 			出版社
 			<input type="text" name="BookPublish" id="BookPUblish" value="" /><br/>
 			作者
 			<input type="text" name="BookEditor" id="BookEditor" value="" /><br/>
 			ISBN码
-			<input type="text" name="BookIsbn" id="BookIsbn" value="" /><br/>
+			<input type="text" name="BookIsbn" id="BookIsbn" value="" /><span style="color: red;">&nbsp;*</span><br/>
 			新书价格
-			<input type="text" name="BookPriceNew" id="BookPriceNew" value="" /><br/>
+			<input type="text" name="BookPriceNew" id="BookPriceNew" value="" /><span style="color: red;">&nbsp;*</span><br/>
 			旧书价格
-			<input type="text" id="BookPriceOld" name="BookPriceOld" value="" /><br/>
+			<input type="text" id="BookPriceOld" name="BookPriceOld" value="" /><span style="color: red;">&nbsp;*</span><br/>
 			新书折扣价格
 			<input type="text" name="BookPriceShowNew" id="BookPriceShowNew" value="" /><br/>
 			旧书折扣价格
@@ -34,8 +34,8 @@
 				<option value="否">否</option>
 			</select><br />
 			上传图片&nbsp;&nbsp;
-			<input type="file" name="file" id="BookPicName" value="" /><br/>
-			<input type="submit" value="确认"/>
+			<input type="file" name="file" id="BookPicName" value="" /><span style="color: red;">&nbsp;*</span><br/>
+			<input type="submit" value="确认" />
 		</form>
 	</body>
 	<script type="text/javascript">

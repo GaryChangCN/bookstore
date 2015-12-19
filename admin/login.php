@@ -2,7 +2,7 @@
 include "conn.php";
 $name1 = $_POST['username'];
 $password = $_POST['password'];
-//mysql_select_db("bookstore", $link);
+$md5password=md5($password);
 $namequery = mysql_query("select name from b_admin", $link);
 while ($dbUserName = mysql_fetch_array($namequery)) {//$adUserName是数据库已经注册的用户名
 	$dbNames[] = $dbUserName['name'];
@@ -10,13 +10,9 @@ while ($dbUserName = mysql_fetch_array($namequery)) {//$adUserName是数据库�
 if (in_array($name1, $dbNames)) {
 	$dbpassword = mysql_query("select name,password from b_admin where name ='$name1'", $link);
 	$row = mysql_fetch_array($dbpassword);
-	if ($password == $row['password']) {
+	if ($md5password == $row['password']) {
 		setcookie("name",$name1,time()+1200,"/");
-		setcookie("mima",$password,time()+1200,"/");
-//      session_id();
-//      session_start();
-//		$_SESSION['name']=$name1;
-//		$_SESSION['password']=$password;
+		setcookie("mima",$md5password,time()+1200,"/");
         echo '<script type="text/javascript">
 	            location.href="index.php";
              </script>';

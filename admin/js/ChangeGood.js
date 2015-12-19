@@ -39,7 +39,7 @@ $(document).ready(function() {
 				},
 				success: function(data) {
 					alert("删除成功！请查看图书列表是否还有此图书。\n如果未能删除，请再试几次或者联系管理员");
-					window.location.reload();
+					window.location.href="";
 				}
 			});
 		} else {}

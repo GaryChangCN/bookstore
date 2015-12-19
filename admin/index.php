@@ -19,6 +19,7 @@
 					<?php
 					echo "欢迎您：" . $_COOKIE['name'];
 					?>
+				<span id="logout" style="font-size: 0.7em;text-decoration: underline;cursor: pointer;">注销</span>	
 				</span>
 			</div>
 			<div class="content">
@@ -37,10 +38,10 @@
 										管理商品
 									</li>
 									<li>
-										1
+										管理推荐商品
 									</li>
 									<li>
-										1
+										管理员管理
 									</li>
 									<li>
 										1
@@ -168,21 +169,42 @@
 		<?php
 		include "conn.php";
 		if (isset($_COOKIE['name'])) {
-			$name = $_COOKIE['name'];
-//			mysql_select_db("bookstore", $link);
-			$password = mysql_query("select password from b_admin where name='$name'", $link);
-			$passworda = mysql_fetch_array($password);
-			mysql_close();	 
-			if ($_COOKIE['mima'] == $passworda['password']) {
-				echo '<script type="text/javascript">
-                     $(".container").css("display","block");
-                      </script>'; 
-			} else {
-				echo "打开失败请联系管理员";
-			}
+		$name = $_COOKIE['name'];
+		$password = mysql_query("select password from b_admin where name='$name'", $link);
+		$passworda = mysql_fetch_array($password);
+		mysql_close();
+		if ($_COOKIE['mima'] == $passworda['password']) {
+		echo '<script type="text/javascript">
+		$(".container").css("display","block");
+		</script>';
 		} else {
-			echo '请先登录<a href="index.html">登录</a>';
+		echo "打开失败请联系管理员";
+		}
+		} else {
+		echo '请先登录<a href="index.html">登录</a>';
+		}
+		include"certain.php";
+		if ($certain == 'admin') {
+		echo "<script>
+				     $('.left ul').children('li:eq(0),li:eq(1),li:eq(2),li:eq(3),li:eq(4)').css('display','block');
+				</script>";	
+		}elseif($certain=='server'){
+		echo "<script>
+				     $('.left ul').children('li:eq(0),li:eq(1),li:eq(2),li:eq(3),li:eq(4)').css('display','none');
+				</script>";
 		}
 		?>
 	</body>
+	<script type="text/javascript">
+		$("#logout").click(function() {
+			$.ajax({
+				type:"post",
+				url:"logout.php",
+				async:false,
+				success:function(){
+					window.location.href="";
+				}
+			});
+	})
+	</script>
 </html>

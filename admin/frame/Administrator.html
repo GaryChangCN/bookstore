@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<title>
+		</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="top1">
+				原账号密码&nbsp;&nbsp;&nbsp; 账号：
+				<input type="text"  id="nameOld"/> 密码：
+				<input type="password"  id="passwordOld"/>
+				<input type="确认" id="Old"/>
+			</div>
+			<div class="top2">
+				新账号密码&nbsp;&nbsp;&nbsp; 账号：
+				<input type="text"  id="nameNew"/> 密码：
+				<input type="password"  id="passwordNew"/>
+				<input type="submit" value="确认" id="New" />
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	var id;
+		$("#Old").click(function(){
+			$.ajax({
+			type:"post",
+			url:"../Administrator.php",
+			async:false,
+			data:{
+				"type":"1",
+				"name":$("#nameOld").val(),
+				"password":$("#passwordOld").val()
+			},
+			success:function(data){
+				$(".top2").css('display',data.split("#")[0]);
+				id=data.split("#")[1];
+				$("#nameNew").val($("#nameOld").val());
+			}
+		});
+		});
+		$("#new").click(function(){
+			$.ajax({
+				type:"post",
+				url:"../Administrator.php",
+				async:false,
+				data:{
+					"type":"2",
+					"name":$("#nameNew").val(),
+				    "password":$("#passwordNew").val(),
+				    "id":id
+				},
+				success:function(data){
+					alert(data);
+					window.location.href="";
+				}
+			});
+		})
+	</script>
+	<style type="text/css">
+		* {
+			font-family: "黑体";
+			border: 0px;
+			padding: 0px;
+			margin: 0px;
+		}
+		.top1{
+			margin-bottom: 50px;
+		}
+		.top2 {
+			display:none;
+			margin-top: 50px;
+		}
+		
+		.container {
+			width: 800px;
+			margin: 0px auto 0px auto;
+			padding-top: 50px;
+		}
+		
+		input {
+			width: 200px;
+			border: 1px dashed #54BAEC;
+			height: 30px;
+			padding-left: 5px;
+		}
+		
+		input[type^="submit"] {
+			background-color: white;
+			width: 100px;
+			border-radius: 20px;
+			margin-left: 5px;
+		}
+	</style>
+
+</html>

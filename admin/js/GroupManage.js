@@ -214,6 +214,7 @@ $(document).ready(function() {
 			}
 		});
 		$("#SubmitAdd").click(function() {
+			second="0";
 			$(".TdContainer table tr td:eq(1) ul").children("li").each(function() {
 				if ($(this).css("background-color") == "rgb(211, 211, 211)") {
 					var a = $(this).text();
@@ -236,6 +237,7 @@ $(document).ready(function() {
 					},
 					success: function(a) {
 						alert(a);
+						window.location.href="";
 					}
 				});
 			}
@@ -283,6 +285,7 @@ $(document).ready(function() {
 			}
 		})
 		$("#SubmitDelete").click(function() {
+			name2='0';
 			$(".TdContainer table tr td:eq(1) ul").children("li").each(function() {
 				if ($(this).css("background-color") == "rgb(211, 211, 211)") {
 					var a = $(this).text();
@@ -305,6 +308,7 @@ $(document).ready(function() {
 					},
 					success: function(data1) {
 						alert(data1);
+						window.location.href="";
 					}
 				});
 			}
