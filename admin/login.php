@@ -11,8 +11,8 @@ if (in_array($name1, $dbNames)) {
 	$dbpassword = mysql_query("select name,password from b_admin where name ='$name1'", $link);
 	$row = mysql_fetch_array($dbpassword);
 	if ($md5password == $row['password']) {
-		setcookie("name",$name1,time()+1200,"/");
-		setcookie("mima",$md5password,time()+1200,"/");
+		setcookie("name",$name1,time()+2400,"/");
+		setcookie("mima",$md5password,time()+2400,"/");
         echo '<script type="text/javascript">
 	            location.href="index.php";
              </script>';

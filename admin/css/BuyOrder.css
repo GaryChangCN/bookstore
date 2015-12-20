@@ -1,0 +1,118 @@
+*{
+	font-family: "黑体";
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+.juxing{
+	border-left: 5px solid #05A2EF;
+	height: 20px;
+	line-height: 20px;
+	font-size: 1.4em;
+	color: #05A2EF;
+	margin: 15px 0px 25px 0px;
+	padding-left: 5px;
+}
+.hearder{
+	width: 1000px;
+	height: 30px;
+	line-height: 50px;
+	text-align: center;
+	margin-top: 10px;
+}
+.hearder span{
+	margin-left: 20px;
+	margin-right: 20px;
+	border: 1px dashed #0392DC;
+	padding: 9px;
+	border-radius: 12px;
+	cursor: pointer;
+	color: #05A2EF;
+}
+table{
+	width: 1000px;
+}
+tr th{
+	border: 1px dashed #05A2EF;
+}
+tr td{
+	border-bottom: 1px dashed #05A2EF;
+	font-size: 0.9em;
+	border-right: 1px dashed #05A2EF;
+	border-left: 1px dashed #05A2EF;
+	height: 35px;
+	overflow: auto;
+}
+tr td:last-child{
+	cursor: pointer;
+}
+tr th:nth-child(1),tr td:nth-child(1){
+	width: 50px;
+}
+tr th:nth-child(2),tr td:nth-child(2){
+	width: 150px;
+}
+tr th:nth-child(3),tr td:nth-child(3){
+	width: 190px;
+	padding: 5px;
+}
+tr th:nth-child(4),tr td:nth-child(4){
+	width: 85px;
+}
+tr th:nth-child(5),tr td:nth-child(5){
+	width: 155px;
+	padding: 5px;
+}
+tr th:nth-child(6),tr td:nth-child(6){
+	width: 70px;
+}
+tr th:nth-child(7),tr td:nth-child(7){
+	width: 70px;
+}
+tr th:nth-child(8),tr td:nth-child(8){
+	width: 100px;
+	padding: 5px;
+}
+tr th:nth-child(9),tr td:nth-child(9){
+	width: 50px;
+}
+tr th:nth-child(10),tr td:nth-child(10){
+	width: 50px;
+}
+.alert{
+	width: 400px;
+	height: 180px;
+	border: 2px solid #05A2EF;
+	background-color: white;
+	box-shadow: -2px 3px 3px 1px #D3D3D3;
+	position: fixed;
+	left: 300px;
+	top: 100px;
+	z-index: 90;
+	text-align: center;	
+	padding-top: 20px;
+	font-size: 0.7em;
+	display: none;
+}
+.alert input{
+	margin-top: 15px;
+	margin-bottom: 25px;
+	border: 1px dashed #54BAEC;
+}
+.alert button{
+	border: 1px solid #05A2EF;
+	width: 70px;
+	height: 30px;
+	background-color: transparent;
+	border-radius: 10px;
+	margin: 5px;
+	color: #05A2EF;
+}
+.cover{
+	width: 100%;
+	height: 100%;
+	background-color: #DCDCDC;
+	position: fixed;
+	opacity: 0.4;
+	display: none;
+}

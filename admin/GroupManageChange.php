@@ -35,6 +35,6 @@ if ($certain == 'admin') {
 } else if ($certain == 'server') {
 	echo "对不起你没有权限";
 } else {
-	echo "请先<a href='index.html'>登录</a>";
+	echo "cookie保存到期请重新登录";
 }
 ?>

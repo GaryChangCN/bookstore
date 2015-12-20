@@ -9,27 +9,38 @@
 * bookstore
     * admin `后台管理目录`
         * css `后台样式表`
+            * ad.css `广告管理css`
             * index.css `后台主页 css`
             * AddGood.css `主要是input样式`
+            * BuyOrder.css `买书订单管理css`
             * ChangeGood.css `更改商品样式`
             * GroupManage.css `GroupManage css`
         * frame
+            * Ad.html `广告管理iframe`
             * AddGood.html `添加商品iframe`
             * Administrator `修改管理员的iframe`
             * BestSell `最热销产品，即默认广告`
+            * BuyOrder.html `买书订单管理iframe`
             * GroupManage.html `管理分组的iframe`
-            * ChangeGood.html `更改商品详情的frame`
+            * ChangeGood.html `更改商品详情的iframe`
+            * Discount.html `设置商品折扣的iframe`
+            * Our.html `我们的动态iframe`
         * js
             * BestSell.js `热销产品js`
+            * BuyOrder.js  `买书订单管理js`
             * index.js `后台主页js`
             * ChangeGood.js `更改商品详情的js`
             * GroupManage.js `管理分组js`
+        * Ad.php `广告管理php`
         * AddGood.php `添加商品php`
         * Administrator.php `修改管理员所有权限账号密码等`
+        * BestSell.php `热销推荐商品的上架删除等`
+        * BuyOrder.php `买书订单管理，查看某一日期，发货，取消发货等`
         * certain.php `通过cookie判断是否登陆`
         * ChangeGood.php `修改商品的所有属性`
         * conn.php `连接数据库php`
         * DeleteGood.php `删除商品和图片的`
+        * discount.php `设置旧书或者新书的整体折扣`
         * GroupManageAdd.php `管理分组->添加分组`
         * GroupManageChange.php `管理分组->更改分组名`
         * GroupManageContent.php `管理分组->添加每个分组的子分组！`
@@ -42,6 +53,7 @@
         * judge.php `ajax目标简单防护未登陆情况`
         * login.php `登录php`
         * logout.php `登出、注销`
+        * Our.php `我们的动态管理，添加、删除、显示等`
         * SelectGood.php `输出所有图书列表`
         * SelectGoodDetails.php `输出图书列表的详情`
     * css `前台样式表`
@@ -71,6 +83,8 @@
 
 
 
+### 2015-12-20 ###
+添加了广告管理，我们的动态管理，折扣管理，买书订单管理，修复了很多bug！本项目 v1.0接近完工。
 ### 2015-12-19 ###
 添加了最热销产品的管理，包括上架、下架等，增加了后台管理员管理页面，包括添加删除，修改信息、权限等，设置了管理员权限和客服权限，增加了注销功能，
 把管理员密码由明文转成MD5加密。

@@ -35,9 +35,14 @@ if ($certain == 'admin') {
 						echo $name2 . "图片名已存在请更名后上传";
 					} else {
 						move_uploaded_file($_FILES['file']["tmp_name"], "../img/book/" . $name1);
-						unlink("../img/book/" . $nameOld1);
-						mysql_query("UPDATE b_product SET b_pic_name='$name2' WHERE id='$id'");
-						echo "上传成功" . "<a href='frame/ChangeGood.html'>返回</a>";
+						if (file_exists("../img/book/" . $nameOld1)) {
+							unlink("../img/book/" . $nameOld1);
+							mysql_query("UPDATE b_product SET b_pic_name='$name2' WHERE id='$id'");
+							echo "上传成功" . "<a href='frame/ChangeGood.html'>返回</a>";
+						} else {
+							mysql_query("UPDATE b_product SET b_pic_name='$name2' WHERE id='$id'");
+							echo "上传成功" . "<a href='frame/ChangeGood.html'>返回</a>";
+						}
 					}
 				}
 			}
@@ -47,6 +52,6 @@ if ($certain == 'admin') {
 } else if ($certain == 'server') {
 	echo "对不起你没有权限";
 } else {
-	echo "请先<a href='index.html'>登录</a>";
+	echo "cookie保存到期请重新登录";
 }
 ?>

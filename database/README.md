@@ -71,7 +71,7 @@ CREATE TABLE `b_order` (
  `b_address` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
  `b_phone` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
  `b_remark` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
- `d_date` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+ `b_date` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
  `b_time` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
  `b_ready` int(5) NOT NULL DEFAULT '0',
  `b_admin_remark` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -98,9 +98,9 @@ CREATE TABLE `b_feedback` (
 ###广告表 ###
 CREATE TABLE `b_ad` (
  `id` int(5) NOT NULL AUTO_INCREMENT,
- `text` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
- `type` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
- `number` int(2) NOT NULL,
+ `text` varchar(140) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `type` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+ `number` varchar(2) NOT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 ###卖书订单表 ###
@@ -128,5 +128,12 @@ CREATE TABLE `b_our` (
  `id` int(5) NOT NULL AUTO_INCREMENT,
  `text` varchar(140) COLLATE utf8_unicode_ci NOT NULL,
  `display` int(5) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+###创建折扣表###
+CREATE TABLE `b_discount` (
+ `id` int(5) NOT NULL AUTO_INCREMENT,
+ `discount_old` varchar(5) COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
+ `discount_new` varchar(5) COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci

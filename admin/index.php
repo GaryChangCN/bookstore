@@ -44,10 +44,16 @@
 										管理员管理
 									</li>
 									<li>
-										1
+										我们动态管理
 									</li>
 									<li>
-										1
+										折扣管理
+									</li>
+									<li>
+										广告管理
+									</li>
+									<li>
+										买书订单管理
 									</li>
 								</ul>
 							</div>
@@ -186,11 +192,11 @@
 		include"certain.php";
 		if ($certain == 'admin') {
 		echo "<script>
-				     $('.left ul').children('li:eq(0),li:eq(1),li:eq(2),li:eq(3),li:eq(4)').css('display','block');
+				     $('.left ul').children('li:eq(0),li:eq(1),li:eq(2),li:eq(3),li:eq(4),li:eq(6),li:eq(7)').css('display','block');
 				</script>";	
 		}elseif($certain=='server'){
 		echo "<script>
-				     $('.left ul').children('li:eq(0),li:eq(1),li:eq(2),li:eq(3),li:eq(4)').css('display','none');
+				     $('.left ul').children('li:eq(0),li:eq(1),li:eq(2),li:eq(3),li:eq(4),li:eq(6),li:eq(7)').css('display','none');
 				</script>";
 		}
 		?>

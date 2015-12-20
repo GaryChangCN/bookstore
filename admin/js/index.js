@@ -29,6 +29,22 @@ $(document).ready(function() {
 		$(".RightTop").children().css('display', 'none');
 		$(".iframe").attr('src', 'frame/Administrator.html').css('display', 'block');
 	})
+	$(".left ul li:eq(5)").click(function() {
+		$(".RightTop").children().css('display', 'none');
+		$(".iframe").attr('src', 'frame/Our.html').css('display', 'block');
+	})
+	$(".left ul li:eq(6)").click(function() {
+		$(".RightTop").children().css('display', 'none');
+		$(".iframe").attr('src', 'frame/Discount.html').css('display', 'block');
+	})
+	$(".left ul li:eq(7)").click(function() {
+		$(".RightTop").children().css('display', 'none');
+		$(".iframe").attr('src', 'frame/Ad.html').css('display', 'block');
+	})
+	$(".left ul li:eq(8)").click(function() {
+		$(".RightTop").children().css('display', 'none');
+		$(".iframe").attr('src', 'frame/BuyOrder.html').css('display', 'block');
+	})
 	$(".FenzuGuanli").find("div").click(function() {
 		$(".FenzuGuanli").find("div").css({
 			"background-color": "transparent",

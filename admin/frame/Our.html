@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: "post",
+				url: "../judge.php",
+				async: false,
+				success: function(data) {
+					if (data == "success") {
+						$(".container").css('display', 'block');
+					} else {
+						$(".container").remove();
+						$(".container").html("请先登录");
+						parent.location.href="../index.html";
+					}
+				}
+			});
+		})
+	</script>
+		<style type="text/css">
+			* {
+				font-family: "黑体";
+				border: 0px;
+				margin: 0px;
+				padding: 0px;
+				list-style-type: none;
+			}
+			
+			.container {
+				width: 800px;
+				margin: 40px auto 0px auto;
+			}
+			
+			textarea {
+				width: 400px;
+				border: 1px dashed #0392DC;
+			}
+			
+			#add {
+				width: 250px;
+				height: 40px;
+				border: 1px dashed #0392DC;
+				border-radius: 15px;
+				background-color: transparent;
+				margin: 15px 0px 25px 75px;
+				font-size: 1.3em;
+				color: #05A2EF;
+			}
+			
+			.OurList {
+				margin-top: 45px;
+			}
+			
+			.OurList li {
+				height: auto;
+				width: 400px;
+				line-height: 30px;
+				text-align: left;
+				cursor: pointer;
+			}
+			
+			.OurList li:nth-child(odd) {
+				border-left: 7px solid #E05C49;
+				border-bottom: 1px dashed #E05C49;
+			}
+			
+			.OurList li div {
+				float: right;
+				padding-right: 5px;
+				color: red;
+			}
+			
+			.OurList li:nth-child(even) {
+				border-left: 7px solid #54BAEC;
+				border-bottom: 1px dashed #54BAEC;
+			}
+			
+			.selected {
+				background-color: #D3D3D3;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div style="border-left: 7px solid #E05C49;height: 30px;line-height: 30px;font-size: 2em;margin-bottom: 15px;padding-left: 5px;">
+				请输入新动态
+			</div>
+			<textarea id="text" rows="4"></textarea>
+			<br />
+			<button id="add">添加</button>
+			<div style="border-left: 7px solid #E05C49;height: 30px;line-height: 30px;font-size: 2em;margin-bottom: 15px;padding-left: 5px;">
+				选择要显示的动态
+				<br />
+				<span style="color: #E07262;font-size:0.4em;text-decoration: underline;">灰色背景表示已显示的动态，双击更改动态是否显示</span>
+				<span id="delete" style="color: #0392DC;font-size:0.3em;border: 1px solid #0392DC;border-radius: 3px;cursor: pointer;">选中后点击此处删除此动态</span>
+			</div>
+			<ul class="OurList">
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#add").click(function(){
+				$.ajax({
+					type:"post",
+					url:"../Our.php",
+					async:false,
+					data:{
+						"type":"4",
+						"text":$("#text").val()
+					},
+					success:function(data){
+						alert(data);
+						window.location.reload();
+					}
+				});
+			})
+			$.ajax({
+				type: "post",
+				url: "../Our.php",
+				async: true,
+				data: {
+					"type": "1"
+				},
+				success: function(data) {
+					$(".OurList").html(data);
+				}
+			});
+			$("#delete").click(function() {
+				var id;
+				$(".OurList").children("li").each(function() {
+					if ($(this).css("background-color") == "rgb(211, 211, 211)") {
+						var arr = $(this).text().split("-");
+				        id = arr[0].replace("编号：", "");
+					} else {
+					}
+				})
+				var r = confirm("你确定将编号为 " + id + " 的动态删除？");
+				if (r == true) {
+					$.ajax({
+						type: "post",
+						url: "../Our.php",
+						async: false,
+						data: {
+							"type": "3",
+							"id": id
+						},
+						success: function(data) {
+							alert(data);
+							window.location.reload();
+						}
+					});
+				} else {
+					window.location.reload();
+				}
+			})
+			$(".OurList").on('click','li',function(){
+				$(this).parent().children("li").css('background-color', 'transparent');
+				$(this).css('background-color', "#D3D3D3");
+			});
+			$(".OurList").on("dblclick", "li", function() {
+				$(this).parent().children("li").css('background-color', 'transparent');
+				$(this).css('background-color', "#D3D3D3");
+				var arr = $(this).text().split("-");
+				var id = arr[0].replace("编号：", "");
+				var r = confirm("你确定将编号为 " + id + " 的动态设置为\"显示\"吗？");
+				if (r == true) {
+					$.ajax({
+						type: "post",
+						url: "../Our.php",
+						async: false,
+						data: {
+							"type": "2",
+							"id": id
+						},
+						success: function(data) {
+							alert(data);
+							window.location.reload();
+						}
+					});
+				} else {}
+			})
+		})
+	</script>
+
+</html>
