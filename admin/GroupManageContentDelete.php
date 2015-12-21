@@ -1,24 +1,12 @@
 <?php
-include "conn.php";
 include "certain.php";
 if ($certain == 'admin') {
+	include "conn.php";
 	$type = $_POST['type'];
 	$first = $_POST['first'];
 	$second = $_POST['second'];
-	switch ($type) {
-		case '1' :
-			DeleteContent($first, "b_category_grade", "grade", "b_category_college", "college", "b_rel_col_grade", "id_category_grade", "id_category_col", $second);
-			break;
-		case '2' :
-			DeleteContent($first, "b_category_college", "college", "b_category_major", "major", "b_rel_maj_col", "id_category_col", "id_category_major", $second);
-		case '3' :
-			DeleteContentBook($first, "b_category_major", "major", "b_product", "b_rel_pro_maj", "id_category_major", "id_product", $second);
-		default :
-			break;
-	}
-	//$a=$first $b=b_category_grade $c=grade $d=b_category_college $e=college
-	//$f=b_rel_col_grade  $g=id_category_grade $h=id_category_col
 	function DeleteContent($a, $b, $c, $d, $e, $f, $g, $h, $second1) {
+		include "conn.php";
 		$query1 = mysql_query("SELECT id FROM $b WHERE $c='$a' ");
 		while ($row1 = mysql_fetch_array($query1)) {
 			$id1 = $row1['id'];
@@ -39,6 +27,7 @@ if ($certain == 'admin') {
 	}
 
 	function DeleteContentBook($a, $b, $c, $d, $f, $g, $h, $second1) {
+		include "conn.php";
 		$query1 = mysql_query("SELECT id FROM $b WHERE $c='$a' ");
 		while ($row1 = mysql_fetch_array($query1)) {
 			$id1 = $row1['id'];
@@ -59,6 +48,20 @@ if ($certain == 'admin') {
 		mysql_close();
 		echo "删除成功";
 	}
+	switch ($type) {
+		case '1' :
+			DeleteContent($first, "b_category_grade", "grade", "b_category_college", "college", "b_rel_col_grade", "id_category_grade", "id_category_col", $second);
+			break;
+		case '2' :
+			DeleteContent($first, "b_category_college", "college", "b_category_major", "major", "b_rel_maj_col", "id_category_col", "id_category_major", $second);
+			break;
+		case '3' :
+			DeleteContentBook($first, "b_category_major", "major", "b_product", "b_rel_pro_maj", "id_category_major", "id_product", $second);
+			break;
+		default :
+			break;
+	}
+	
 
 } else if ($certain == 'server') {
 	echo "对不起你没有权限";

@@ -19,12 +19,13 @@ if ($certain == 'admin' || $certain == 'server') {
 		while ($row = mysql_fetch_array($query)) {
 			if ($row[0] == "") {
 				echo "<td>此日无订货单，请换个日期</td>";
-			} elseif ($row[7] == "0") {
-				echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[8] . "</td><td>" . $row[9] . "</td><td>未发货</td></tr>";
 			} else {
-				echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[8] . "</td><td>" . $row[9] . "</td><td>已发货</td></tr>";
+				if ($row[7] == "0") {
+					echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[8] . "</td><td>" . $row[9] . "</td><td>未发货</td></tr>";
+				} else {
+					echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[8] . "</td><td>" . $row[9] . "</td><td>已发货</td></tr>";
+				}
 			}
-
 		}
 	}
 
@@ -47,6 +48,12 @@ if ($certain == 'admin' || $certain == 'server') {
 			$id = $_POST['id'];
 			$ready = $_POST['ready'];
 			mysql_query("UPDATE b_order SET b_ready='$ready' WHERE id='$id' ");
+			echo "修改成功";
+			break;
+		case '6' :
+			$remark = $_POST['remark'];
+			$id1 = $_POST['id'];
+			mysql_query("UPDATE b_order SET b_admin_remark='$remark' WHERE id='$id1'");
 			echo "修改成功";
 			break;
 		default :

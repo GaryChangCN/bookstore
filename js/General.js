@@ -47,16 +47,16 @@ $(document).ready(function(){
     });
 //   导航栏上面点击事件
     $(".hearder-logo").click(function(){
-		window.location.href = "index.html"
+		window.location.href = "index.php"
 	});
     $(".HearderContentTable tr td:nth-child(1)").click(function(){
-    	window.location.href="index.html"
+    	window.location.href="index.php"
     });
     $(".HearderContentTable tr td:nth-child(2)").click(function(){
-    	window.location.href="sell.html"
+    	window.location.href="sell.php"
     });
     $(".HearderContentTable tr td:nth-child(3)").click(function(){
-    	window.location.href="buy.html";
+    	window.location.href="buy.php";
     });
     $(".HearderContentTable tr td:nth-child(4)").click(function(){
       	window.open("shopcar.html");

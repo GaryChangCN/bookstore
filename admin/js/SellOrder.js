@@ -1,21 +1,20 @@
-$(document).ready(function() {
-	select("1"); //默认加载
+$(document).ready(function(){
+	select("1");
 	$(".hearder span:eq(1)").click(function() {
-		select("2"); //点击已发货显示所有发货订单
-		$(".juxing").text("已发货订单");
+		select("2"); //点击已收书显示所有收书订单
+		$(".juxing").text("已收书订单");
 	});
 	$(".hearder span:eq(0)").click(function() {
-		$(".juxing").text("未发货订单");
+		$(".juxing").text("未收书订单");
 		select("1");
 	})
-
 	function select(type) {
 		$.ajax({
 			type: "post",
-			url: "../BuyOrder.php",
+			url: "../SellOrder.php",
 			async: false,
 			data: {
-				"type": type
+				"type":type
 			},
 			success: function(data) {
 				$("#table tr:first-child").nextAll().remove();
@@ -33,17 +32,16 @@ $(document).ready(function() {
 	})
 	$("#already").click(function() {
 		var date0 = $("#selectdate").val()
-		selectdate("3", date0); //已发货订单 按日期
+		selectdate("3", date0); //已收书订单 按日期
 	})
 	$("#unready").click(function() {
 		var date0 = $("#selectdate").val()
-		selectdate("4", date0); //未发货订单 按日期
+		selectdate("4", date0); //未收书订单 按日期
 	})
-
 	function selectdate(type, date1) {
 		$.ajax({
 			type: "post",
-			url: "../BuyOrder.php",
+			url: "../SellOrder.php",
 			async: false,
 			data: {
 				"type": type,
@@ -63,18 +61,18 @@ $(document).ready(function() {
 		var state = $(this).text();
 		var a;
 		var ready;
-		if (state == "未发货") {
-			a = "已发货";
+		if (state == "未收书") {
+			a = "已收书";
 			ready = '1';
 		} else {
-			a = "未发货";
+			a = "未收书";
 			ready = '0';
 		}
-		var r = confirm("确定将发货状态改成 " + a + " 吗？");
+		var r = confirm("确定将收书状态改成 " + a + " 吗？");
 		if (r == true) {
 			$.ajax({
 				type: "post",
-				url: "../BuyOrder.php",
+				url: "../SellOrder.php",
 				async: false,
 				data: {
 					"type": "5",
@@ -90,13 +88,13 @@ $(document).ready(function() {
 
 		}
 	})
-	$(document).on("click", "tr td:nth-child(8)", function() {
+	$(document).on("click", "tr td:nth-child(7)", function() {
 		var id = $(this).parent().children("td:first-child").text();
-		var name = prompt("请输入新备注", $(this).text());
+		var name = prompt("请输入新1备注", $(this).text());
 		if (name != null && name != "") {
 			$.ajax({
 				type:"post",
-				url:"../BuyOrder.php",
+				url:"../SellOrder.php",
 				async:false,
 				data:{
 					"type":"6",

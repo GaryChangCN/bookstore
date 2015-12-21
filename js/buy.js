@@ -23,7 +23,7 @@ $(document).ready(function() {
 	$(".SelectMajorContent ul ul").slideUp("fast");
 	$(".SelectMajorContentFirst").on("click", function() {
 		if ($(this).next().is("ul")) {
-			$(".SMCFirst").slideUp();
+			$(".SelectMajorContent ul ul").slideUp();
 			if ($(this).next().css('display') == "block") {
 				$(this).next().slideUp();
 			} else {
@@ -41,7 +41,7 @@ $(document).ready(function() {
 	})
 	$(".SelectMajorContentSecond").on("click", function() {
 		if ($(this).next().is("ul")) {
-			$(".SMCSecond").slideUp();
+			$(".SelectMajorContent ul ul ul").slideUp();
 			if ($(this).next().css('display') == "block") {
 				$(this).next().slideUp();
 			} else {
@@ -72,5 +72,9 @@ $(document).ready(function() {
 		"color": "white"
 	});
 	//滚动展示栏
-
+    //pagenumber 变化
+    $(".PageNumber ul").on('click',"li",function(){
+    	$(this).parent("ul").children("li").css('background-color','transparent');
+    	$(this).css('background-color','#E05C49');
+    })
 })

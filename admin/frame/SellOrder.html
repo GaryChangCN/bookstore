@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
-		<title></title>
 		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="../css/BuyOrder.css" />
-		<script src="../js/BuyOrder.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	<script type="text/javascript">
+		<script src="../js/SellOrder.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/SellOrder.css" />
+		<title></title>
+		<script type="text/javascript">
 		$(document).ready(function() {
 			$.ajax({
 				type: "post",
@@ -26,7 +24,7 @@
 			});
 		})
 	</script>
-
+	</head>
 	<body>
 		<div class="container">
 			<div class="alert">
@@ -34,41 +32,38 @@
 				<br />
 				<br /> 选择日期控件然后选择要查看的订单。若无法显示日期控件，
 				<br/> 建议使用极速模式或者更换为chrome内核浏览器。
-				<br />或者手动输入。例：2015-09-08
 				<br /> 选择日期：
 				<input type="date" name="" id="selectdate" value="" />
 				<br />
-				<button id="already">已发货</button>
-				<button id="unready">未发货</button>
+				<button id="already">已收书</button>
+				<button id="unready">未收书</button>
 			</div>
 			<div class="cover">
 
 			</div>
 			<div class="hearder">
-				<span>未发货</span>
-				<span>已发货</span>
+				<span>未收书</span>
+				<span>已收书</span>
 				<span>选择日期</span>
 			</div>
 			<div class="not">
 				<div class="juxing">
-					未发货订单
+					未收书订单
 				</div>
 				<table border="0" id="table">
 					<tr>
 						<th>编号</th>
-						<th>商品名</th>
-						<th>收货地址</th>
+						<th>卖书地址</th>
 						<th>手机号</th>
-						<th>用户备注</th>
 						<th>下单日期</th>
 						<th>下单时间</th>
+						<th>用户备注</th>
 						<th>
 							商家备注<br />
 							<span style="font-size: 0.6em;font-weight: 100;">单击更改</span>
 						</th>
-						<th>支付方式</th>
 						<th>
-							状态
+							状态<br />
 							<span style="font-size: 0.6em;font-weight: 100;">单击更改</span>
 						</th>
 					</tr>

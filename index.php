@@ -1,6 +1,18 @@
+<?php
+	include "admin/conn.php";
+	function content($number){   //选择图片和小内容
+		$query=mysql_query("SELECT text FROM b_ad WHERE number='$number'");
+		$row=mysql_fetch_array($query);
+		return $row['text'];
+	}
+	function Our($number){
+		$query1=mysql_query("SELECT text FROM b_our WHERE display='$number'");
+		$row1=mysql_fetch_array($query1);
+		return $row1['text'];
+	}
+	?>
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<title>卜克卜客</title>
@@ -17,7 +29,7 @@
 			<!--hearder-->
 			<div class="hearder">
 				<div class="hearder-content">
-					<img class="hearder-logo" src="img/icon/booklbook-logo.png" />
+					<img alt="logo" class="hearder-logo" src="img/icon/<?php echo content("1"); ?>" />
 					<table border="0" class="HearderContentTable">
 						<tr>
 							<td>
@@ -43,19 +55,19 @@
 					<ul class="items">
 						<li>
 							<a href="" title="测试轮播"></a>
-							<img class="slideBoxPic" src="img/ad/1.png">
+							<img class="slideBoxPic" src="img/ad/<?php echo content("2"); ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播2"></a>
-							<img class="slideBoxPic" src="img/ad/2.png">
+							<img class="slideBoxPic" src="img/ad/<?php echo content("3"); ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播"></a>
-							<img class="slideBoxPic" src="img/ad/3.png">
+							<img class="slideBoxPic" src="img/ad/<?php echo content("4"); ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播"></a>
-							<img class="slideBoxPic" src="img/ad/4.png">
+							<img class="slideBoxPic" src="img/ad/<?php echo content("5"); ?>">
 						</li>
 					</ul>
 				</div>
@@ -75,11 +87,11 @@
 						<tr>
 							<td>
 								<span style="color: white;font-size: 2.2em;position: relative;top: -30px;left: 20px;">我要卖书</span>
-								<span style="color: white;font-size: 2.0em;position: relative;top: 30px;left: 90px;">Sell</span>
+								<span style="color: white;font-size: 2.0em;position: relative;top: 30px;left: 70px;">Sell</span>
 							</td>
 							<td>
 								<span style="color: white;font-size: 2.2em;position: relative;top: -30px;left: 20px;">我要买书</span>
-								<span style="color: white;font-size: 2.0em;position: relative;top: 30px;left: 90px;">Buy</span>
+								<span style="color: white;font-size: 2.0em;position: relative;top: 30px;left: 80px;">Buy</span>
 							</td>
 							<td>
 								<span style="color: white;font-size: 2.2em;position: relative;top: -30px;left: 20px;">信息反馈</span>
@@ -101,7 +113,7 @@
 					</div>
 					<!--我们的动态实时更新可编辑-->
 					<div class="OurDynamicContent">
-						这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态 这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态 这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态 这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态这里是一个可编辑的实时动态
+						<?php echo Our("1"); ?>
 					</div>
 				</div>
 				<!--我们的服务-->
@@ -119,30 +131,28 @@
 						<table class="OurServiceListTable">
 							<tr>
 								<td>
-									<div>详</div>
-									<span style="font-weight: 500;font-size: 1.2em;">专业的分类</span>
+									<div><img src="img/ad/<?php echo content("6"); ?>" alt="专业"/></div>
+									<span style="font-weight: 500;font-size: 1.2em;"><?php echo content("7"); ?></span>
 									<br />
-									<div>我们把每个专业的所需的教材分门别类，我们甚至把您的教材做了调查，推荐给您最需要的教材！</div>
+									<div><?php echo content("8"); ?></div>
 								</td>
 								<td>
-									<div>惠</div>
-									<span style="font-weight: 500;font-size: 1.2em;">强大的优惠</span>
+									<div><img src="img/ad/<?php echo content("9"); ?>" alt="优惠"/></div>
+									<span style="font-weight: 500;font-size: 1.2em;"><?php echo content("10"); ?></span>
 									<br />
-									<div>不论是收书还是提供二手书，我们为您提供强大的优惠力度，让您在教材的购买上节省下一笔不小的开销！</div>
+									<div><?php echo content("11"); ?></div>
 								</td>
 								<td>
-									<div>新</div>
-									<span style="font-weight: 500;font-size: 1.2em;">实时的更新</span>
+									<div><img src="img/ad/<?php echo content("12"); ?>" alt="更新"/></div>
+									<span style="font-weight: 500;font-size: 1.2em;"><?php echo content("13"); ?></span>
 									<br />
-									<div>我们把教材的真实封面展现给您，确保您买到的教材符合您的课程，不仅如此我们
-										<!--还会实时更新课程和图书资料，确保您的教材万无一失！-->
-										</span>
+									<div><?php echo content("14"); ?></div>
 								</td>
 								<td>
-									<div>心</div>
-									<span style="font-weight: 500;font-size: 1.2em;">贴心的上门</span>
+									<div><img src="img/ad/<?php echo content("26"); ?>" alt="贴心"/></div>
+									<span style="font-weight: 500;font-size: 1.2em;"><?php echo content("27"); ?></span>
 									<br />
-									<div>我们为您提供上们服务，您只需在预定后输入你的宿舍号及寝室号，便可安心等到教材的到来！</span>
+									<div><?php echo content("28"); ?></div>
 								</td>
 							</tr>
 						</table>
@@ -154,5 +164,15 @@
 				booklbook卜克卜客®版权所有
 			</div>
 	</body>
-
+    <script type="text/javascript">
+    	$(".SellBuyListTable tr td:eq(2)").click(function(){
+    		window.open("feedback.html","给我们的信息反馈","height=350px,width=1020px,top=100px,left=400px");
+    	})
+    	$(".SellBuyListTable tr td:nth-child(1)").click(function(){
+    		window.location.href="sell.html";
+    	})
+    	$(".SellBuyListTable tr td:nth-child(2)").click(function(){
+    		window.location.href="buy.html";
+    	})
+    </script>
 </html>

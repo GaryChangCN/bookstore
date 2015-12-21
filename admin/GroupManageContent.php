@@ -5,23 +5,6 @@ if ($certain == 'admin') {
 	$type = $_POST['type'];
 	$first = $_POST['first'];
 	$second = $_POST['second'];
-	switch ($type) {
-		case '1' :
-			//第一列为学期grade
-			AddContent("b_category_grade", "grade", $first, "b_category_college", "college", "b_rel_col_grade", $second);
-			break;
-		case '2' :
-			//第一列为学院college
-			AddContent("b_category_college", "college", $first, "b_category_major", "major", "b_rel_maj_col", $second);
-			break;
-		case '3' :
-			//第一列为专业major
-			AddContentBook($first, $second);
-			break;
-
-		default :
-			break;
-	}
 	function AddContent($e, $f, $g, $h, $i, $j, $second1) {
 		$secondArr = explode("*", $second1);
 		$number = count($secondArr);
@@ -59,6 +42,24 @@ if ($certain == 'admin') {
 		mysql_close();
 		echo "提交成功";
 	}
+	switch ($type) {
+		case '1' :
+			//第一列为学期grade
+			AddContent("b_category_grade", "grade", $first, "b_category_college", "college", "b_rel_col_grade", $second);
+			break;
+		case '2' :
+			//第一列为学院college
+			AddContent("b_category_college", "college", $first, "b_category_major", "major", "b_rel_maj_col", $second);
+			break;
+		case '3' :
+			//第一列为专业major
+			AddContentBook($first, $second);
+			break;
+
+		default :
+			break;
+	}
+	
 
 } else if ($certain == 'server') {
 	echo "对不起你没有权限";

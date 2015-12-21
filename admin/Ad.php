@@ -3,24 +3,6 @@ include "certain.php";
 if ($certain == 'admin') {
 	include "conn.php";
 	$type = $_POST['type'];
-	switch ($type) {
-		case '1' :
-			ChangePic("../img/icon/", "1");
-			break;
-		case '2' :
-			ChangePic("../img/ad/", "2");
-			break;
-		case '3' :
-			$number = $_POST['number'];
-			$text = $_POST['text'];
-			mysql_query("UPDATE b_ad SET text='$text' WHERE number='$number'");
-			echo "修改成功";
-			break;
-
-		default :
-			break;
-	}
-	mysql_close();
 	function ChangePic($a, $b) {
 		if ((($_FILES['file']['type'] == "image/gif") || ($_FILES['file']['type'] == "image/jpeg") || ($_FILES['file']['type'] == "image/png") || ($_FILES['file']['type'] == "image/jpg")) && ($_FILES['file']['size'] < 2000000)) {
 			if ($_FILES['file']['error'] > 0) {
@@ -52,7 +34,25 @@ if ($certain == 'admin') {
 			}
 		}
 	}
+	switch ($type) {
+		case '1' :
+			ChangePic("../img/icon/", "1");
+			break;
+		case '2' :
+			$number0=$_POST['number'];
+			ChangePic("../img/ad/", $number0);
+			break;
+		case '3' :
+			$number = $_POST['number'];
+			$text = $_POST['text'];
+			mysql_query("UPDATE b_ad SET text='$text' WHERE number='$number'");
+			echo "修改成功";
+			break;
 
+		default :
+			break;
+	}
+	mysql_close();
 } else if ($certain == 'server') {
 	echo "对不起你没有权限";
 } else {

@@ -7,6 +7,14 @@ if ($certain == 'admin') {
 	$nameNew = $_POST['nameNew'];
 	$nameOld = $_POST['nameOld'];
 	// 选择行名称
+	function changeGroup($e, $f, $g, $h) {//$e->表名称 $f->列名称 $g->选择行名称OLD $h->修改后行名称
+		$query = mysql_query("SELECT * FROM $e WHERE $f='$g' ");
+		while ($row = mysql_fetch_array($query)) {
+			$id = $row['id'];
+		}
+		mysql_query("UPDATE $e SET $f='$h' WHERE id='$id'");
+		echo "已经成功把原分组名:&nbsp;" . $g . "改为：&nbsp;" . $h;
+	}
 	switch ($type) {
 		case '0' :
 			//grade
@@ -22,14 +30,6 @@ if ($certain == 'admin') {
 			break;
 		default :
 			break;
-	}
-	function changeGroup($e, $f, $g, $h) {//$e->表名称 $f->列名称 $g->选择行名称OLD $h->修改后行名称
-		$query = mysql_query("SELECT * FROM $e WHERE $f='$g' ");
-		while ($row = mysql_fetch_array($query)) {
-			$id = $row['id'];
-		}
-		mysql_query("UPDATE $e SET $f='$h' WHERE id='$id'");
-		echo "已经成功把原分组名:&nbsp;" . $g . "改为：&nbsp;" . $h;
 	}
 
 } else if ($certain == 'server') {
