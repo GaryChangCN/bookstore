@@ -134,4 +134,5 @@ switch ($type) {
 	default :
 		break;
 }
+mysql_close();
 ?>

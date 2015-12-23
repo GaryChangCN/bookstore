@@ -49,6 +49,10 @@ $(document).ready(function() {
 		$(".RightTop").children().css('display', 'none');
 		$(".iframe").attr('src', 'frame/SellOrder.html').css('display', 'block');
 	})
+	$(".left ul li:eq(10)").click(function() {
+		$(".RightTop").children().css('display', 'none');
+		$(".iframe").attr('src', 'frame/visited.html').css('display', 'block');
+	})
 	$(".FenzuGuanli").find("div").click(function() {
 		$(".FenzuGuanli").find("div").css({
 			"background-color": "transparent",

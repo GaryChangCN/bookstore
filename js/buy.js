@@ -45,6 +45,24 @@ $(document).ready(function() {
 			}
 		});
 	}
+	//图书搜索
+	$("#SearchSubmit").click(function(){
+		$.ajax({
+			type:"get",
+			url:"php/Search.php",
+			async:false,
+			data:{
+				"name":$("#search").val()
+			},
+			success:function(data){
+				if ((data=='')||(data==null)||(data.indexOf(" ")>=0)) {
+					alert("网站搜索功能有限，只支持精确搜索，您可以去专业分类选书。");
+				} else{
+					window.open("bookdetail.html?"+data);
+				}
+			}
+		});
+	})
 	//slide买家须知折叠
 	function zhedie(){
 		$("#BuyersNoticeContent").slideToggle();

@@ -42,6 +42,7 @@ tr td{
 	border-left: 1px dashed #05A2EF;
 	height: 35px;
 	overflow: auto;
+	text-align: center;
 }
 
 tr td:last-child,tr td:nth-child(7){
