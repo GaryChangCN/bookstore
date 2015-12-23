@@ -18,6 +18,7 @@ if ($certain == 'admin') {
 			mysql_query("UPDATE b_product SET b_hot='$new' WHERE id='$id'");
 			mysql_close();
 			echo "已经修改成功";
+			break;
 		case '3' :
 			$id = $_POST['id'];
 			if ((($_FILES['file']['type'] == "image/gif") || ($_FILES['file']['type'] == "image/jpeg") || ($_FILES['file']['type'] == "image/png") || ($_FILES['file']['type'] == "image/jpg")) && ($_FILES['file']['size'] < 2000000)) {
@@ -46,6 +47,7 @@ if ($certain == 'admin') {
 					}
 				}
 			}
+            break;
 		default :
 			break;
 	}

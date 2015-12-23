@@ -1,9 +1,17 @@
+<?php
+	include "admin/conn.php";
+	function content($number){   //选择图片和小内容
+		$query=mysql_query("SELECT text FROM b_ad WHERE number='$number'");
+		$row=mysql_fetch_array($query);
+		return $row['text'];
+	}
+	?>
 <!DOCTYPE html>
 <html>
 
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>我要卖书</title>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.slideBox.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/General.js" type="text/javascript" charset="utf-8"></script>
@@ -17,7 +25,7 @@
 			<!--hearder-->
 			<div class="hearder">
 				<div class="hearder-content">
-					<img class="hearder-logo" src="img/icon/booklbook-logo.png" />
+					<img class="hearder-logo" src="img/icon/<?php echo content("1") ?>" />
 					<table border="0" class="HearderContentTable">
 						<tr>
 							<td>
@@ -43,11 +51,19 @@
 					<ul class="items">
 						<li>
 							<a href="" title="测试轮播"></a>
-							<img class="slideBoxPic" src="img/ad/2.png">
+							<img class="slideBoxPic" src="img/ad/<?php echo content("15") ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播2"></a>
-							<img class="slideBoxPic" src="img/ad/4.png">
+							<img class="slideBoxPic" src="img/ad/<?php echo content("16") ?>">
+						</li>
+						<li>
+							<a href="" title="测试轮播2"></a>
+							<img class="slideBoxPic" src="img/ad/<?php echo content("17") ?>">
+						</li>
+						<li>
+							<a href="" title="测试轮播2"></a>
+							<img class="slideBoxPic" src="img/ad/<?php echo content("18") ?>">
 						</li>
 					</ul>
 				</div>
@@ -58,10 +74,7 @@
 						卖书须知
 					</div>
 					<div class="ContentSellNoticeText">
-						别的是否合格vs据印度分公司的积分很少有饭呢稍等，uokgbufesfbeshjfyudiehwiohwi的和别人发v
-						这是一个测试测试测试额这是一个测试测试测试额这是一个测试测试测试额这是一个测试测试测试额
-						这是一个测试测试测试额这是一个测试测试测试额这是一个测试测试测试额这是一个测试测试测试额
-						这是一个测试测试测试额这是一个测试测试测试额这是一个测试测试测试额这是一个测试测试测试额
+						<?php echo content("19") ?>
 					</div>
 					<div class="ContentSellNoticeFenge">
 						<div></div>
@@ -74,11 +87,11 @@
 						填写地址
 					</div>
 					<div class="contentText">
-						<form action="" method="post" id="InputSubmit">
+						<form action="php/sell.php" method="get" id="InputSubmit">
 							<span>
 								手机：
 							</span>
-							<input type="text" name="phonenumber" id="phonenumber" value="" placeholder="唯一联系方式请仔细填写"/>
+							<input type="number" name="phonenumber" id="phonenumber" value="" placeholder="唯一联系方式请仔细填写"/>
 							<br />
 							<span>
 								小区：
@@ -98,7 +111,7 @@
 							<span>
 								备注：
 							</span>
-							<input id="remark" placeholder="备注信息"/>
+							<input id="remark" name="remark" placeholder="备注信息" value=""/>
 							<br />
 							<input type="submit" value="提交"/>
 						</form>
@@ -115,5 +128,4 @@
                 })
 			</script>
 	</body>
-    <script src="js/input.js" type="text/javascript" charset="utf-8"></script>
 </html>

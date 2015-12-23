@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/general.css" />
+		<link rel="stylesheet" type="text/css" href="css/bookdetail.css" />
+		<title>书本详情</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<!--hearder-->
+			<div class="hearder">
+				<div class="hearder-content">
+					<img alt="logo" class="hearder-logo" />
+					<table border="0" class="HearderContentTable">
+						<tr>
+							<td>
+								<div>首页</div>
+							</td>
+							<td>
+								<div>我要卖书</div>
+							</td>
+							<td>
+								<div>我要买书</div>
+							</td>
+							<td>
+								<div>购物车</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="content">
+				<table border="0" class="ContentBook">
+					<tr>
+						
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var id = location.href.split("?")[1];
+			$(".HearderContentTable tr td").mouseover(function() {
+				$(this).css({
+					'background-color': "#05A2EF",
+					'cursor': "pointer"
+				});
+			}).mouseleave(function() {
+				$(this).css('background-color', '#54BAEC');
+			});
+			$(".hearder-logo").click(function() {
+				window.location.href = "index.php"
+			});
+			$(".HearderContentTable tr td:nth-child(1)").click(function() {
+				window.location.href = "index.php"
+			});
+			$(".HearderContentTable tr td:nth-child(2)").click(function() {
+				window.location.href = "sell.php"
+			});
+			$(".HearderContentTable tr td:nth-child(3)").click(function() {
+				window.location.href = "buy.php";
+			});
+			$(".HearderContentTable tr td:nth-child(4)").click(function() {
+				window.open("shopcar.html");
+			});
+			$.ajax({
+				type: "get",
+				url: "php/BookDetail.php",
+				async: false,
+				data: {
+					"type": "1",
+					"id": id
+				},
+				success: function(data) {
+					$(".ContentBook").html(data.split("%%")[1]);
+					$(".hearder-logo").attr('src','img/icon/'+data.split("%%")[0]+'');
+				}
+			});
+			$(document).on("click","#addnew",function(){
+				$.ajax({
+					type:"get",
+					url:"php/BookDetail.php",
+					async:false,
+					data:{
+						"type":"2",
+						"id":id,	
+					},
+					success:function(data){
+						alert(data);
+					},
+					error:function(){
+						alert("添加失败，请刷新重试");
+					}
+				});
+			})
+		})
+	</script>
+
+</html>

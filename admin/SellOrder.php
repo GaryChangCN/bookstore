@@ -42,7 +42,7 @@ if ($certain == 'admin' || $certain == 'server') {
 			break;
 		case '4' :
 			$date = $_POST['date'];
-			select("0", $date);
+			selectdate("0", $date);
 			break;
 		case '5' :
 			$id = $_POST['id'];

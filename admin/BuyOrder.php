@@ -6,10 +6,12 @@ if ($certain == 'admin' || $certain == 'server') {
 	function select($ready) {
 		$query = mysql_query("SELECT * FROM b_order WHERE b_ready='$ready'");
 		while ($row = mysql_fetch_array($query)) {
-			if ($row[7] == "0") {
-				echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[8] . "</td><td>" . $row[9] . "</td><td>未发货</td></tr>";
+			$query2=mysql_query("SELECT b_name,b_isbn FROM b_product WHERE id='$row[1]'");
+			$row2=mysql_fetch_array($query2);
+			if ($row[8] == "0") {	
+				echo "<tr><td>" . $row[0] . "</td><td>" . $row2[0]."-".$row2[1] . "</td><td>".$row[2]."</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[7] . "</td><td>" . $row[9] . "</td><td>" . $row[10] . "</td><td>未发货</td></tr>";
 			} else {
-				echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[8] . "</td><td>" . $row[9] . "</td><td>已发货</td></tr>";
+				echo "<tr><td>" . $row[0] . "</td><td>" . $row2[0]."-".$row2[1] . "</td><td>".$row[2]."</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[7] . "</td><td>" . $row[9] . "</td><td>" . $row[10] . "</td><td>已发货</td></tr>";
 			}
 		}
 	}
@@ -17,13 +19,15 @@ if ($certain == 'admin' || $certain == 'server') {
 	function selectdate($ready, $date) {
 		$query = mysql_query("SELECT * FROM b_order WHERE b_ready='$ready' AND b_date='$date'");
 		while ($row = mysql_fetch_array($query)) {
+			$query2=mysql_query("SELECT b_name,b_isbn FROM b_product WHERE id='$row[1]'");
+			$row2=mysql_fetch_array($query2);
 			if ($row[0] == "") {
 				echo "<td>此日无订货单，请换个日期</td>";
 			} else {
-				if ($row[7] == "0") {
-					echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[8] . "</td><td>" . $row[9] . "</td><td>未发货</td></tr>";
+				if ($row[8] == "0") {
+					echo "<tr><td>" . $row[0] . "</td><td>" .$row2[0]."-".$row2[1] . "</td><td>".$row[2]."</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[7] . "</td><td>" . $row[9] . "</td><td>" . $row[10] . "</td><td>未发货</td></tr>";
 				} else {
-					echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[8] . "</td><td>" . $row[9] . "</td><td>已发货</td></tr>";
+					echo "<tr><td>" . $row[0] . "</td><td>" . $row2[0]."-".$row2[1] . "</td><td>".$row[2]."</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td><td>" . $row[5] . "</td><td>" . $row[6] . "</td><td>" . $row[7] . "</td><td>" . $row[9] . "</td><td>" . $row[10] . "</td><td>已发货</td></tr>";
 				}
 			}
 		}

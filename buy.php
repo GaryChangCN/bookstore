@@ -10,14 +10,6 @@
 		$row1=mysql_fetch_array($query1);
 		return $row1['text'];
 	}
-	$query2=mysql_query("SELECT COUNT(*) FROM b_hot_goods");
-	$row2=mysql_fetch_array($query2);
-	if ($row2[0]==0) {
-		$count=1;
-	} else {
-		$count=$row2[0];
-	}
-	$num=ceil($count/6); //显示几个下标
 	?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +23,7 @@
 		<link rel="stylesheet" type="text/css" href="css/jquery.slideBox.css" />
 		<link rel="stylesheet" type="text/css" href="css/general.css" />
 		<link rel="stylesheet" type="text/css" href="css/buy.css" />
-		<title></title>
+		<title>我要买书</title>
 	</head>
 
 	<body>
@@ -43,7 +35,7 @@
 					<table border="0" class="HearderContentTable">
 						<tr>
 							<td>
-								<div><?php echo $count; ?></div>
+								<div>首页</div>
 							</td>
 							<td>
 								<div>我要卖书</div>
@@ -126,9 +118,9 @@
 											$result3=mysql_query("SELECT id_category_major FROM b_rel_maj_col WHERE id_category_college='$id_col'");
 											while ($hang3=mysql_fetch_array($result3)) { //输出专业
 												$id_maj=$hang3[0];
-												$result3_1=mysql_query("SELECT major FROM b_category_major WHERE id='$id_maj'");
+												$result3_1=mysql_query("SELECT major,id FROM b_category_major WHERE id='$id_maj'");
 												$hang3_1=mysql_fetch_array($result3_1);
-												echo "<li class='SelectMajorContentThird'>".$hang3_1[0]."</li>";
+												echo "<li class='SelectMajorContentThird'><span>".$hang3_1[1]."</span>".$hang3_1[0]."</li>";
 											}
 											echo "</ul>";
 										}
@@ -159,92 +151,13 @@
 							分类图书
 						</div>
 						<div class="DivideGroupContent">
-							<?php
-								function BookList($limit1,$limit2){
-									$listquery=mysql_query("SELECT id_product FROM b_hot_goods ORDER BY 'id' LIMIT $limit1,$limit2");
-									while ($listrow=mysql_fetch_array($listquery)) {
-										$book_id=$listrow[0];
-										$listquery2=mysql_query("SELECT * FROM b_product WHERE id='$book_id'");
-										$listrow2=mysql_fetch_array($listquery2);
-										if ($listrow2[11]=="是") {
-                                            echo '<div class="BuyContentList">
-								                  <table>
-									                    <tr>
-										                    <td>
-											                    <img src="img/book/'.$listrow2[12].'" class="BuyContentListPic" />
-										                    </td>
-										                    <td>
-											                    <div class="BuyContentListMore">
-												                <span class="BookTitle">'.$listrow2[1].'</span>
-												                <span class="BookHot">热</span>
-												                <br />
-												                <span class="BookEditor">作者：'.$listrow2[3].'</span>
-												                <br />
-												                <span class="BookPublish">出版社：'.$listrow2[2].'</span>
-												                <br />
-											                    <span class="BookIsbn">ISBN码：'.$listrow2[5].'</span>
-												                <br />
-												                <span class="BookStock">库存：充足</span>
-											                    </div>
-										                    </td>
-										                    <td>
-											                    <div class="BuyContentListPrice">
-												                                      旧书：<span class="OldPriceBefore">'.$listrow2[6].'</span>元
-												                <span class="OldPriceAfter">'.$listrow2[8].'</span>元
-												                <br /> 新书：
-												                <span class="NewPriceBefore">'.$listrow2[5].'</span>元
-												                <span class="NewPriceAfter">'.$listrow2[7].'</span>元
-											                    </div>
-										                    </td>
-									                    </tr>
-								                   </table>
-							                       </div>';
-										} else {
-											echo '<div class="BuyContentList">
-								                  <table>
-									                    <tr>
-										                    <td>
-											                    <img src="img/book/'.$listrow2[12].'" class="BuyContentListPic" />
-										                    </td>
-										                    <td>
-											                    <div class="BuyContentListMore">
-												                <span class="BookTitle">'.$listrow2[1].$listrow2[11].'</span>
-												                <br />
-												                <span class="BookEditor">作者：'.$listrow2[3].'</span>
-												                <br />
-												                <span class="BookPublish">出版社：'.$listrow2[2].'</span>
-												                <br />
-											                    <span class="BookIsbn">ISBN码：'.$listrow2[5].'</span>
-												                <br />
-												                <span class="BookStock">库存：充足</span>
-											                    </div>
-										                    </td>
-										                    <td>
-											                    <div class="BuyContentListPrice">
-												                                      旧书：<span class="OldPriceBefore">'.$listrow2[6].'</span>元
-												                <span class="OldPriceAfter">'.$listrow2[8].'</span>元
-												                <br /> 新书：
-												                <span class="NewPriceBefore">'.$listrow2[5].'</span>元
-												                <span class="NewPriceAfter">'.$listrow2[7].'</span>元
-											                    </div>
-										                    </td>
-									                    </tr>
-								                   </table>
-							                       </div>';
-										}
-									}
-								}
-								?>
+							
 							
 						</div>
 						<!--页码-->
 						<div class="PageNumber" id="HotPageNumber">
 							<ul>
-								<?php
-									for ($i=1; $i <=$num ; $i++) { 
-										echo "<li>".($num+1-$i)."</li>";
-									}
-									?>
+								
 							</ul>
 						</div>
 					</div>
@@ -256,9 +169,4 @@
 			</div>
 		</div>
 	</body>
-   <?php 
-   	echo ' <script type="text/javascript">
-        document.write("1");
-    </script>';
-   	?>
 </html>

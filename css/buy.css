@@ -5,7 +5,9 @@
 	text-align: center;
 	background-color: #54BAEC;
 }
-
+#thisId{
+	display: none;
+}
 .BuyersNotice {
 	width: 100%;
 	margin-top: 15px;
@@ -120,6 +122,9 @@ li.SelectMajorContentSecond{
 li.SelectMajorContentThird{
 	margin-left: 60px;	
 }
+li.SelectMajorContentThird span{
+	display: none;
+}
 #search{
 	border: 1px dashed #E05C49;
 	border-right: 0px;
@@ -205,4 +210,7 @@ li.SelectMajorContentThird{
 	line-height: 20px;
 	text-align: center;
 	margin-left: 10px;
+}
+.PageNumber ul li:last-child{
+	background-color: #E07262;
 }

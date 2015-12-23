@@ -35,8 +35,8 @@ $(document).ready(function(){
 		selectdate("3", date0); //已收书订单 按日期
 	})
 	$("#unready").click(function() {
-		var date0 = $("#selectdate").val()
-		selectdate("4", date0); //未收书订单 按日期
+		var dat = $("#selectdate").val()
+		selectdate("4", dat); //未收书订单 按日期
 	})
 	function selectdate(type, date1) {
 		$.ajax({

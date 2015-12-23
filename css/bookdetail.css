@@ -1,0 +1,75 @@
+.ContentBook{
+	width: 1000px;
+	margin-top: 25px;
+}
+.detail{
+	color: #E05C49;
+}
+.td1{
+	width: 300px;
+	height: 433px;
+}
+.td1 img{
+	width: inherit;
+	height: inherit;
+}
+.td2{
+	width: 500px;
+	height: 433px;
+	vertical-align: top;
+}
+.td2  div:nth-child(1){
+	font-size: 3em;
+	width: 498px;
+	padding-left: 30px;
+	margin-top: 15px;
+}
+.td2  div:nth-child(2){
+	font-size: 1.5em;
+	padding-left: 30px;
+	margin-top: 65px;
+}
+.td2  div:nth-child(3){
+	font-size: 1.5em;
+	padding-left: 30px;
+}
+.td2  div:nth-child(4){
+	font-size: 1.5em;
+	padding-left: 30px;
+}
+.td2  div:nth-child(5),.td2 div:nth-child(6){
+	padding-left: 140px;
+	margin-top: 40px;
+	font-size: 1.7em;
+}
+.td2  div:nth-child(5) span:first-child,.td2  div:nth-child(6) span:first-child{
+	text-decoration: line-through;
+}
+.td2  div:nth-child(5) span:last-child,.td2  div:nth-child(6) span:last-child{
+	color: #E05C49;
+	font-size: 2.1em;
+	padding-left: 25px;
+}
+.td3{
+	vertical-align: bottom;
+	width: 200px;
+	height: 433px;
+}
+.td3 div{
+	text-align: center;
+	width: 160px;
+	height: 50px;
+	line-height: 50px;
+	border-color: #E07262;
+	border-left:1px solid #E07262;
+	border-right: 2px solid #E07262;
+	border-bottom:4px solid #E07262;
+	background-color: transparent;
+	border-radius:0px 25px 0px 25px;
+	float: right;
+	color: #E05C49;
+	font-weight: 300;
+	font-size: 1.3em;
+	cursor: pointer;
+	margin-top: 35px;
+}

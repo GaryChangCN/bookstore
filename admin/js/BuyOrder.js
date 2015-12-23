@@ -90,7 +90,7 @@ $(document).ready(function() {
 
 		}
 	})
-	$(document).on("click", "tr td:nth-child(8)", function() {
+	$(document).on("click", "tr td:nth-child(9)", function() {
 		var id = $(this).parent().children("td:first-child").text();
 		var name = prompt("请输入新备注", $(this).text());
 		if (name != null && name != "") {

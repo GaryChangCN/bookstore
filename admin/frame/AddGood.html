@@ -54,6 +54,17 @@
 					}
 				}
 			});
+			$("input[type='text']").on('focus',function(){
+				certain();
+			})
+			certain();
+			function certain(){
+				if (($("#BookName").val()=="")||($("#BookName").val().indexOf(" ")>=0)||($("#BookIsbn").val()=="")||($("#BookIsbn").val().indexOf(" ")>=0)||($("#BookPriceNew").val()=="")||($("#BookPriceNew").val().indexOf(" ")>=0)||($("#BookPriceOld").val()=="")||($("#BookPriceOld").val().indexOf(" ")>=0)) {
+					$("form input:last-child").css('display','none');
+				} else{
+					$("form input:last-child").css('display','');
+				}
+			}
 		})
 	</script>
 </html>

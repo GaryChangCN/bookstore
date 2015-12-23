@@ -10,6 +10,13 @@
 		$row1=mysql_fetch_array($query1);
 		return $row1['text'];
 	}
+	include_once "php/GetUser.php";
+	$year=date("Y");
+	$mouth=date("m");
+	$day=date("d");
+	$ip=get_real_ip();
+	$browser=GetBrowser();
+	mysql_query("INSERT INTO b_visited VALUES('','$year','$mouth','$day','$ip','$browser')");
 	?>
 <!DOCTYPE html>
 <html>
@@ -169,10 +176,13 @@
     		window.open("feedback.html","给我们的信息反馈","height=350px,width=1020px,top=100px,left=400px");
     	})
     	$(".SellBuyListTable tr td:nth-child(1)").click(function(){
-    		window.location.href="sell.html";
+    		window.location.href="sell.php";
     	})
     	$(".SellBuyListTable tr td:nth-child(2)").click(function(){
-    		window.location.href="buy.html";
+    		window.location.href="buy.php";
     	})
     </script>
 </html>
+<?php
+	mysql_close();
+	?>
