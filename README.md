@@ -15,6 +15,7 @@
             * BuyOrder.css `买书订单管理css`
             * ChangeGood.css `更改商品样式`
             * GroupManage.css `GroupManage css`
+            * SellOrder.css `卖书订单css`
         * frame
             * Ad.html `广告管理iframe`
             * AddGood.html `添加商品iframe`
@@ -25,12 +26,15 @@
             * ChangeGood.html `更改商品详情的iframe`
             * Discount.html `设置商品折扣的iframe`
             * Our.html `我们的动态iframe`
+            * SellOrder `卖书订单iframe`
+            * Visited `浏览量iframe`
         * js
             * BestSell.js `热销产品js`
             * BuyOrder.js  `买书订单管理js`
             * index.js `后台主页js`
             * ChangeGood.js `更改商品详情的js`
             * GroupManage.js `管理分组js`
+            * SellOrder `卖书订单js`
         * Ad.php `广告管理php`
         * AddGood.php `添加商品php`
         * Administrator.php `修改管理员所有权限账号密码等`
@@ -56,7 +60,9 @@
         * Our.php `我们的动态管理，添加、删除、显示等`
         * SelectGood.php `输出所有图书列表`
         * SelectGoodDetails.php `输出图书列表的详情`
+        * SellOrder.php `输出卖书订单`
     * css `前台样式表`
+        * bookdetails.css `书本详情css`
         * buy.css  `我要买书 css`
         * general.css `通用 css`
         * index.css `前台主页 css`
@@ -76,13 +82,26 @@
         * jquery.min.js `jquery库`
         * jquery.slideBox.min.js `slideBox库`
         * shopcar.js `购物车js`
-    * buy.html `买书页面`
-    * index.html `主页`
-    * sell.html `卖书页面`
+    * php
+        * BookDetail.php `输出书本详情`    
+        * BookList .php `输出书本分类表`
+        * FeedBack.php `反馈`
+        * GetUser.php `获取客户端ip及UA`
+        * Search.php `搜索书本`
+        * sell.php `卖书`
+        * Shopcar.php `购物车`
+    * bookdetail.html `书本详情`    
+    * buy.php `买书页面`
+    * feedback.html `反馈弹窗`
+    * index.php `主页`
+    * sell.php `卖书页面`
     * shopcar.html `购物车页面`
 
 
 
+### 2015-12-23 ###
+所有基本功能开发完毕，此项目v1.0版本可以上线了，目前还有一些bug没有修复，后续更新将会修复。
+增加了浏览量管理，前端和后端已经结合起来，购物车采用cookie保存，以及各种bug修复。
 ### 2015-12-20 ###
 添加了广告管理，我们的动态管理，折扣管理，买书订单管理，修复了很多bug！本项目 v1.0接近完工。
 ### 2015-12-19 ###
