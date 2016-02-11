@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<script src="../../js/jquery.min.js"></script>
@@ -7,24 +8,25 @@
 		<link rel="stylesheet" type="text/css" href="../css/SellOrder.css" />
 		<title></title>
 		<script type="text/javascript">
-		$(document).ready(function() {
-			$.ajax({
-				type: "post",
-				url: "../judge.php",
-				async: false,
-				success: function(data) {
-					if (data == "success") {
-						$(".container").css('display', 'block');
-					} else {
-						$(".container").remove();
-						$(".container").html("请先登录");
-						parent.location.href = "../index.html";
+			$(document).ready(function() {
+				$.ajax({
+					type: "post",
+					url: "../judge.php",
+					async: false,
+					success: function(data) {
+						if (data == "success") {
+							$(".container").css('display', 'block');
+						} else {
+							$(".container").remove();
+							$(".container").html("请先登录");
+							parent.location.href = "../index.html";
+						}
 					}
-				}
-			});
-		})
-	</script>
+				});
+			})
+		</script>
 	</head>
+
 	<body>
 		<div class="container">
 			<div class="alert">
@@ -59,11 +61,13 @@
 						<th>下单时间</th>
 						<th>用户备注</th>
 						<th>
-							商家备注<br />
+							商家备注
+							<br />
 							<span style="font-size: 0.6em;font-weight: 100;">单击更改</span>
 						</th>
 						<th>
-							状态<br />
+							状态
+							<br />
 							<span style="font-size: 0.6em;font-weight: 100;">单击更改</span>
 						</th>
 					</tr>
@@ -71,6 +75,12 @@
 					</tr>
 				</table>
 			</div>
+			<ul class="PageNumber">
+				<!--<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>-->
+			</ul>
 		</div>
 	</body>
 

@@ -1,7 +1,7 @@
 <?php
 $dbhostname1 = 'localhost';
-$dbuser1 = 'root';
-$dbpassword1 = '';
+$dbuser1 = 'tinytin';
+$dbpassword1 = 'tinytin';
 //连接数据库
 $link = mysql_connect($dbhostname1, $dbuser1, $dbpassword1);
 if (!$link) {

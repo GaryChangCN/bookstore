@@ -116,7 +116,7 @@ $(document).ready(function() {
 		}
 	});
 	$(".SelectMajorContentThird").on('click',function(){
-		zhedie();
+		$("#BuyersNoticeContent").slideUp()
 		$("#slidebox").slideUp();
 		$(".hearder").css('top',"0px");
 		$(".content").css('margin-top','30px')
