@@ -13,6 +13,7 @@ $(document).ready(function() {
 	})
 	$(".hearder span:eq(1)").click(function() {
 		select("2", "1"); //点击已发货显示所有发货订单
+		getPagenumber("2");
 		$(".juxing").text("已发货订单");
 		data.type = "2";
 		data.time = "";
