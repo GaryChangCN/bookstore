@@ -39,7 +39,7 @@ $(document).ready(function() {
 				},
 				success: function(data) {
 					alert("删除成功！请查看图书列表是否还有此图书。\n如果未能删除，请再试几次或者联系管理员");
-					window.location.href="";
+					window.location.href = "";
 				}
 			});
 		} else {}
@@ -68,10 +68,10 @@ $(document).ready(function() {
 			case "6": //旧书价格
 				ChangeGood("b_price_old");
 				break;
-			case "7": //新书折扣价格
+			case "7": //新书折扣价格-改为新书折扣默认是1~9  0为不打折
 				ChangeGood("b_price_show_new");
 				break;
-			case "8": //旧书折扣价格
+			case "8": //旧书折扣价格-改为旧书折扣默认是1~9  0为不打折
 				ChangeGood("b_price_show_Old");
 				break;
 			case "9": //新书库存
@@ -85,28 +85,53 @@ $(document).ready(function() {
 				break;
 			case "12": //是否热销
 				ChangeGoodPic(id);
-				break;	
+				break;
 			default:
 				break;
 		}
+
 		function ChangeGood(data) { //修改商品详情 除了热销和图片
-			var nameNew = prompt("请输入新" + namea[0], namea[1]);
-			if (nameNew != null && nameNew != "") {
-				$.ajax({
-					type: "post",
-					url: "../ChangeGood.php",
-					async: false,
-					data: {
-						"type": "1",
-						"col": data,
-						"new": nameNew,
-						"id": id
-					},
-					success: function(data) {
-						alert(data);
-						window.location.reload();
-					}
-				});
+			if (ulRightIndex == 8 || ulRightIndex == 7) {
+                var discountNew=prompt("请输入折扣价(1~9表示几折，0表示不打折");
+                var num=parseInt(discountNew);
+                if (/[0-9]/.test(num)&&num-10<0) {
+                	$.ajax({
+						type: "post",
+						url: "../ChangeGood.php",
+						async: false,
+						data: {
+							"type": "1",
+							"col": data,
+							"new": discountNew,
+							"id": id
+						},
+						success: function(data) {
+							alert(data);
+							window.location.reload();
+						}
+					});
+                } else{
+                	alert("请输入0-9的数字");
+                }
+			} else {
+				var nameNew = prompt("请输入新" + namea[0], namea[1]);
+				if (nameNew != null && nameNew != "") {
+					$.ajax({
+						type: "post",
+						url: "../ChangeGood.php",
+						async: false,
+						data: {
+							"type": "1",
+							"col": data,
+							"new": nameNew,
+							"id": id
+						},
+						success: function(data) {
+							alert(data);
+							window.location.reload();
+						}
+					});
+				}
 			}
 		}
 
@@ -147,8 +172,9 @@ $(document).ready(function() {
 			$(".alert").slideDown();
 			cover();
 		}
-		function cover(){   //隐藏遮盖图层
-			$(".cover").click(function(){
+
+		function cover() { //隐藏遮盖图层
+			$(".cover").click(function() {
 				$(this).hide();
 				$(".alert").slideUp();
 			})

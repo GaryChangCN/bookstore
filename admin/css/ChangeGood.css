@@ -15,6 +15,9 @@ table tr td{
 table tr:nth-child(2) td:nth-child(1){
 	vertical-align: top;
 }
+.rightTd{
+	vertical-align: top;
+}
 table tr:nth-child(1) td{
 	height: 30px;
 	text-align: center;

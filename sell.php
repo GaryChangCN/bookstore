@@ -51,19 +51,19 @@
 					<ul class="items">
 						<li>
 							<a href="" title="测试轮播"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("15") ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("15") ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播2"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("16") ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("16") ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播2"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("17") ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("17") ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播2"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("18") ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("18") ?>">
 						</li>
 					</ul>
 				</div>

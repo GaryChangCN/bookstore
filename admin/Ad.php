@@ -40,7 +40,7 @@ if ($certain == 'admin') {
 			break;
 		case '2' :
 			$number0=$_POST['number'];
-			ChangePic("../img/ad/", $number0);
+			ChangePic("../img/show/", $number0);
 			break;
 		case '3' :
 			$number = $_POST['number'];

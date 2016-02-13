@@ -57,19 +57,19 @@
 					<ul class="items">
 						<li>
 							<a href="" title="测试轮播"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("22"); ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("22"); ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播2"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("23"); ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("23"); ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播2"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("24"); ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("24"); ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播2"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("25"); ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("25"); ?>">
 						</li>
 					</ul>
 				</div>
@@ -142,7 +142,7 @@
 							我要卖书
 						</div>
 						<div class="SellBookContent">
-							<img class="SellBookPic" src="img/ad/<?php echo content("21") ?>" alt="点击去卖书" />
+							<img class="SellBookPic" src="img/show/<?php echo content("21") ?>" alt="点击去卖书" />
 						</div>
 					</div>
 					<!--热销商品栏-->

@@ -28,21 +28,23 @@ function BookList($table, $where, $limit1) {
 			echo '</div>';
 			echo '</td>';
 			echo '<td>';
-			echo '<div class="BuyContentListPrice">';
-			if (($listrow2[8] == "") || ($listrow2[8] == NULL)||(ctype_space($listrow2[8]))) {
+			echo '<div class="BuyContentListPrice">';//新书折扣第7列；旧书折扣8   5新书价格  6旧书价格
+			if ($listrow2[8] == "0") {
 				echo '旧书：<span class="OldPriceBefore"></span>';
 				echo '<span class="OldPriceAfter">' . $listrow2[6] . '元</span>';
 			} else {
+				$old2016=ceil($listrow2[6]*($listrow2[8]/10));
 				echo '旧书：<span class="OldPriceBefore">' . $listrow2[6] . '元</span>';
-				echo '<span class="OldPriceAfter">' . $listrow2[8] . '元</span>';
+				echo '<span class="OldPriceAfter">' . $old2016 . '元</span>';
 			}
 			echo '<br /> 新书：';
-			if (($listrow2[7] == "") || ($listrow2[7] == NULL)||(ctype_space($listrow2[7]))) {
+			if ($listrow2[7] == "0") {
 				echo '<span class="NewPriceBefore"></span>';
 				echo '<span class="NewPriceAfter">' . $listrow2[5] . '元</span>';
 			} else {
+				$old2015=ceil($listrow2[5]*($listrow2[7]/10));
 				echo '<span class="NewPriceBefore">' . $listrow2[5] . '元</span>';
-				echo '<span class="NewPriceAfter">' . $listrow2[7] . '元</span>';
+				echo '<span class="NewPriceAfter">' . $old2015 . '元</span>';
 			}
 			echo '</div>';
 			echo ' </td>';
@@ -71,20 +73,22 @@ function BookList($table, $where, $limit1) {
 			echo '</td>';
 			echo '<td>';
 			echo '<div class="BuyContentListPrice">';
-			if (($listrow2[8] == "") || ($listrow2[8] == NULL)||(ctype_space($listrow2[8]))) {
+			if ($listrow2[8] == "0") {
 				echo '旧书：<span class="OldPriceBefore"></span>';
 				echo '<span class="OldPriceAfter">' . $listrow2[6] . '元</span>';
 			} else {
+				$old2016=ceil($listrow2[6]*($listrow2[8]/10));
 				echo '旧书：<span class="OldPriceBefore">' . $listrow2[6] . '元</span>';
-				echo '<span class="OldPriceAfter">' . $listrow2[8] . '元</span>';
+				echo '<span class="OldPriceAfter">' . $old2016 . '元</span>';
 			}
 			echo '<br /> 新书：';
-			if (($listrow2[7] == "") || ($listrow2[7] == NULL)||(ctype_space($listrow2[7]))) {
+			if ($listrow2[7] == "0") {
 				echo '<span class="NewPriceBefore"></span>';
 				echo '<span class="NewPriceAfter">' . $listrow2[5] . '元</span>';
 			} else {
+				$old2015=ceil($listrow2[5]*($listrow2[7]/10));
 				echo '<span class="NewPriceBefore">' . $listrow2[5] . '元</span>';
-				echo '<span class="NewPriceAfter">' . $listrow2[7] . '元</span>';
+				echo '<span class="NewPriceAfter">' . $old2015 . '元</span>';
 			}
 			echo '</div>';
 			echo '</td>';

@@ -9,7 +9,17 @@ if ($certain == 'admin') {
 	$bookpricenew = $_POST['BookPriceNew'];
 	$bookpriceold = $_POST['BookPriceOld'];
 	$bookpriceshownew = $_POST['BookPriceShowNew'];
+	if (preg_match('/[0-9]/', "$bookpriceshownew")&&$bookpriceshownew-10<0) {
+		
+	} else {
+		$bookpriceshownew="0";
+	}
 	$bookpriceshowold = $_POST['BookPriceShowOld'];
+	if (preg_match('/[0-9]/', "$bookpriceshowold")&&$bookpriceshowold-10<0) {
+		
+	} else {
+		$bookpriceshowold="0";
+	}
 	$bookstocknew = $_POST['BookStockNew'];
 	$bookstockold = $_POST['BookStockOld'];
 	$bookhot = $_POST['BookHot'];

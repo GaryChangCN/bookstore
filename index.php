@@ -62,19 +62,19 @@
 					<ul class="items">
 						<li>
 							<a href="" title="测试轮播"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("2"); ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("2"); ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播2"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("3"); ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("3"); ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("4"); ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("4"); ?>">
 						</li>
 						<li>
 							<a href="" title="测试轮播"></a>
-							<img class="slideBoxPic" src="img/ad/<?php echo content("5"); ?>">
+							<img class="slideBoxPic" src="img/show/<?php echo content("5"); ?>">
 						</li>
 					</ul>
 				</div>
@@ -138,25 +138,25 @@
 						<table class="OurServiceListTable">
 							<tr>
 								<td>
-									<div><img src="img/ad/<?php echo content("6"); ?>" alt="专业"/></div>
+									<div><img src="img/show/<?php echo content("6"); ?>" alt="专业"/></div>
 									<span style="font-weight: 500;font-size: 1.2em;"><?php echo content("7"); ?></span>
 									<br />
 									<div><?php echo content("8"); ?></div>
 								</td>
 								<td>
-									<div><img src="img/ad/<?php echo content("9"); ?>" alt="优惠"/></div>
+									<div><img src="img/show/<?php echo content("9"); ?>" alt="优惠"/></div>
 									<span style="font-weight: 500;font-size: 1.2em;"><?php echo content("10"); ?></span>
 									<br />
 									<div><?php echo content("11"); ?></div>
 								</td>
 								<td>
-									<div><img src="img/ad/<?php echo content("12"); ?>" alt="更新"/></div>
+									<div><img src="img/show/<?php echo content("12"); ?>" alt="更新"/></div>
 									<span style="font-weight: 500;font-size: 1.2em;"><?php echo content("13"); ?></span>
 									<br />
 									<div><?php echo content("14"); ?></div>
 								</td>
 								<td>
-									<div><img src="img/ad/<?php echo content("26"); ?>" alt="贴心"/></div>
+									<div><img src="img/show/<?php echo content("26"); ?>" alt="贴心"/></div>
 									<span style="font-weight: 500;font-size: 1.2em;"><?php echo content("27"); ?></span>
 									<br />
 									<div><?php echo content("28"); ?></div>
