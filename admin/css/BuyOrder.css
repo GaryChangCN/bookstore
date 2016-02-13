@@ -121,3 +121,22 @@ tr th:nth-child(11),tr td:nth-child(11){
 	opacity: 0.4;
 	display: none;
 }
+.PageNumber li{
+	float: right;
+	list-style-type: none;
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	border: 1px solid currentcolor;
+	text-align: center;
+	line-height: 20px;
+	color: #0392DC;
+	cursor: pointer;
+}
+.not{
+	height: 500px;
+}
+.PageNumber li:last-child{
+	background-color: #0392DC;
+	color: white;
+}
