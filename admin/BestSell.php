@@ -21,15 +21,25 @@ if ($certain == 'admin') {
 			echo "添加成功";
 			break;
 		case '2' :
-			$query = mysql_query("SELECT id_product FROM b_hot_goods");
-			$idArr = array();
-			while ($row2 = mysql_fetch_array($query)) {
-				$idArr[] = $row2['id_product'];
-			}
-			for ($x = 0; $x < count($idArr); $x++) {
-				$query2 = mysql_query("SELECT b_name,b_isbn FROM b_product WHERE id='$idArr[$x]'");
-				while ($row3 = mysql_fetch_array($query2)) {
-					echo "<li>" . $row3['b_name'] . "#" . $row3['b_isbn'];
+			if ($_POST['type2'] == "1") {
+				$a = mysql_query("SELECT COUNT(*) FROM b_hot_goods");
+				$b = mysql_fetch_array($a);
+				$num1 = ceil($b[0] / 12);
+				for ($i = 1; $i <= $num1; $i++) {
+					echo "<li>" . ($num1 + 1 - $i) . "</li>";
+				}
+			} else {
+				$num=($_POST['num']-1)*12;
+				$query = mysql_query("SELECT id_product FROM b_hot_goods LIMIT $num,12");
+				$idArr = array();
+				while ($row2 = mysql_fetch_array($query)) {
+					$idArr[] = $row2['id_product'];
+				}
+				for ($x = 0; $x < count($idArr); $x++) {
+					$query2 = mysql_query("SELECT b_name,b_isbn FROM b_product WHERE id='$idArr[$x]'");
+					while ($row3 = mysql_fetch_array($query2)) {
+						echo "<li>" . $row3['b_name'] . "#" . $row3['b_isbn'];
+					}
 				}
 			}
 			break;
