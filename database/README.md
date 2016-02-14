@@ -133,10 +133,3 @@ CREATE TABLE `b_our` (
  `display` int(5) NOT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
-###创建折扣表###
-CREATE TABLE `b_discount` (
- `id` int(5) NOT NULL AUTO_INCREMENT,
- `discount_old` varchar(5) COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
- `discount_new` varchar(5) COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
- PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
