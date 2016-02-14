@@ -9,17 +9,17 @@
 	<body>
 		<form action="../AddGood.php" method="post" enctype="multipart/form-data" style="display: none;">
 			书名
-			<input type="text" name="BookName" id="BookName" value="" /><span style="color: red;">&nbsp;*</span><br/>
+			<input type="text" name="BookName" required="required" id="BookName" value="" /><span style="color: red;">&nbsp;*</span><br/>
 			出版社
 			<input type="text" name="BookPublish" id="BookPUblish" value="" /><br/>
 			作者
 			<input type="text" name="BookEditor" id="BookEditor" value="" /><br/>
 			ISBN码
-			<input type="text" name="BookIsbn" id="BookIsbn" value="" /><span style="color: red;">&nbsp;*</span><br/>
+			<input type="text" name="BookIsbn" required="required" id="BookIsbn" value="" /><span style="color: red;">&nbsp;*</span><br/>
 			新书价格
-			<input type="text" name="BookPriceNew" id="BookPriceNew" value="" /><span style="color: red;">&nbsp;*</span><br/>
+			<input type="text" name="BookPriceNew" id="BookPriceNew" required="required" value="" /><span style="color: red;">&nbsp;*</span><br/>
 			旧书价格
-			<input type="text" id="BookPriceOld" name="BookPriceOld" value="" /><span style="color: red;">&nbsp;*</span><br/>
+			<input type="text" id="BookPriceOld" name="BookPriceOld" required="required" value="" /><span style="color: red;">&nbsp;*</span><br/>
 			新书折扣
 			<input type="text" name="BookPriceShowNew" id="BookPriceShowNew" placeholder="(0-9，0表示不打折)" value="" /><br/>
 			旧书折扣
@@ -27,7 +27,7 @@
 			新书库存
 			<input type="text" name="BookStockNew" id="BookStockNew" value="" /><br/>
 			旧书库存
-			<input type="text" name="BookStockOld" id="BookStockOld" value="" /><br/>
+			<input type="text" name="BookStockOld" required="required" id="BookStockOld" value="" /><br/>
 			是否热销
 			<select name="BookHot">
 				<option value="是">是</option>

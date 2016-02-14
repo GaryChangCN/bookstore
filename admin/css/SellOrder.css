@@ -122,6 +122,7 @@ tr th:nth-child(8),tr td:nth-child(8){
 	line-height: 20px;
 	color: #0392DC;
 	cursor: pointer;
+	margin-bottom: 5px;
 }
 .not{
 	height: 500px;

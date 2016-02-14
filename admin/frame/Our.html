@@ -6,23 +6,23 @@
 		<title></title>
 		<script src="../../js/jquery.min.js"></script>
 		<script type="text/javascript">
-		$(document).ready(function() {
-			$.ajax({
-				type: "post",
-				url: "../judge.php",
-				async: false,
-				success: function(data) {
-					if (data == "success") {
-						$(".container").css('display', 'block');
-					} else {
-						$(".container").remove();
-						$(".container").html("请先登录");
-						parent.location.href="../index.html";
+			$(document).ready(function() {
+				$.ajax({
+					type: "post",
+					url: "../judge.php",
+					async: false,
+					success: function(data) {
+						if (data == "success") {
+							$(".container").css('display', 'block');
+						} else {
+							$(".container").remove();
+							$(".container").html("请先登录");
+							parent.location.href = "../index.html";
+						}
 					}
-				}
-			});
-		})
-	</script>
+				});
+			})
+		</script>
 		<style type="text/css">
 			* {
 				font-family: "黑体";
@@ -84,6 +84,30 @@
 			.selected {
 				background-color: #D3D3D3;
 			}
+			
+			.PageNumber {
+				margin-top: 5px;
+				margin-right: 390px;
+			}
+			
+			.PageNumber li {
+				float: right;
+				list-style-type: none;
+				width: 20px;
+				height: 20px;
+				margin-left: 5px;
+				border: 1px solid currentcolor;
+				text-align: center;
+				line-height: 20px;
+				color: #0392DC;
+				cursor: pointer;
+				margin-bottom: 5px;
+			}
+			
+			.PageNumber li:last-child {
+				background-color: #0392DC;
+				color: white;
+			}
 		</style>
 	</head>
 
@@ -103,44 +127,74 @@
 			</div>
 			<ul class="OurList">
 			</ul>
+			<ul class="PageNumber">
+				
+			</ul>
 		</div>
 	</body>
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#add").click(function(){
+		$(document).ready(function() { //Our.php type  1显示动态  2修改  3删除  4添加  5获取页码
+			$.ajax({
+				type: "post",
+				url: "../Our.php",
+				async: false,
+				data: {
+					"type": "5"
+				},
+				success: function(re) {
+					$(".PageNumber").html(re);
+				}
+			});
+			getContent(1);
+			$("#add").click(function() {
 				$.ajax({
-					type:"post",
-					url:"../Our.php",
-					async:false,
-					data:{
-						"type":"4",
-						"text":$("#text").val()
+					type: "post",
+					url: "../Our.php",
+					async: false,
+					data: {
+						"type": "4",
+						"text": $("#text").val()
 					},
-					success:function(data){
+					success: function(data) {
 						alert(data);
 						window.location.reload();
 					}
 				});
 			})
-			$.ajax({
-				type: "post",
-				url: "../Our.php",
-				async: true,
-				data: {
-					"type": "1"
-				},
-				success: function(data) {
-					$(".OurList").html(data);
-				}
-			});
+
+			function getContent() {
+				$.ajax({
+					type: "post",
+					url: "../Our.php",
+					async: true,
+					data: {
+						"type": "1",
+						"num": arguments[0]
+					},
+					success: function(data) {
+						$(".OurList").html(data);
+					}
+				});
+			}
+			$(".PageNumber").on("click", "li", function() { //切换页码
+				$(this).parent().children().css({
+					'background-color': "transparent",
+					'color': '#0392DC'
+				});
+				$(this).css({
+					'background-color': "#0392DC",
+					'color': 'white'
+				})
+				var num = $(this).text();
+				getContent(num);
+			})
 			$("#delete").click(function() {
 				var id;
 				$(".OurList").children("li").each(function() {
 					if ($(this).css("background-color") == "rgb(211, 211, 211)") {
 						var arr = $(this).text().split("-");
-				        id = arr[0].replace("编号：", "");
-					} else {
-					}
+						id = arr[0].replace("编号：", "");
+					} else {}
 				})
 				var r = confirm("你确定将编号为 " + id + " 的动态删除？");
 				if (r == true) {
@@ -161,7 +215,7 @@
 					window.location.reload();
 				}
 			})
-			$(".OurList").on('click','li',function(){
+			$(".OurList").on('click', 'li', function() {
 				$(this).parent().children("li").css('background-color', 'transparent');
 				$(this).css('background-color', "#D3D3D3");
 			});
