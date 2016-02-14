@@ -127,6 +127,30 @@
 			border-radius: 15px;
 			margin-top: 35px;
 		}
+		
+		.PageNumber {
+			margin-top: 5px;
+			margin-right: 555px;
+		}
+		
+		.PageNumber li {
+			float: right;
+			list-style-type: none;
+			width: 20px;
+			height: 20px;
+			margin-left: 5px;
+			border: 1px solid currentcolor;
+			text-align: center;
+			line-height: 20px;
+			color: #0392DC;
+			cursor: pointer;
+			margin-bottom: 5px;
+		}
+		
+		.PageNumber li:last-child {
+			background-color: #0392DC;
+			color: white;
+		}
 	</style>
 
 	<body>
@@ -192,22 +216,47 @@
 
 			</table>
 		</div>
+		<ul class="PageNumber">
+
+		</ul>
 	</body>
 	<script type="text/javascript">
-		visited("1", "0");
+		var data = new Object();
+		data.type = "1"; //data.type==type2--------1全部 2按年 3按月 4按天
+		data.time = "0";
+		data.year = "2016";
+		visited("1", "0", "1");
 		$(".cover").click(function() {
 			$(this).hide();
 			$(".alert").hide();
 		})
+		getPageNumber("5", '1');
 
-		function visited(a, b) {
+		function getPageNumber() {
 			$.ajax({
 				type: "post",
 				url: "../visited.php",
 				async: false,
 				data: {
-					"type": a,
-					"data": b
+					"type": arguments[0],
+					"type2": arguments[1],
+					"data": arguments[2]
+				},
+				success: function(data) {
+					$(".PageNumber").html(data);
+				}
+			});
+		}
+			//visited.php type-----1 全部  2按年 3 按月 4按天 【5获取页码】
+		function visited() {
+			$.ajax({
+				type: "post",
+				url: "../visited.php",
+				async: false,
+				data: {
+					"type": arguments[0],
+					"data": arguments[1],
+					"num": arguments[2]
 				},
 				success: function(data) {
 					$("#juxing2").text(data.split("#")[0] + "次");
@@ -217,8 +266,36 @@
 				}
 			});
 		}
+		$(".PageNumber").on("click", "li", function() { //改变页码
+				$(this).parent().children().css({
+					'background-color': "transparent",
+					'color': '#0392DC'
+				});
+				$(this).css({
+					'background-color': "#0392DC",
+					'color': 'white'
+				})
+				var Pagenum = $(this).text();
+				switch (data.type){
+					case '1':
+					visited("1","0",Pagenum);
+						break;
+					case '2':
+					visited("2",data.time,Pagenum);
+						break;
+					case '3':
+					visited("3",data.time,Pagenum);
+						break;
+					case '4':
+					visited("4",data.time,Pagenum);
+						break;	
+					default:
+						break;
+				}
+			})
 		$(".hearder span:eq(0)").click(function() {
-			visited("1", "0");
+			getPageNumber("5", '1');
+			visited("1", "0","1");
 		})
 		$(".hearder span:eq(1)").click(function() {
 			$(".alert,.cover,#year").show();
@@ -236,21 +313,28 @@
 			if ($("#selectyear").val() == "") {
 				alert("请先选择年份")
 			} else {
-				visited("2", $("#selectyear").val());
+				data.time = $("#selectyear").val();
+				data.year = $("#selectyear").val();
+				visited("2", data.time, "1");
+				getPageNumber("5", '2', data.time);
 			}
 		})
 		$("#buttonmouth").click(function() {
 			if ($("#selectmouth").val() == "") {
 				alert("请先选择月份")
 			} else {
-				visited("3", $("#selectmouth").val());
+				data.time = $("#selectmouth").val();
+				visited("3", data.time, "1");
+				getPageNumber("5", "3", data.time);
 			}
 		})
 		$("#buttonday").click(function() {
 			if ($("#selectday").val() == "") {
 				alert("请先选择天份");
 			} else {
-				visited("4", $("#selectday").val());
+				data.time = $("#selectday").val();
+				visited("4", data.time, "1");
+				getPageNumber("5", "4", data.time);
 			}
 		})
 	</script>
