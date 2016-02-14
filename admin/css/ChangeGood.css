@@ -27,6 +27,9 @@ table tr:nth-child(1) td{
 	line-height: 30px;
 	border-bottom: 3px dashed #54BAEC;
 }
+#ulLeft{
+	height: 430px;
+}
 #ulLeft li,#ulRight li{
 	height: 20px;
 	line-height: 20px;
@@ -95,4 +98,24 @@ table tr:nth-child(1) td{
 	width: 100px;
 	background-color: #54BAEC;
 	border-radius: 30px;
+}
+.PageNumber{
+	margin-top: 10px;
+	margin-right: 30px;
+}
+.PageNumber li{
+	float: right;
+	list-style-type: none;
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	border: 1px solid currentcolor;
+	text-align: center;
+	line-height: 20px;
+	color: #0392DC;
+	cursor: pointer;
+}
+.PageNumber li:last-child{
+	background-color: #0392DC;
+	color: white;
 }

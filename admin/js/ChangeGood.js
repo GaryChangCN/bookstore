@@ -1,12 +1,43 @@
 $(document).ready(function() {
-	$.ajax({
+	//type 1 获取页码 type  2  切换页码----->SelectGood.php
+	$.ajax({ //获取总共页码
 		type: "post",
 		url: "../SelectGood.php",
 		async: false,
+		data: {
+			"type": "1"
+		},
 		success: function(data) {
-			$("#ulLeft").html(data);
+			$(".PageNumber").html(data);
 		}
 	});
+	changePageNumber("1");
+	function changePageNumber(){
+		$.ajax({
+			type:"post",
+			url:"../SelectGood.php",
+			async:false,
+			data:{
+				"type":"2",
+				"num":arguments[0]
+			},
+			success:function(d){
+				$("#ulLeft").html(d);
+			}
+		});
+	}
+	$(".PageNumber").on("click","li",function(){  //改变页码
+		$(this).parent().children().css({
+			'background-color': "transparent",
+			'color': '#0392DC'
+		});
+		$(this).css({
+			'background-color': "#0392DC",
+			'color': 'white'
+		})
+		var num = $(this).text();
+		changePageNumber(num);
+	})
 	$("#ulLeft").on("click", "li", function() { //点击左边栏事件
 		$(this).parent().children("li").css('background-color', 'transparent');
 		$(this).css('background-color', '#D3D3D3');
@@ -92,10 +123,10 @@ $(document).ready(function() {
 
 		function ChangeGood(data) { //修改商品详情 除了热销和图片
 			if (ulRightIndex == 8 || ulRightIndex == 7) {
-                var discountNew=prompt("请输入折扣价(1~9表示几折，0表示不打折");
-                var num=parseInt(discountNew);
-                if (/[0-9]/.test(num)&&num-10<0) {
-                	$.ajax({
+				var discountNew = prompt("请输入折扣价(1~9表示几折，0表示不打折");
+				var num = parseInt(discountNew);
+				if (/[0-9]/.test(num) && num - 10 < 0) {
+					$.ajax({
 						type: "post",
 						url: "../ChangeGood.php",
 						async: false,
@@ -110,9 +141,9 @@ $(document).ready(function() {
 							window.location.reload();
 						}
 					});
-                } else{
-                	alert("请输入0-9的数字");
-                }
+				} else {
+					alert("请输入0-9的数字");
+				}
 			} else {
 				var nameNew = prompt("请输入新" + namea[0], namea[1]);
 				if (nameNew != null && nameNew != "") {
