@@ -1,10 +1,188 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="../../js/jquery.min.js"></script>
 	</head>
-	<body>
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+			border: 0px;
+		}
 		
+		@media only screen and (max-width: 640px) {
+			.content {
+				width: 100%;
+			}
+			.container {
+				width: 100%;
+				text-align: center;
+			}
+		}
+		
+		@media only screen and (min-width: 640px) {
+			.container {
+				width: 100%;
+				padding-top: 50px;
+			}
+			.content {
+				width: 640px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		
+		@media only screen and (max-width: 249px) {
+			* {
+				display: none;
+			}
+		}
+		
+		.content {
+			background-color: gainsboro;
+		}
+		
+		#isbn {
+			height: 40px;
+			margin-top: 15px;
+			opacity: 0.6;
+			text-align: center;
+			border-radius: 5px;
+			width: 70%;
+		}
+		
+		.ok {
+			height: 40px;
+			width: 40px;
+			float: right;
+			background-color: rgb(84, 186, 236);
+			color: #05A2EF;
+			cursor: pointer;
+			margin: 15px 25px 0px 0px;
+			line-height: 40px;
+			border-radius: 50%;
+		}
+		
+		tr {
+			width: 100%;
+			height: 48px;
+		}
+		
+		tr td:first-child {
+			width: 20%;
+			text-align: center;
+			opacity: 0.5;
+			padding-left: 4%;
+		}
+		
+		tr td:last-child {
+			width: 80%;
+			text-align: left;
+			padding-left: 11%;
+		}
+		
+		tr td input,tr td select {
+			height: 40px;
+			opacity: 0.6;
+			padding-left: 15px;
+			border-radius: 5px;
+			width: 80%;
+		}
+	</style>
+
+	<body>
+		<div class="container">
+			<div class="content">
+				<div class="hearder" style="width: 100%;background-color: #05A2EF;height: 70px;text-align: center;">
+					<input type="number" id="isbn" placeholder="这里输入ISBN码" />
+					<div class="ok">ok</div>
+				</div>
+				<table style="padding-top: 15px;width: 100%;">
+					<tr>
+						<!--tittle-->
+						<td>标题</td>
+						<td>
+							<input type="text" />
+						</td>
+					</tr>
+					<tr>
+						<!--publisher-->
+						<td>出版社</td>
+						<td>
+							<input type="text" />
+						</td>
+					</tr>
+					<tr>
+						<!--author-->
+						<td>作者</td>
+						<td>
+							<input type="text" />
+						</td>
+					</tr>
+					<tr>
+						<!--isbn-->
+						<td>ISBN</td>
+						<td>
+							<input type="number" />
+						</td>
+					</tr>
+					<tr>
+						<!--（定价）-->
+						<td>定价</td>
+						<td>
+							<input type="number" readonly="readonly" />
+						</td>
+					</tr>
+					<tr>
+						<!--新书价格-->
+						<td>新书价格</td>
+						<td>
+							<input type="number" placeholder="默认为定价" />
+						</td>
+					</tr>
+					<tr>
+						<!--旧书价格-->
+						<td>旧书价格</td>
+						<td>
+							<input type="number" placeholder="默认为定价一半减一元" />
+						</td>
+					</tr>
+					<tr>
+						<!--新书折扣-->
+						<td>新书折扣</td>
+						<td>
+							<input type="number" placeholder="0~9 默认为0不打折" />
+						</td>
+					</tr>
+					<tr>
+						<!--旧书折扣-->
+						<td>旧书折扣</td>
+						<td>
+							<input type="number" placeholder="0~9 默认为0不打折" />
+						</td>
+					</tr>
+					<tr>
+						<td>新书库存</td>
+						<td>
+							<input type="number" placeholder="默认为999且不显示" />
+						</td>
+					</tr>
+					<tr>
+						<td>旧书库存</td>
+						<td>
+							<input type="number" placeholder="默认为999且不显示" />
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+		</div>
 	</body>
+	<script type="text/javascript">
+	</script>
+
 </html>
