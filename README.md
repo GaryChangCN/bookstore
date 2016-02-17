@@ -24,6 +24,7 @@
             * BuyOrder.html `买书订单管理iframe`
             * GroupManage.html `管理分组的iframe`
             * ChangeGood.html `更改商品详情的iframe`
+            * FastAddGood.html `快速上传商品iframe 响应式`
             * Discount.html `设置商品折扣的iframe`
             * Our.html `我们的动态iframe`
             * SellOrder `卖书订单iframe`
@@ -99,6 +100,10 @@
 
 
 
+### 2016-02-17 ###
+添加快速上传图书功能，本项目目前唯一一个`响应式`页面，利用豆瓣图书类api
+### 2016-02-15 ###
+后台我们动态、访问管理支持分页查看
 ### 2016-02-14 ###
 修改数据库，删除b_discount，新sql文件已更新
 ### 2016-02-13 ###

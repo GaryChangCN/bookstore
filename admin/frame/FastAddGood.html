@@ -93,6 +93,27 @@
 			width: 80%;
 		}
 	</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".ok").click(function() {
+				var isbn = $("#isbn").val();
+				$.ajax({
+					type: "get",
+					url: "https://api.douban.com/v2/book/isbn/:" + isbn,
+					async: false,
+					dataType: "jsonp",
+					success: function(data) {
+						$("#title").val(data.title);
+						$("#publisher").val(data.publisher);
+						$("#author").val(data.author);
+						$("#isbn13").val(data.isbn13);
+						$("#price").val(data.price);
+						$(".img").attr('src', data.images.medium).css('opacity',1);
+					}
+				});
+			})
+		})
+	</script>
 
 	<body>
 		<div class="container">
@@ -104,37 +125,37 @@
 				<table style="padding-top: 15px;width: 100%;">
 					<tr>
 						<!--tittle-->
-						<td>标题</td>
+						<td>书名</td>
 						<td>
-							<input type="text" />
+							<input type="text" id="title" />
 						</td>
 					</tr>
 					<tr>
 						<!--publisher-->
 						<td>出版社</td>
 						<td>
-							<input type="text" />
+							<input type="text" id="publisher" />
 						</td>
 					</tr>
 					<tr>
 						<!--author-->
 						<td>作者</td>
 						<td>
-							<input type="text" />
+							<input type="text" id="author" />
 						</td>
 					</tr>
 					<tr>
 						<!--isbn-->
-						<td>ISBN</td>
+						<td>ISBN13</td>
 						<td>
-							<input type="number" />
+							<input type="number" id="isbn13" />
 						</td>
 					</tr>
 					<tr>
 						<!--（定价）-->
 						<td>定价</td>
 						<td>
-							<input type="number" readonly="readonly" />
+							<input type="number" readonly="readonly" id="price" />
 						</td>
 					</tr>
 					<tr>
@@ -177,7 +198,12 @@
 							<input type="number" placeholder="默认为999且不显示" />
 						</td>
 					</tr>
-					
+					<tr>
+						<td>图片 </td>
+						<td><img class="img" style="opacity: 0.4;width: 150px;height: 200px;" src="../../img/icon/pic.gif" />
+
+						</td>
+					</tr>
 				</table>
 			</div>
 		</div>
