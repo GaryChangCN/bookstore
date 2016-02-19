@@ -9,7 +9,7 @@ $(document).ready(function() {
 			"type": "1"
 		},
 		success: function(data) {
-			//$(".PageNumber").html(data);
+			$(".PageNumberfirst").html(data);
 		}
 	});
 	changePageNumber("1");
@@ -28,7 +28,7 @@ $(document).ready(function() {
 			}
 		});
 	}
-	$(".PageNumber").on("click", "li", function() { //改变页码
+	$(".PageNumberfirst").on("click", "li", function() { //改变页码
 			$(this).parent().children().css({
 				'background-color': "transparent",
 				'color': '#0392DC'

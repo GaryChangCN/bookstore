@@ -19,15 +19,17 @@ switch ($type) {
 		echo '<div>作者：' . $row[3] . '</div>';
 		echo '<div>出版社：' . $row[2] . '</div>';
 		echo '<div>ISBN码：' . $row[4] . '</div>';
-		if (($row[8] == "") || ($row[8] == NULL) || (ctype_space($row[8]))) {
+		if ($row[8] == "0") {
 			echo '<div>旧书: <span></span><span>' . $row[6] . '</span>元</div>';
 		} else {
-			echo '<div>旧书: <span>' . $row[6] . '元</span><span>' . $row[8] . '</span>元</div>';
+			$old2016=ceil($row[6]*($row[8]/10));
+			echo '<div>旧书: <span>' . $row[6] . '元</span><span>' . $old2016 . '</span>元</div>';
 		}
-		if (($row[7] == "") || ($row[7] == NULL) || (ctype_space($row[7]))) {
+		if ($row[7] == "0") {
 			echo '<div>新书: <span></span><span>' . $row[5] . '</span>元</div>';
 		} else {
-			echo '<div>新书: <span>' . $row[5] . '</span><span>' . $row[7] . '</span>元</div>';
+			$old2015=ceil($row[5]*($row[7]/10));
+			echo '<div>新书: <span>' . $row[5] . '</span><span>' . $old2015 . '</span>元</div>';
 		}
 		echo '</td>';
 		echo '<td class="td3">';
