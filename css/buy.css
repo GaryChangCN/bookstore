@@ -154,10 +154,13 @@ li.SelectMajorContentThird span{
 	border-bottom: 1px solid #E05C49;
 	padding-bottom: 7px;
 	margin-bottom: 7px;
+	height:205px;
 }
 .BuyContentListPic{
 	width: 120px;
 	height: 160px;
+	position: relative;
+	top: 15px;
 }
 .BuyContentListMore{
 	width: 280px;

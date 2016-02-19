@@ -16,7 +16,7 @@ if ($certain == 'admin') {
 			$num=($_POST['num']-1)*12;
 			$query = mysql_query("SELECT b_name,b_isbn FROM b_product LIMIT $num,12", $link);
 			while ($row = mysql_fetch_array($query)) {
-				echo "<li>" . $row['b_name'] . "#" . $row['b_isbn'] . "</li>";
+				echo "<li><p>" . $row['b_name'] . "#" . $row['b_isbn'] . "</p></li>";
 			}
 			break;
 		default :

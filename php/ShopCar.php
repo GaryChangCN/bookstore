@@ -40,16 +40,18 @@ switch ($type) {
 									<div class="BookPrice">
 										<span class="SinglePrice">单价</span>
 										<br />旧书：';
-				if (($row[8] == "") || ($row[8] == NULL) || (ctype_space($row[8]))) {
+				if ($row[8] == "0") {
 					echo '<span id="book1">' . $row[6] . '</span>';
 				} else {
-					echo '<span id="book1">' . $row[8] . '</span>';
+					$old2016=ceil($row[6]*($row[8]/10));
+					echo '<span id="book1">' . $old2016 . '</span>';
 				}
 				echo '<br />新书：';
-				if (($row[7] == "") || ($row[7] == NULL) || (ctype_space($row[7]))) {
+				if ($row[7] == "0") {
 					echo '<span id="book2">' . $row[5] . '</span>';
 				} else {
-					echo '<span id="book2">' . $row[7] . '</span>';
+					$old2015=ceil($row[5]*($row[7]/10));
+					echo '<span id="book2">' . $old2015 . '</span>';
 				}
 				echo '</div>
 								</td>
