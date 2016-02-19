@@ -38,7 +38,7 @@ if ($certain == 'admin') {
 				for ($x = 0; $x < count($idArr); $x++) {
 					$query2 = mysql_query("SELECT b_name,b_isbn FROM b_product WHERE id='$idArr[$x]'");
 					while ($row3 = mysql_fetch_array($query2)) {
-						echo "<li>" . $row3['b_name'] . "#" . $row3['b_isbn'];
+						echo "<li><p>" . $row3['b_name'] . "#" . $row3['b_isbn']."</p></li>";
 					}
 				}
 			}
