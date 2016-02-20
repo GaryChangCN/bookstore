@@ -114,6 +114,20 @@
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function() {
+			function hiddenAlert(){
+				$(".cover,.alert").css('display','none');
+			}
+			hiddenAlert();
+			$(".cover").click(function(){
+				hiddenAlert();
+			})
+			function alertMessage(message,button){
+				$(".message").text(message);
+				$(".enter").text(button).click(function(){
+					window.location.href='';
+				});
+				$(".cover,.alert").css('display','');
+			}
 			var information = new Object();
 			var informationPic = "";
 			$(".ok").click(function() {
@@ -209,7 +223,7 @@
 								"picsrc": information.picsrc
 							},
 							success: function(data) {
-								document.write(data);
+								alertMessage(data,'刷新');
 							}
 						});
 					} else {
@@ -233,7 +247,7 @@
 							},
 							success: function(data) //服务器成功响应处理函数
 								{
-									document.write(data)
+									alertMessage(data,'刷新');
 								}
 						})
 					}
@@ -241,12 +255,21 @@
 					alert("书名、isbn、定价为必填项！");
 				}
 			})
+			$(".cover").height($(".content").height());
 		})
 	</script>
 
 	<body>
 		<div class="container">
 			<div class="content">
+				<div class="cover" style="width: 100%;z-index: 98;background-color:white ;opacity: 0.7;height: 500px;position: fixed;">
+				</div>
+				<div class="alert" style="width: 70%;height: 200px; z-index: 99;background-color: white;box-shadow: 0px 0px 14px 1px #81CEF9; position: fixed;left: 15%;top: 100px;">
+                     <div class="message" style="text-align: center;width: 94%;height: 100px;overflow: auto;padding: 10% 3% 0px 3%;">
+                     	
+                     </div>
+                     <button class="enter" style="width: 25%;height: 35px;background-color: white;border: 1px solid #81CEF9;border-radius: 5px;margin-top: 11px;">确认</button>
+				</div>
 				<div class="hearder" style="width: 100%;background-color: #05A2EF;height: 70px;text-align: center;box-shadow: 0px 1px 1px 1px #BBBBBB;z-index: 45;">
 					<input type="number" id="isbn" placeholder="这里输入ISBN码" />
 					<button class="ok">ok</button>

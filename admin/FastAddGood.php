@@ -53,7 +53,7 @@ if ($type == "0") {
 	GrabImage("$picsrc", '../img/book/', $picname);
 	//echo $type . $title . $author . $isbn . $newprice . $oldprice . $newdiscount . $olddiscount . $newstock . $oldstock . $picsrc;
 	mysql_query("INSERT INTO b_product VALUES('','$title','$publisher','$author','$isbn','$newprice','$oldprice','$newdiscount','$olddiscount','$newstock','$oldstock','否','$picname')");
-	echo "成功";
+	echo "上传成功，请刷新";
 } else if($type=='1') {
 	if ((($_FILES['file']['type'] == "image/gif") || ($_FILES['file']['type'] == "image/jpeg") || ($_FILES['file']['type'] == "image/png") || ($_FILES['file']['type'] == "image/jpg")) && ($_FILES['file']['size'] < 2000000)) {
 		if ($_FILES['file']['error'] > 0) {
@@ -66,7 +66,7 @@ if ($type == "0") {
 			} else {
 				move_uploaded_file($_FILES['file']["tmp_name"], "../img/book/" . $name1);
 				mysql_query("INSERT INTO b_product VALUES('','$title','$publisher','$author','$isbn','$newprice','$oldprice','$newdiscount','$olddiscount','$newstock','$oldstock','否','$name2')");
-				echo "上传成功";
+				echo "上传成功，请刷新";
 			}
 		}
 	} else {
