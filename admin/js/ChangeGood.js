@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	function totop(top) { //返回顶部函数
+		$(window.parent).scrollTop(top).scrollLeft(top);
+		$(window).scrollTop(top).scrollLeft(top);
+	}
 	//type 1 获取页码 type  2  切换页码----->SelectGood.php
 	$.ajax({ //获取总共页码
 		type: "post",
@@ -23,6 +27,7 @@ $(document).ready(function() {
 			},
 			success:function(d){
 				$("#ulLeft").html(d);
+				totop('0');
 			}
 		});
 	}

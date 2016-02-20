@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	function totop(top) { //返回顶部函数
+		$(window.parent).scrollTop(top).scrollLeft(top);
+		$(window).scrollTop(top).scrollLeft(top);
+	}
 	//type 1 获取页码 type  2  切换页码----->SelectGood.php
 	var second = "0";
 	$.ajax({ //获取总页码
@@ -13,7 +17,8 @@ $(document).ready(function() {
 		}
 	});
 	changePageNumber("1");
-    pageNum("1");
+	pageNum("1");
+
 	function changePageNumber() {
 		$.ajax({
 			type: "post",
@@ -25,6 +30,7 @@ $(document).ready(function() {
 			},
 			success: function(d) {
 				$("#ulLeft").html(d);
+				totop('0');
 			}
 		});
 	}
@@ -53,18 +59,19 @@ $(document).ready(function() {
 			$(".PageNumber2").html(data);
 		}
 	});
-    $(".PageNumber2").on("click", "li", function() { //改变页码
-			$(this).parent().children().css({
-				'background-color': "transparent",
-				'color': '#0392DC'
-			});
-			$(this).css({
-				'background-color': "#0392DC",
-				'color': 'white'
-			})
-			var num = $(this).text();
-			pageNum(num);
+	$(".PageNumber2").on("click", "li", function() { //改变页码
+		$(this).parent().children().css({
+			'background-color': "transparent",
+			'color': '#0392DC'
+		});
+		$(this).css({
+			'background-color': "#0392DC",
+			'color': 'white'
 		})
+		var num = $(this).text();
+		pageNum(num);
+	})
+
 	function pageNum() {
 		$.ajax({
 			type: "post",
@@ -72,11 +79,12 @@ $(document).ready(function() {
 			async: false,
 			data: {
 				"type": "2",
-				"type2":"2",
-				"num":arguments[0]
+				"type2": "2",
+				"num": arguments[0]
 			},
 			success: function(data) {
 				$("#ulRight").html("<li>id</li>" + data);
+				totop('0');
 			}
 		});
 	}
