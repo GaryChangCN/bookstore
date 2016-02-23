@@ -28,7 +28,7 @@
 		<script src="js/General.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="css/jquery.slideBox.css" />
 		<link rel="stylesheet" type="text/css" href="css/general.css"/>
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 	</head>
 
 	<body>

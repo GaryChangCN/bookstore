@@ -54,6 +54,10 @@ $(document).ready(function() {
 		$(".RightTop").children().css('display', 'none');
 		$(".iframe").attr('src', 'frame/visited.html').css('display', 'block');
 	})
+	$(".left ul li:eq(11)").click(function() { //邮件通知设置
+		$(".RightTop").children().css('display', 'none');
+		$(".iframe").attr('src', 'frame/mail.html').css('display', 'block');
+	})
 	$(".FenzuGuanli").find("div").click(function() {
 		$(".FenzuGuanli").find("div").css({
 			"background-color": "transparent",
