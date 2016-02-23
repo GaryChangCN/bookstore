@@ -114,6 +114,19 @@
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function() {
+			$.ajax({
+				type: "post",
+				url: "../judge.php",
+				async: false,
+				success: function(data) {
+					if (data == "success") {
+						$(".BContainer").css('display', 'block');
+					} else {
+						$(".BContainer").html("请先登录");
+						window.location.href="../index.html";
+					}
+				}
+			});
 			function hiddenAlert(){
 				$(".cover,.alert").css('display','none');
 			}
