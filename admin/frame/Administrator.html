@@ -9,7 +9,6 @@
 	</head>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$(document).ready(function() {
 			$.ajax({
 				type: "post",
 				url: "../judge.php",
@@ -24,7 +23,6 @@
 				}
 			});
 		})
-		})
 	</script>
 
 	<body>
@@ -38,13 +36,13 @@
 					<input type="text" name="type" id="type" value="4" style="display: none;" />
 					<br /> 新账号：
 					<span style="color: red;">*</span>
-					<input type="text" name="name" id="" value="" />
+					<input type="text" name="name" id="" value="" required="required"/>
 					<br /> 新密码：
 					<span style="color: red;">*</span>
-					<input type="password" name="password" id="" value="" />
+					<input type="password" name="password" id="pass" value="" placeholder="为空则不修改密码"/>
 					<br /> 权限：
 					<span style="color: red;">*</span>
-					<select name="power">
+					<select name="power" required="required">
 						<option value="0">管理员</option>
 						<option value="1" selected="selected">客服</option>
 					</select>
@@ -98,6 +96,7 @@
 		$("#AddAdmin").click(function() { //添加管理员帐号
 			$("#alert form input:eq(0)").val("5");
 			$("#alert form input:eq(1)").val("");
+			$("#pass").removeAttr('placeholder').attr('required','required');
 			$("#alert").show();
 			$("#cover").show();
 			$(".adminList li").css('background-color', "transparent");
@@ -121,6 +120,8 @@
 			} else {}
 		})
 		$(".adminList").on("click", "li", function() { //单击选中管理员列表弹出alert更改管理员信息
+			$("#alert form input:eq(0)").val("4");
+			$("#pass").removeAttr('required').attr('placeholder','为空则不修改密码');
 			$(this).parent().children("li").css('background-color', "transparent");
 			$(this).css("background-color", "#D3D3D3");
 			$("#alert form input:eq(3)").val($(this).text().replace("编号:", "").replace("-账号", "").split("：")[0]);

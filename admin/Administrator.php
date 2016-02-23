@@ -38,13 +38,21 @@ if ($certain == 'admin') {
 			break;
 		case '4' :
 			//修改管理员信息
-			$name2 = $_POST['name'];
 			$password2 = $_POST['password'];
-			$id2 = $_POST['id'];
-			$md5password2 = md5($password2);
-			$power = $_POST['power'];
-			mysql_query("UPDATE b_admin SET name='$name2',password='$md5password2',power='$power' WHERE id='$id2' ");
-			echo "修改成功";
+			if ($password2 == "" || $password2 == null) {
+				$name2 = $_POST['name'];
+				$id2 = $_POST['id'];
+				$power = $_POST['power'];
+				mysql_query("UPDATE b_admin SET name='$name2',power='$power' WHERE id='$id2' ");
+				echo "修改成功";
+			} else {
+				$name2 = $_POST['name'];
+				$id2 = $_POST['id'];
+				$md5password2 = md5($password2);
+				$power = $_POST['power'];
+				mysql_query("UPDATE b_admin SET name='$name2',password='$md5password2',power='$power' WHERE id='$id2' ");
+				echo "修改成功";
+			}
 			break;
 		case '5' :
 			//添加管理员
