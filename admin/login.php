@@ -17,9 +17,9 @@ if (in_array($name1, $dbNames)) {
 	            location.href="index.php";
              </script>';
 	} else {
-		echo "抱歉不能让你登陆 <a href='index.html'>返回</a>";
+		echo "抱歉不能让你登陆 <a style='font-size: 2em;' href='index.html'>返回</a>";
 	}
 } else {
-	echo "对不起不能让你登陆！<a href='index.html'>返回</a>";
+	echo "对不起不能让你登陆！<a style='font-size: 2em;'  href='index.html'>返回</a>";
 }
 ?>
