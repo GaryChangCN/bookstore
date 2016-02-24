@@ -1,4 +1,6 @@
 <?php
+include "certain.php";
+if ($certain == 'admin') {
 	include "conn.php";
 	$type=$_GET['type'];
 	switch ($type) {//type  0获取邮箱列表  1添加邮箱 2修改是否发送 3删除该条
@@ -36,4 +38,9 @@
 			break;
 	}
 	mysql_close();
+} else if ($certain == 'server') {
+	echo "对不起你没有权限";
+} else {
+	echo "cookie保存到期请重新登录";
+}	
 	?>
