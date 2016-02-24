@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2016-02-20 21:53:45
+-- 生成日期: 2016-02-24 12:02:25
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -82,15 +82,16 @@ CREATE TABLE IF NOT EXISTS `b_admin` (
   `password` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `power` int(3) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
 -- 转存表中的数据 `b_admin`
 --
 
 INSERT INTO `b_admin` (`id`, `name`, `password`, `power`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 0),
-(2, '123', '202cb962ac59075b964b07152d234b70', 1);
+(1, 'admin', '7fef6171469e80d32c0559f88b377245', 0),
+(2, '123', '202cb962ac59075b964b07152d234b70', 1),
+(5, '111', 'c37bf859faf392800d739a41fe5af151', 1);
 
 -- --------------------------------------------------------
 
@@ -182,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `b_hot_goods` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `id_product` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=69 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=68 ;
 
 --
 -- 转存表中的数据 `b_hot_goods`
@@ -201,8 +202,28 @@ INSERT INTO `b_hot_goods` (`id`, `id_product`) VALUES
 (64, 50),
 (65, 51),
 (66, 52),
-(67, 53),
-(68, 54);
+(67, 53);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `b_mail`
+--
+
+CREATE TABLE IF NOT EXISTS `b_mail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `send` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- 转存表中的数据 `b_mail`
+--
+
+INSERT INTO `b_mail` (`id`, `mail`, `send`) VALUES
+(3, 'tinytin@qq.com', 0),
+(4, 'tinytin1@qq.com', 0);
 
 -- --------------------------------------------------------
 
@@ -223,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `b_order` (
   `b_admin_remark` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
   `b_pay_method` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
 
 --
 -- 转存表中的数据 `b_order`
@@ -241,7 +262,13 @@ INSERT INTO `b_order` (`id`, `b_id`, `b_num`, `b_address`, `b_phone`, `b_remark`
 (19, 10, 2, '9小区+A077+434', '0107898678', '', '2015-12-23', '16:05:54', 0, '', '货到付款'),
 (20, 10, 2, '9小区+A077+434', '0107898678', '', '2015-12-23', '16:05:54', 0, '', '货到付款'),
 (21, 10, 2, '9小区+A077+434', '0107898678', '', '2015-12-23', '16:05:54', 0, '', '货到付款'),
-(22, 10, 2, '9小区+A077+434', '0107898678', '', '2015-12-23', '16:05:54', 0, '', '货到付款');
+(22, 10, 2, '9小区+A077+434', '0107898678', '', '2015-12-23', '16:05:54', 0, '', '货到付款'),
+(23, 42, 1, '++', '', '', '2016-02-24', '11:41:33', 0, '', '货到付款'),
+(24, 41, 2, '++', '', '', '2016-02-24', '11:41:33', 0, '', '货到付款'),
+(25, 42, 1, '9+a89+222', '13262973189', '', '2016-02-24', '11:56:31', 0, '', '货到付款'),
+(26, 41, 1, '9+a89+222', '13262973189', '', '2016-02-24', '11:56:31', 0, '', '货到付款'),
+(27, 42, 4, '1+1+1', '13212344321', '', '2016-02-24', '12:00:29', 0, '', '货到付款'),
+(28, 41, 1, '1+1+1', '13212344321', '', '2016-02-24', '12:00:29', 0, '', '货到付款');
 
 -- --------------------------------------------------------
 
@@ -289,7 +316,7 @@ CREATE TABLE IF NOT EXISTS `b_product` (
   `b_hot` varchar(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `b_pic_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=56 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=57 ;
 
 --
 -- 转存表中的数据 `b_product`
@@ -309,8 +336,8 @@ INSERT INTO `b_product` (`id`, `b_name`, `b_publish`, `b_editor`, `b_isbn`, `b_p
 (51, '爱情和其他魔鬼', '南海出版公司', '[哥伦比亚] 加西亚·马尔克斯', '9787544278638', '35', '17', '0', '0', 999, 999, '否', '9787544278638.jpg'),
 (52, '生命中最简单又最困难的事', '北京时代华文书局·阳光博客', '[美] 大卫·福斯特·华莱士,焉沁 绘', '9787569902921', '32', '15', '0', '0', 999, 999, '否', '9787569902921.jpg'),
 (53, '再度觉醒', '三辉图书/外语教学与研究出版社', '[意] 普里莫·莱维(Primo Lev', '9787513567459', '39', '19', '0', '0', 999, 999, '否', '9787513567459.jpg'),
-(54, '独立日：用电影延长三倍生命', '生活•读书•新知三联书店 生活书店出版有限公司', '木卫二', '9787807681274', '48', '23', '0', '0', 999, 999, '否', '9787807681274.jpg'),
-(55, '樱桃之远', '春风文艺出版社', '张悦然', '9787531327165', '23', '11', '0', '0', 999, 999, '否', '9787531327165.jpg');
+(55, '樱桃之远', '春风文艺出版社', '张悦然', '9787531327165', '23', '11', '0', '0', 999, 999, '否', '9787531327165.jpg'),
+(56, '解忧杂货店', '南海出版公司', '(日)东野圭吾', '9787544270878', '39', '19', '0', '0', 999, 999, '否', '9787544270878.jpg');
 
 -- --------------------------------------------------------
 
@@ -406,7 +433,7 @@ CREATE TABLE IF NOT EXISTS `b_sell` (
   `b_ready` int(5) NOT NULL,
   `b_admin_remark` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=30 ;
 
 --
 -- 转存表中的数据 `b_sell`
@@ -434,7 +461,10 @@ INSERT INTO `b_sell` (`id`, `b_address`, `b_phone`, `b_date`, `b_time`, `b_remar
 (23, '8+i097+434', '13262976666', '2015-12-22', '18:43:11', '', 1, ''),
 (24, '8+i097+434', '13262976666', '2015-12-22', '18:43:11', '', 1, ''),
 (25, '8+i097+434', '13262976666', '2015-12-22', '18:43:11', '', 1, ''),
-(26, '9小区+A077+434', '13262973189', '2015-12-22', '18:47:59', ' 65465654645756756775685787876', 0, '');
+(26, '9小区+A077+434', '13262973189', '2015-12-22', '18:47:59', ' 65465654645756756775685787876', 0, ''),
+(27, '++', '', '2016-02-24', '11:23:46', '该用户没有填写备注', 0, ''),
+(28, '++', '12332456545', '2016-02-24', '11:27:23', '该用户没有填写备注', 0, ''),
+(29, '++', '12332112332', '2016-02-24', '11:28:16', '该用户没有填写备注', 0, '');
 
 -- --------------------------------------------------------
 
@@ -450,7 +480,7 @@ CREATE TABLE IF NOT EXISTS `b_visited` (
   `ip` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `browser` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=48 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=53 ;
 
 --
 -- 转存表中的数据 `b_visited`
@@ -500,7 +530,12 @@ INSERT INTO `b_visited` (`id`, `year`, `mouth`, `day`, `ip`, `browser`) VALUES
 (44, '2016', '02', '19', '::1', 'google'),
 (45, '2016', '02', '20', '127.0.0.1', 'google'),
 (46, '2016', '02', '20', '127.0.0.1', 'google'),
-(47, '2016', '02', '20', '127.0.0.1', 'google');
+(47, '2016', '02', '20', '127.0.0.1', 'google'),
+(48, '2016', '02', '23', '127.0.0.1', 'google'),
+(49, '2016', '02', '23', '192.168.1.106', 'Firefox'),
+(50, '2016', '02', '23', '192.168.1.106', 'Firefox'),
+(51, '2016', '02', '23', '192.168.1.106', 'google'),
+(52, '2016', '02', '24', '127.0.0.1', 'google');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
