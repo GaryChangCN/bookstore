@@ -25,17 +25,19 @@
             * GroupManage.html `管理分组的iframe`
             * ChangeGood.html `更改商品详情的iframe`
             * FastAddGood.html `快速上传商品iframe 响应式`
-            * Discount.html `设置商品折扣的iframe`
             * Our.html `我们的动态iframe`
+            * mail.html `邮件通知设置iframe`
             * SellOrder `卖书订单iframe`
             * Visited `浏览量iframe`
         * js
             * BestSell.js `热销产品js`
             * BuyOrder.js  `买书订单管理js`
             * index.js `后台主页js`
+            * fileupload.js `利用ajax上传文件lib`
             * ChangeGood.js `更改商品详情的js`
             * GroupManage.js `管理分组js`
             * SellOrder `卖书订单js`
+            * UploadPreview `上传预览lib`
         * Ad.php `广告管理php`
         * AddGood.php `添加商品php`
         * Administrator.php `修改管理员所有权限账号密码等`
@@ -58,6 +60,8 @@
         * judge.php `ajax目标简单防护未登陆情况`
         * login.php `登录php`
         * logout.php `登出、注销`
+        * mail.php `设置邮件通知`
+        * mailer.php `php stmp类`
         * Our.php `我们的动态管理，添加、删除、显示等`
         * SelectGood.php `输出所有图书列表`
         * SelectGoodDetails.php `输出图书列表的详情`
@@ -68,12 +72,13 @@
         * general.css `通用 css`
         * index.css `前台主页 css`
         * jquery.slideBox.css `slideBox css`
+        * load.css `css3加载图标`
         * sell.css `我要卖书 css
         * shopcar.css `购物车`
     * database `数据库`
         * bookstore.sql `数据库sql文件`
     * img `存放图片目录`
-        * ad `广告图片`
+        * show `广告图片`
         * book `图书图片`
         * icon `小图标`
     * js 
@@ -100,6 +105,9 @@
 
 
 
+### 2016-02-24 ###
+修复购物车和卖书页面提交订单必填项为空能提交bug；添加正则验证手机号格式，添加后台邮件提醒设置功能，更新了数据库，添加新的邮箱提醒数据库‘b_mail’，
+为提交买书订单添加load动画，修正非管理员权限bug
 ### 2016-02-23 ###
 修复快速上传页面模拟弹出框在宽度大于640px时不居中问题；登录失败时“返回”字体加大；添加邮件通知选项（功能尚未写完）；后台登录页面改为`响应式` 页面；修复点击
 管理员后不能修改管理员密码或者权限bug
