@@ -39,8 +39,9 @@ $(document).ready(function() {
     function checksubmit(){
     	if (($("#phonenumber").val() != "") && ($("#xiaoqu").val() != "") && ($("#loudao").val() != "") && ($("#qinshi").val() != "")) {
 			$("#enterbuy").removeAttr('disabled');
+			$("#enterbuy").attr('value','确认够买');
 		}else{
-			$("#enterbuy").attr('disabled','disabled');
+			$("#enterbuy").attr({'disabled':'disabled','value':'*号为必填项'});
 		}
     }
 	function PhoneNumberError() {
