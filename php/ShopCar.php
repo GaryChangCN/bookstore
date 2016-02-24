@@ -43,14 +43,14 @@ switch ($type) {
 				if ($row[8] == "0") {
 					echo '<span id="book1">' . $row[6] . '</span>';
 				} else {
-					$old2016=ceil($row[6]*($row[8]/10));
+					$old2016 = ceil($row[6] * ($row[8] / 10));
 					echo '<span id="book1">' . $old2016 . '</span>';
 				}
 				echo '<br />新书：';
 				if ($row[7] == "0") {
 					echo '<span id="book2">' . $row[5] . '</span>';
 				} else {
-					$old2015=ceil($row[5]*($row[7]/10));
+					$old2015 = ceil($row[5] * ($row[7] / 10));
 					echo '<span id="book2">' . $old2015 . '</span>';
 				}
 				echo '</div>
@@ -121,7 +121,7 @@ switch ($type) {
 		break;
 	case '5' :
 		$id = $_GET['id'];
-		$num=$_GET['num'];
+		$num = $_GET['num'];
 		$address = $_GET['xiaoqu'] . "+" . $_GET['loudao'] . "+" . $_GET['qinshi'];
 		$phonenumber = $_GET['phonenumber'];
 		$remark = $_GET['remark'];
@@ -129,7 +129,7 @@ switch ($type) {
 		$date = date("Y-m-d");
 		$time = date("H:i:s");
 		$idArr = explode("#", $id);
-		$numArr=explode("#", $num);
+		$numArr = explode("#", $num);
 		for ($i = 1; $i < count($idArr); $i++) {
 			if ($remark = "" || $remark = NULL) {
 				mysql_query("INSERT INTO b_order VALUES('','$idArr[$i]','$numArr[$i]','$address','$phonenumber','该用户没有备注','$date','$time','0','','$paymethod')");
@@ -138,6 +138,36 @@ switch ($type) {
 			}
 		}
 		echo "提交成功，稍后会有工作人员联系您,若长时间没有联系您，您可以去首页反馈";
+		setcookie('shopcar','0',time()-3600,"/");
+		require_once "../admin/mailer.php";
+		$smtpserver = "smtp.126.com";
+		//SMTP服务器
+		$smtpserverport = 25;
+		//SMTP服务器端口
+		$smtpusermail = "tinytin@126.com";
+		//SMTP服务器的用户邮箱
+		$smtpuser = "tinytin";
+		//SMTP服务器的用户帐号
+		$smtppass = "z123369";
+		//SMTP服务器的用户密码
+		$q = mysql_query("SELECT mail FROM b_mail WHERE send='1'");
+		while ($r = mysql_fetch_array($q)) {
+			$smtpemailto = $r['mail'];
+			//发送给谁
+			$mailtitle = '【booklbook】新买书订单';
+			//邮件主题
+			$mailcontent = "收到手机号为：" . $phonenumber . "的新订单，请尽快处理";
+			//邮件内容
+			$mailtype = "HTML";
+			//邮件格式（HTML/TXT）,TXT为文本邮件
+			//************************ 配置信息 ****************************
+			$smtp = new smtp($smtpserver, $smtpserverport, true, $smtpuser, $smtppass);
+			//这里面的一个true是表示使用身份验证,否则不使用身份验证.
+			$smtp -> debug = false;
+			//是否显示发送的调试信息
+			$state = $smtp -> sendmail($smtpemailto, $smtpusermail, $mailtitle, $mailcontent, $mailtype);
+
+		}
 		break;
 	default :
 		break;

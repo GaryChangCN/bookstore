@@ -8,6 +8,11 @@
 		<link rel="stylesheet" type="text/css" href="css/general.css" />
 		<link rel="stylesheet" type="text/css" href="css/shopcar.css" />
 		<title>购物车</title>
+		<style type="text/css">
+			b{
+				color: red;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -56,22 +61,22 @@
 					</div>
 					<div class="ReceiveAddressText" id="InputSubmit">
 						<span>
-								手机：
+								<b>*</b>手机：
 						</span>
 						<input type="text" name="phonenumber" id="phonenumber" value="" placeholder="唯一联系方式请仔细填写" />
 						<br />
 						<span>
-								小区：
+								<b>*</b>小区：
 							</span>
 						<input type="text" name="xiaoqu" id="xiaoqu" value="" placeholder="例：9小区" />
 						<br />
 						<span>
-								楼道：
+								<b>*</b>楼道：
 							</span>
 						<input type="text" name="loudao" id="loudao" value="" placeholder="例：a073" />
 						<br />
 						<span>
-								寝室：
+								<b>*</b>寝室：
 							</span>
 						<input type="text" name="qinshi" id="qinshi" value="" placeholder="例：301" />
 						<br />
@@ -87,13 +92,13 @@
 						支付方式
 					</div>
 					<div class="PayMethodsText">
-						<input type="radio" name="radio" id="OffLinePay" value="货到付款" /> 货到付款
+						<input type="radio" name="radio" id="OffLinePay" value="货到付款" checked="checked"/> 货到付款
 						<input type="radio" name="radio" id="OnlinePayAli" value="支付宝" disabled="disabled"/> 支付宝
 						<input type="radio" name="radio" id="OnLinePayWx" value="微信" disabled="disabled"/> 微信
 					</div>
 				</div>
 				<div class="EnterBuy">
-					<input type="submit" value="确认购买" id="enterbuy"/>
+					<input type="submit" value="确认购买" id="enterbuy" disabled="disabled"/>
 				</div>
 			</div>
 			<div class="footer">
