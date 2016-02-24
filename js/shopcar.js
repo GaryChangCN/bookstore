@@ -179,6 +179,7 @@ $(document).ready(function() {
 		$(window).scrollTop(parseInt(a) + 70);
 	});
 	$("#enterbuy").click(function(){
+		var exg=/^[1][358][0-9]{9}$/;
 		var id="0";
 		var num="0";
 		$(".ShopCarListX").each(function(){
@@ -187,7 +188,7 @@ $(document).ready(function() {
 		})
 		if (id=="0") {
 			alert("您的购物车还是空的呢！")
-		} else{
+		} else if(exg.test($("#phonenumber").val())){
 			$.ajax({
 			type:"get",
 			url:"php/ShopCar.php",
@@ -205,8 +206,11 @@ $(document).ready(function() {
 			},
 			success:function(data){
 				alert(data);
+				window.location.reload();
 			}
 		});
+		}else{
+			alert("请输入正确手机号！");
 		}
 	})
 });
