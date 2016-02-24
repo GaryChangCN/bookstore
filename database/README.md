@@ -133,3 +133,10 @@ CREATE TABLE `b_our` (
  `display` int(5) NOT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+###邮件通知表###
+CREATE TABLE `b_mail` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+ `send` int(2) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
