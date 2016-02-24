@@ -87,11 +87,11 @@
 						填写地址
 					</div>
 					<div class="contentText">
-						<form action="php/sell.php" method="get" id="InputSubmit">
+						<form action="php/sell.php" method="get" id="InputSubmit" onsubmit="return checkform()">
 							<span>
 								手机：
 							</span>
-							<input type="number" name="phonenumber" id="phonenumber" value="" placeholder="唯一联系方式请仔细填写"/>
+							<input type="number" name="phonenumber" id="phonenumber" value="" placeholder="唯一联系方式请仔细填写" required="required"/>
 							<br />
 							<span>
 								小区：
@@ -126,6 +126,15 @@
                 $(".contentText form input").on("focus",function(){
                 	$(window).scrollTop(382)
                 })
+                function checkform(){
+                	var exg=/^[1][358][0-9]{9}$/;
+                	if (exg.test($("#phonenumber").val())) {
+                		return true;
+                	} else{
+                		alert("请输入正确的手机号！");
+                		return false;
+                	}
+                }
 			</script>
 	</body>
 </html>
