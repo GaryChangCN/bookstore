@@ -17,22 +17,22 @@ function CountPrice() {
 //===========================================================================
 $(document).ready(function() {
 	$.ajax({
-		type:"get",
-		url:"php/ShopCar.php",
-		async:true,
-		data:{
-			"type":"3"
+		type: "get",
+		url: "php/ShopCar.php",
+		async: true,
+		data: {
+			"type": "3"
 		},
-		success:function(data){
-			$(".hearder-logo").attr('src','img/icon/'+data);
+		success: function(data) {
+			$(".hearder-logo").attr('src', 'img/icon/' + data);
 		}
 	});
 	$.ajax({
 		type: "get",
 		url: "php/ShopCar.php",
 		async: false,
-		data:{
-			"type":"1"
+		data: {
+			"type": "1"
 		},
 		success: function(data) {
 			$(".ShopCarList").html(data);
@@ -143,24 +143,22 @@ $(document).ready(function() {
 			var r = confirm("确认要删除这样商品名么");
 			if (r == true) {
 				$(this).parents(".ShopCarListX").remove();
-				var id=$(this).parents(".ShopCarListX").find("#b_id").text();
+				var id = $(this).parents(".ShopCarListX").find("#b_id").text();
 				$.ajax({
-					type:"get",
-					url:"php/ShopCar.php",
-					async:false,
-					data:{
-						"type":"2",
-						"id":id
+					type: "get",
+					url: "php/ShopCar.php",
+					async: false,
+					data: {
+						"type": "2",
+						"id": id
 					},
-					success:function(){
-					},
-					error:function(){
+					success: function() {},
+					error: function() {
 						alert("删除失败");
 					}
 				});
 				CountPrice();
-			} else {
-			}
+			} else {}
 		}
 	});
 
@@ -178,39 +176,50 @@ $(document).ready(function() {
 		var a = $(".ShopCarList").css('height');
 		$(window).scrollTop(parseInt(a) + 70);
 	});
-	$("#enterbuy").click(function(){
-		var exg=/^[1][358][0-9]{9}$/;
-		var id="0";
-		var num="0";
-		$(".ShopCarListX").each(function(){
-			id+= "#"+$(this).find("#b_id").text();
-			num+= "#"+$(this).find(".shuliang").text();
+	$("#enterbuy").click(function() {
+		var exg = /^[1][358][0-9]{9}$/;
+		var id = "0";
+		var num = "0";
+		$(".ShopCarListX").each(function() {
+			id += "#" + $(this).find("#b_id").text();
+			num += "#" + $(this).find(".shuliang").text();
 		})
-		if (id=="0") {
+		if (id == "0") {
 			alert("您的购物车还是空的呢！")
-		} else if(exg.test($("#phonenumber").val())){
-			$.ajax({
-			type:"get",
-			url:"php/ShopCar.php",
-			async:false,
-			data:{
-				"type":"5",
-				"id":id,
-				"num":num,
-				"phonenumber":$("#phonenumber").val(),
-				"xiaoqu":$("#xiaoqu").val(),
-				"loudao":$("#loudao").val(),
-				"qinshi":$("#qinshi").val(),
-				"remark":$("#remark").val(),
-				"paymethod":$(".PayMethodsText input").val()
-			},
-			success:function(data){
-				alert(data);
-				window.location.reload();
+		} else if (($("#phonenumber").val() != "") && ($("#xiaoqu").val() != "") && ($("#loudao").val() != "") && ($("#qinshi").val() != "")) { //exg.test($("#phonenumber").val())
+			if (exg.test($("#phonenumber").val())) {
+				$.ajax({
+					type: "get",
+					url: "php/ShopCar.php",
+					async: false,
+					beforeSend:function(){
+						$(".three-quarters-loader").show();
+					},
+					data: {
+						"type": "5",
+						"id": id,
+						"num": num,
+						"phonenumber": $("#phonenumber").val(),
+						"xiaoqu": $("#xiaoqu").val(),
+						"loudao": $("#loudao").val(),
+						"qinshi": $("#qinshi").val(),
+						"remark": $("#remark").val(),
+						"paymethod": $(".PayMethodsText input").val()
+					},
+					success: function(data) {
+						$(".three-quarters-loader").hide();
+						alert(data);
+						window.location.reload();
+					}
+				});
+			} else {
+				alert("请输入正确的手机号！")
 			}
-		});
-		}else{
-			alert("请输入正确手机号！");
+
+		} else {
+			var a = $(".ShopCarList").css('height');
+			$(window).scrollTop(parseInt(a) + 70);
+			alert("带星号为必填项！");
 		}
 	})
 });

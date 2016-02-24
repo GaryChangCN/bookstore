@@ -1,28 +1,24 @@
 $(document).ready(function() {
 	$("#phonenumber").on('focus', function() {
 		PhoneNumberCorrect();
-		checksubmit();
 	});
 	$("#xiaoqu").on('focus', function() {
 		XiaoQuCorrect();
 		if ($("#phonenumber").val() == "") {
 			PhoneNumberError()
 		}
-		checksubmit();
 	});
 	$("#loudao").on('focus', function() {
 		LouDaoCorrect();
 		if ($("#xiaoqu").val() == '') {
 			XiaoQuError();
 		}
-		checksubmit();
 	});
 	$("#qinshi").on('focus', function() {
 		QinShiCorrect()
 		if ($("#loudao").val() == "") {
 			LouDaoError();
 		};
-		checksubmit();
 	});
 	$("#remark").on('focus', function() {
 		if ($("#qinshi").val() == "") {
@@ -36,14 +32,6 @@ $(document).ready(function() {
 //			alert("对不起你信息没有填写完整");
 //		}
 //	})
-    function checksubmit(){
-    	if (($("#phonenumber").val() != "") && ($("#xiaoqu").val() != "") && ($("#loudao").val() != "") && ($("#qinshi").val() != "")) {
-			$("#enterbuy").removeAttr('disabled');
-			$("#enterbuy").attr('value','确认够买');
-		}else{
-			$("#enterbuy").attr({'disabled':'disabled','value':'*号为必填项'});
-		}
-    }
 	function PhoneNumberError() {
 		$("#phonenumber").css({
 			'borderStyle': 'solid',
