@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2016-02-24 12:02:25
+-- 生成日期: 2016-03-15 12:27:49
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -244,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `b_order` (
   `b_admin_remark` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
   `b_pay_method` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=32 ;
 
 --
 -- 转存表中的数据 `b_order`
@@ -268,7 +268,10 @@ INSERT INTO `b_order` (`id`, `b_id`, `b_num`, `b_address`, `b_phone`, `b_remark`
 (25, 42, 1, '9+a89+222', '13262973189', '', '2016-02-24', '11:56:31', 0, '', '货到付款'),
 (26, 41, 1, '9+a89+222', '13262973189', '', '2016-02-24', '11:56:31', 0, '', '货到付款'),
 (27, 42, 4, '1+1+1', '13212344321', '', '2016-02-24', '12:00:29', 0, '', '货到付款'),
-(28, 41, 1, '1+1+1', '13212344321', '', '2016-02-24', '12:00:29', 0, '', '货到付款');
+(28, 41, 1, '1+1+1', '13212344321', '', '2016-02-24', '12:00:29', 0, '', '货到付款'),
+(29, 44, 1, '7+7+7', '13277779999', '', '2016-02-24', '12:54:47', 0, '', '货到付款'),
+(30, 48, 1, '6+1+1', '13262973189', '', '2016-02-24', '13:24:20', 0, '', '货到付款'),
+(31, 48, 1, '1+1+1', '13244446565', '', '2016-02-24', '13:25:16', 0, '', '货到付款');
 
 -- --------------------------------------------------------
 
@@ -480,7 +483,7 @@ CREATE TABLE IF NOT EXISTS `b_visited` (
   `ip` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `browser` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=53 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=55 ;
 
 --
 -- 转存表中的数据 `b_visited`
@@ -535,7 +538,9 @@ INSERT INTO `b_visited` (`id`, `year`, `mouth`, `day`, `ip`, `browser`) VALUES
 (49, '2016', '02', '23', '192.168.1.106', 'Firefox'),
 (50, '2016', '02', '23', '192.168.1.106', 'Firefox'),
 (51, '2016', '02', '23', '192.168.1.106', 'google'),
-(52, '2016', '02', '24', '127.0.0.1', 'google');
+(52, '2016', '02', '24', '127.0.0.1', 'google'),
+(53, '2016', '02', '24', '127.0.0.1', 'google'),
+(54, '2016', '02', '24', '127.0.0.1', 'google');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
