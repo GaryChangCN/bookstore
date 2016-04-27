@@ -1,64 +1,33 @@
-jQuery(function($){
-    $('#slidebox').slideBox();
-    $('#slidebox').slideBox({
-        direction : 'left',//left,top#方向
-        duration : 2,//滚动持续时间，单位：秒
-        easing : 'swing',//swing,linear//滚动特效
-        delay : 5,//滚动延迟时间，单位：秒
-        startIndex : 1//初始焦点顺序
-    });
-});
-//DOM页面加载完成函数==========================================================
-$(document).ready(function(){
-//	导航栏随着滚动放大缩小
-	$(window).on("scroll",function(){
-		if($(window).scrollTop() > 60){
-			$(".hearder").stop().animate({
-				height:'40px'
-			}).css("position","fixed");
-			$(".hearder-logo").stop().animate({
-				width:'100px',
-				top:"8px"
-			},"fast");
-			$(".HearderContentTable").stop().animate({
-				height:'40px'
-			},"fast");
-		}else{
-			$(".hearder").stop().animate({
-				height:'80px'
-			}).css('position','static');
-			$(".hearder-logo").stop().animate({
-				width:'200px',
-				top:"15px"
-			},"fast");
-			$(".HearderContentTable").stop().animate({
-				height:'80px'
-			},"fast");
-		}
-	});
-//	导航栏鼠标悬浮变色
-    $(".HearderContentTable tr td").mouseover(function(){
-    	$(this).css({
-    		'background-color':"#05A2EF",
-    		'cursor':"pointer"
-    	});
-    }).mouseleave(function(){
-    	$(this).css('background-color','#54BAEC');
-    });
-//   导航栏上面点击事件
-    $(".hearder-logo").click(function(){
-		window.location.href = "index.php"
-	});
-    $(".HearderContentTable tr td:nth-child(1)").click(function(){
-    	window.location.href="index.php"
-    });
-    $(".HearderContentTable tr td:nth-child(2)").click(function(){
-    	window.location.href="sell.php"
-    });
-    $(".HearderContentTable tr td:nth-child(3)").click(function(){
-    	window.location.href="buy.php";
-    });
-    $(".HearderContentTable tr td:nth-child(4)").click(function(){
-      	window.open("shopcar.html");
-    });
-})
+function T() {}
+T.prototype.prompt = function(title) {
+        var p = document.createElement("p");
+        p.innerText = title ? title : "未命名";
+        var i=document.createElement("i");
+        var div = document.createElement("div");
+        div.appendChild(p);
+        div.appendChild(i);
+        var textarea = document.createElement("textarea");
+        textarea.clos = "30";
+        textarea.rows = "5";
+        textarea.maxlength = "140";
+        textarea.placeholder = "140字内,建议留下联系方式";
+        var a = document.createElement("a");
+        a.className = "Tbutton";
+        a.href = "#";
+        a.innerText = "确定";
+        var divC = document.createElement("div");
+        divC.className = "Tprompt";
+        divC.appendChild(div);
+        divC.appendChild(textarea);
+        divC.appendChild(a);
+        document.body.appendChild(divC);
+        var close=document.querySelector(".Tprompt i");
+        close.addEventListener("click",function(){
+        	document.body.removeChild(divC);
+        });
+}
+T.prototype.enter=function(){
+	var divC=document.querySelector(".Tprompt");
+	return divC.childNodes[1].value;
+	document.body.removeChild(divC);
+}
