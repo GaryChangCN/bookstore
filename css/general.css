@@ -1,95 +1,152 @@
-*{
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-	font-family: "黑体";
-	font-weight: 100;
+* {
+    margin: 0px;
+    padding: 0px;
+    bottom: 0px;
+    font-family: "黑体";
+    font-weight: 100;
 }
-tr,td,ul,li{
-	cursor: pointer;
+
+li,
+ol,
+ul {
+    list-style: none outside;
 }
-.container {
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+}
+
+#headerContent,
+#midContent,
+#bottomContent {
+    width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header {
+    height: 89px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+#headerContentLogo {
+    width: 180px;
+    height: 90px;
+    background-color: rgb(224, 92, 73);
+    float: left;
+}
+
+#headerContentLogo::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 90px;
+    width: 2px;
+    border-top: 30px solid rgb(224, 92, 73);
+    border-bottom: 0px solid transparent;
+    border-left: 89px solid transparent;
+    border-right: 89px solid transparent;
+}
+
+#headerUl {
+    width: 810px;
+    height: 90px;
+    float: right;
+}
+
+#headerUl>li {
+    float: left;
+    height: 88px;
+    line-height: 88px;
+    width: 100px;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+#headerUl>li:first-child {
+    margin-left: 410px;
+}
+
+#headerUl>li a {
+    text-decoration: none;
+}
+
+#headerUl>li a:link {
+    color: black;
+}
+
+#headerUl>li a:visited {
+    color: black;
+}
+
+#headerUl>li a:hover {
+    color: rgb(224, 92, 73);
+    text-decoration: none;
+}
+
+.Tprompt{
+    width: 400px;
+    height: 250px;
+    border: 2px solid rgb(224, 92, 73);
+    position: fixed;
+    background-color: #fff;
+    left: calc(50% - 200px);
+    top: 300px;
+}
+.Tprompt>div:first-child{
 	width: 100%;
-	/*position: relative;*/
-}
-
-.hearder {
-	width: 100%;
-	height: 80px;
-	background-color: #54baec;
-	margin-bottom: 5px;
-	z-index: 99;
-}
-
-.hearder-content,
-.content {
-	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.hearder-content {
-	height: 80px;
-}
-
-.hearder-logo {
-	position: relative;
-	top: 15px;
-	width: 200px;
-}
-
-.HearderContentTable {
-	position: relative;
-	float: right;
-	height: inherit;
-}
-
-.HearderContentTable tr td {
+	background-color: rgb(224,92,73);
+	height: 40px;
 	text-align: center;
-	width: 80px;
-	margin: 0px;
-	border-left: 1px dashed #0392dc;
-	transform: skew(-25deg, 0deg);
-	-ms-transform: skew(-25deg, 0deg);
-	/* IE 9 */
-	-webkit-transform: skew(-25deg, 0deg);
-	/* Safari and Chrome */
-	-o-transform: skew(-25deg, 0deg);
-	/* Opera */
-	-moz-transform: skew(-25deg, 0deg);
+	font-size: 1.7rem;
+	color: #fff;
+	line-height: 40px
 }
-
-.HearderContentTable tr td div {
-	font-weight: 100;
-	color: black;
-	transform: skew(25deg, 0deg);
-	-ms-transform: skew(25deg, 0deg);
-	/* IE 9 */
-	-webkit-transform: skew(25deg, 0deg);
-	/* Safari and Chrome */
-	-o-transform: skew(25deg, 0deg);
-	/* Opera */
-	-moz-transform: skew(25deg, 0deg);
+.Tprompt i::after{
+	content: "×";
+	font-style: normal;
+	position: fixed;
+	top: 300px;
+	right: calc(50% - 195px);
 }
-
-.HearderContentTable tr td:last-child {
-	border-right: 1px dashed #0392dc;
+.Tprompt>textarea{
+	width: 310px;
+	margin: 35px 35px 10px 35px;
+	font-size: 1.5rem;
+	border-color: rgba(224,92,73,0.5);
+	padding: 10px;
 }
-
-#slidebox {
-	width: 100%;
-	padding-top: 10px;
+.Tbutton{
+	margin: 0px auto 0px auto;
+	text-align: center;
+	line-height: 40px;
+	font-size:1.5rem;
 }
-
-.items {
-	width: 100%;
+.Tbutton:link{
+	color: #fff;
+	text-decoration: none;
+	display: block;;
+	width: 90px;
+	height: 40px;	
+	background-color: rgba(244,92,73,0.5);
+	border;2px solid transprant;
 }
-
-.items li {
-	width: 100%;
+.Tbutton:visited{
+	color: #fff;
+	text-decoration: none;
 }
-
-.slideBoxPic {
-	width: 100%;
-	height: 400px;
+.Tbutton:hover{
+	color: #fff;
+	text-decoration: none;
+	background-color: rgba(244,92,73,0.7);
+}
+.Tbutton:active{
+	color: #fff;
+	text-decoration: none;
+	background-color: rgba(244,92,73,1);
 }

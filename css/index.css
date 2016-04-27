@@ -1,148 +1,85 @@
-.ServerContent {
-	margin-top: 15px;
+#headerUl>li:first-child{
+	margin-left: 410px;
+	border-bottom: 2px solid rgb(224,92,73);
+}
+#mid{
 	width: 100%;
+	background-color: rgb(244,247,237);
+	height: 560px;
 }
-
-.ServerContentJuxing {
-	width: 15px;
-	height: 48px;
-	background-color: #e05c49;
-	position: absolute;
+#midContentImg{
+	width: 990px;
+	height: 520px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
-
-.ServerContentText {
-	position: relative;
-	left: 20px;
-	font-size: 1em;
+#bottom{
+	widows: 100%;
+	background-color:rgb(221,217,197);
 }
-
-.ServerContentText span:nth-child(1) {
-	color: #E05C49;
-	font-weight: 800;
-	font-size: 1.5em;
-}
-
-.ServerContentText span:last-child {
-	color: #E05C49;
-	font-weight: 200;
-}
-
-.SellBuyList {
+#bottomContentUl{
 	width: 100%;
-	margin-top: 15px;
+	height: 150px;
 }
-
-.SellBuyListTable {
-	width: 100%;
-	padding: 0;
+#bottomContentUl>li{
+	float: left;
+	margin: 15px 0px 15px 0px;
 }
-
-.SellBuyList tr {
-	width: 100%;
+#bottomContentUl>li:first-child{
+	width: 285px !important;
+	height: 130px !important;
+	background-color: rgb(201,192,155);
+	font-size: 1.4rem;
+	padding: 10px 20px 10px 20px;
+	color: rgba(255,255,255,0.8);
+	margin-right: 5px;
 }
-
-.SellBuyList tr td {
-	height: 130px;
-	padding: 0px;
-}
-
-.SellBuyList tr td:nth-child(1) {
-	width: 303px;
-	background-color: #E05C49;
-	border-right: 30px solid white;
-}
-
-.SellBuyList tr td:nth-child(2) {
-	background-color: #54BAEC;
-	width: 304px;
-	border-right: 15px solid white;
-	border-left: 15px solid white;
-}
-
-.SellBuyList tr td:nth-child(3) {
-	width: 303px;
-	background-color: lightgrey;
-	border-left: 30px solid white;
-}
-
-.OurService,
-.OurDynamic {
-	margin-top: 15px;
-	width: 100%;
-}
-
-.OurServiceText,
-.OurDynamicText {
-	font-weight: 600;
-	width: 100%;
-}
-
-.OurServiceJuxing,
-.OurDynamicJuxing {
-	margin-top: 3px;
-	width: 100%;
-	height: 3px;
-	border: 1px solid #E05C49;
-}
-
-.OurServiceJuxingTianchong,
-.OurDynamicJuxingTianchong {
-	width: 100px;
-	background-color: #E05C49;
-	height: inherit;
-}
-
-.OurDynamicContent {
-	margin-top: 3px;
-	padding-left: 15px;
-	padding-right: 15px;
-	/*text-indent: 2em;*/
-}
-
-.OurDynamicContent:first-letter {
-	font-size: 2em;
-}
-
-.OurServiceList,
-.OurServiceListTable,
-.OurServiceListTable tr {
-	width: 100%;
-}
-
-.OurServiceListTable tr td {
-	width: 25%;
-	padding: 0px;
-	padding: 15px;
-	text-align: center;
-	border: 1px solid teal;
-	border: 0px;
-}
-
-.OurServiceListTable tr td div:nth-child(odd) {
-	width: 70px;
-	height: 70px;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 50%;
-	background-color: #E05C49;
+#bottomContentUl>li:first-child>p::before{
+	content: "最新公告";
+	display: block;
+	font-size: 2rem;
 	margin-bottom: 10px;
-	margin-top: 25px;
-	line-height: 70px;
-}
-.OurServiceListTable tr td div img{
-	width: 70px;
-	height: 70px;
-}
-.OurServiceListTable tr td div:nth-child(even) {
-	height: 200px;
-	padding-left: 15px;
-	padding-right: 15px;
 	margin-top: 5px;
 }
-
-.footer {
-	height: 40px;
-	line-height: 40px;
+#bottomContentUl>li:first-child>p{
+	display: block;
+	height: 120px;
+	overflow: hidden;
+}
+#bottomContentUl>li:nth-child(2){
+	height: 150px;
+	width: 370px!important;
+	background-color: rgb(247,239,200);
+}
+#bottomContentUl>li:nth-child(3){
+	width: 255px!important;
+	background-color: rgb(201,192,155);
+	font-size: 3rem;
+	color: rgba(255,255,255,0.8);
+	text-align: right;
+	padding: 100px 30px 0px 0px;
+	height: 50px;
+	margin-left: 5px;
+}
+#bottomAboutus{
+	font-size: 1.7rem;
+	color: rgba(255,255,255,0.7);
+	text-indent: 2rem;
+	min-height: 150px;
+	margin-bottom: 15px;
+}
+#footer{
 	text-align: center;
-	background-color: #54BAEC;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.5rem;
+	color: black;
+	opacity: 0.5;
+}
+#qrcode{
+	position: fixed;
+	width: 100px;
+	max-height: 300px;
+	right: calc((100% - 1000px) / 2 - 130px);
+	top:550px;
 }
