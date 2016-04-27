@@ -13,7 +13,8 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-/admin/conn.php
+/ser/conn.php
+/ser/xszcconn.php
 # Windows shortcuts
 *.lnk
 
