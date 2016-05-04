@@ -62,13 +62,15 @@ switch ($type) {
 		break;
 	case '4' :
 		$majorId=$_GET['majorId'];
+		$collegeId=$_GET['collegeId'];
+		$gradeId=$_GET['gradeId'];
 		$arr = array();
-		$q2 = $link -> query("SELECT COUNT(id_product) FROM b_rel_pro_maj WHERE id_category_major='$majorId'");
+		$q2 = $link -> query("SELECT COUNT(id_product) FROM b_rel_pro_maj WHERE id_category_major='$majorId' AND id_category_college='$collegeId' AND id_category_grade='$gradeId'");
 		$r2 = $q2 -> fetch_row();
 		if ($r2[0] <= 0) {
 			$arr['code'] = 1;
 		} else {
-			$q1 = $link -> query("SELECT id_product FROM b_rel_pro_maj WHERE id_category_major='$majorId'");
+			$q1 = $link -> query("SELECT id_product FROM b_rel_pro_maj WHERE id_category_major='$majorId' AND id_category_college='$collegeId' AND id_category_grade='$gradeId'");
 			while ($r1 = $q1 -> fetch_row()) {
 				$tmp = $r1[0];
 				$q3 = $link -> query("SELECT * FROM b_product WHERE id='$tmp'");
