@@ -1,0 +1,132 @@
+/*.hotSell{  
+    width: 0px;
+    height: 0px;
+    display: block;
+    float: left;
+    position: relative;
+    bottom: 412px;
+    right: 10px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 20px;
+    border-left-color: rgb(224,92,73);
+    border-top-color: rgb(224,92,73);
+}*/
+#buyLi{
+	border-bottom: 2px solid rgb(224,92,73);
+}
+li{
+	cursor: pointer;
+}
+#searchContent{
+	width: 990px;
+	margin: 0px auto 0px auto;
+	height: 30px;
+	margin-top: 10px;
+}
+#search{
+	height: 30px;
+	border: 1px solid rgb(224,92,73);
+	width: 220px;
+	margin-left: 720px;
+	font-size: 2rem;
+	padding-left: 5px
+}
+#searchContent>span{
+	display: inline-block;
+	width: 50px;
+	height: 30px;
+	float: right;
+	background-color: rgb(224,93,73);
+	line-height: 30px;
+	text-align: center;
+	color: rgb(255,255,255);
+	font-size: 1.4rem;
+}
+#content{
+	width: 990px;
+	margin: 0px auto 0px auto;
+}
+#content ul{
+	overflow: auto;
+}
+.contentLi{
+	border:1px solid rgb(249,247,237) !important;
+	background-color: rgb(249,247,237);
+	/*color: rgb(255,255,255);*/
+}
+#content ul li{
+	float: left;
+	height: 15px;
+	padding: 5px 10px 5px 10px;
+	margin: 5px 10px 5px 0px;
+	border:1px solid rgb(249,247,237);
+	text-align: center;
+}
+#book{
+	width: 990px;
+	margin: 20px auto 20px auto;
+	overflow: auto;
+}
+#book li{
+	float: left;
+	width: 218px;
+	height: 410px;
+	max-height: 410px;
+	overflow: hidden;
+	border:1px solid rgb(249,247,237);
+	padding: 10px;
+	margin-left: 3.5px;
+	margin-right: 4px;
+	margin-bottom: 7.5px;
+}
+#book li img{
+	width: 218px;
+	height: 307.5px;
+	margin-bottom: 15px;
+}
+#book li span:nth-child(even){
+	display: inline-block;
+	margin-right: 5px;
+	color: rgb(224,92,73);
+	font-weight: 600;
+	font-size: 2.5rem;
+}
+#book li p{
+	display: block;
+	padding: 5px;
+	margin-top: 5px;
+	font-size: 1.3rem;
+	max-height: 55px;
+	min-height: 55px;
+	overflow: hidden;
+}
+#pageNumber{
+	width: 990px;
+	margin: 0px auto 20px auto;
+	overflow: auto;
+}
+#pageNumber li{
+	float: right;
+	width: 25px;
+	height: 25px;
+	border-color: rgb(224,92,73);
+	border-width: 1px 0px 1px 1px;
+	border-style: solid;
+	text-align: center;
+	line-height: 25px;
+}
+#pageNumber li:first-child{
+	border-right: 1px solid rgb(224,92,73);
+	margin-right: 3px;
+}
+#pageNumber li:last-child{
+	background-color: rgb(224,92,73);
+	color: white;
+}
+#hr{
+	width: 100%;
+	height: 2px;
+	background-color: rgb(224,92,73);
+	margin: 15px 0px 0px 0px;
+}
