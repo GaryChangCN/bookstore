@@ -80,6 +80,9 @@ li{
 	margin-right: 4px;
 	margin-bottom: 7.5px;
 }
+.bookHover{
+	box-shadow: 0px 0px 10px 1px #eee;
+}
 #book li img{
 	width: 218px;
 	height: 307.5px;
