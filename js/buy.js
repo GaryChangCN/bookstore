@@ -2,6 +2,13 @@
 //记录年级-学院-专业的id//
 ///////////////////////////
 (function() {
+    var a = new T();
+
+    function TalertClose() {
+        document.querySelector(".Talert>.Tbutton").onclick = function() {
+            a.close();
+        }
+    }
     var dataId = new Object();
     ///////////////////////////
     //样式切换效果           //
@@ -23,6 +30,35 @@
             }
         });
     })();
+    //选中标签效果
+    (function() {
+        var ul = document.getElementById("book");
+        ul.addEventListener("mouseover", function(event) {
+            var target = event.target;
+            var children = target.children;
+            var len = children.length;
+            for (var i = 0; i < len; i++) {
+                children[i].removeAttribute("class");
+            }
+            var tagName = target.tagName.toLowerCase();
+            if (tagName != "ul" && tagName == "li") {
+                target.setAttribute("class", "bookHover");
+            } else if (tagName == "span" || tagName == "p") {
+                target.parentNode.setAttribute("class", "bookHover");
+            }
+        });
+        ul.addEventListener("mouseleave", function() {
+            var target = event.target;
+            var children = target.children;
+            var len = children.length;
+            for (var i = 0; i < len; i++) {
+                children[i].removeAttribute("class");
+            }
+        });
+    })();
+    /////
+    // pageNumber切换动画//
+    /////
     (function() {
         var a = document.getElementById("pageNumber");
         a.addEventListener("click", function() {
@@ -73,7 +109,9 @@
                     var content = document.getElementById("content");
                     content.appendChild(ul);
                 } else {
-                    alert("出错了!错误代码" + json.code);
+                    a.close();
+                    a.Talert("出错了", "出错了错误代码：" + json.code);
+                    TalertClose();
                 }
             },
             beforeSend: function() {}
@@ -189,7 +227,9 @@
                     }
                     content.appendChild(ul);
                 } else {
-                    alert("出错了!错误代码" + json.code);
+                    a.close();
+                    a.Talert("出错了", "错误代码：" + json.code);
+                    TalertClose();
                 }
             },
             beforeSend: function() {}
@@ -235,7 +275,9 @@
                     }
                     content.appendChild(ul);
                 } else {
-                    alert("出错了!错误代码" + json.code);
+                    a.close();
+                    a.Talert("出错了", "错误代码：" + json.code);
+                    TalertClose();
                 }
             },
             beforeSend: function() {}
@@ -339,7 +381,9 @@
                 book(1, 16);
             }
         } else {
-            alert("出错了!错误代码" + json.code);
+            a.close();
+            a.Talert("出错了", "错误代码：" + json.code);
+            TalertClose();
         }
     }
 })();
