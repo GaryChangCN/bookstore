@@ -91,7 +91,7 @@ body {
     text-decoration: none;
 }
 
-.Tprompt{
+.Tprompt,.Talert{
     width: 400px;
     height: 250px;
     border: 2px solid rgb(224, 92, 73);
@@ -100,7 +100,7 @@ body {
     left: calc(50% - 200px);
     top: 300px;
 }
-.Tprompt>div:first-child{
+.Tprompt>div:first-child,.Talert>div:first-child{
 	width: 100%;
 	background-color: rgb(224,92,73);
 	height: 40px;
@@ -109,12 +109,22 @@ body {
 	color: #fff;
 	line-height: 40px
 }
-.Tprompt i::after{
+.Tprompt i::after,.Talert i::after{
 	content: "×";
 	font-style: normal;
 	position: fixed;
 	top: 300px;
 	right: calc(50% - 195px);
+}
+.Talert>p{
+    display: block;
+    width: 280px;
+    margin:15px auto 20px auto;
+    height: 80px;
+    padding: 15px;
+    overflow: auto;
+    font-size: 1.5rem;
+    color: rgb(224,92,73);
 }
 .Tprompt>textarea{
 	width: 310px;
@@ -136,7 +146,7 @@ body {
 	width: 90px;
 	height: 40px;	
 	background-color: rgba(244,92,73,0.5);
-	border;2px solid transprant;
+	border:2px solid transprant;
 }
 .Tbutton:visited{
 	color: #fff;
