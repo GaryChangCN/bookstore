@@ -1,0 +1,101 @@
+#headerUl>li:nth-child(3){
+	border-bottom: 2px solid rgb(224,92,73);
+}
+#midContent{
+	background-image: url(../img/main/sellMain.jpg);
+	background-repeat: no-repeat;
+	background-size: 990px auto;
+	background-position: center top;
+	background-color: rgb(227,240,236);
+	width: 100%;
+	height: 1000px;
+}
+#content{
+	width: 990px;
+	margin: 0px auto 0px auto;
+	padding-top: 150px;
+}
+#form{
+	width: 400px;
+	height: 500px;
+	background-color: rgb(239,246,243);
+	box-shadow: 0px 0px 4px 0px rgb(200,200,200);
+	padding-top: 50px;
+	font-size: 1.5rem;
+	overflow: auto;
+	color: rgb(201,192,155);
+}
+#form>p{
+	display: block;
+	text-align: center;
+	font-size: 2.2rem;
+}
+input{
+	width: 50%;
+	height: 30px;
+	background-color: rgb(227,240,236);
+	border:1px solid rgb(249,247,237);
+	border-left-width: 0px;
+	border-radius: 0px 10px 10px 0px;
+	padding-left: 5px;
+	float: left;
+	margin-top: 30px;
+}
+#form span{
+	float: left;
+	display:block;
+	width: 20%;
+	height: 30px;
+	margin-left: 15%;
+	background-color: rgb(227,240,236);
+	border:1px solid rgb(249,247,237);
+	border-right-width: 0px;
+	border-radius: 10px 0px 0px 10px;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 30px;
+}
+#form textarea{
+	width: calc(70% - 30px);
+	margin-top: 30px;
+	float: left;
+	position: relative;
+	left: 15%;
+	height: 60px;
+	padding: 5px 15px 5px 15px;
+	background-color: rgb(227,240,236);
+	border:1px solid rgb(249,247,237);
+	border-radius: 10px;
+}
+#form a{
+	float: left;
+	width: 40%;
+	margin-left: 30%;
+	margin-top: 30px;
+	border-radius: 10px;
+	border:1px solid rgb(0,0,0);
+	color: inherit;
+	border:1px solid rgb(201,192,155);
+}
+#form a:link{
+	background-color: rgba(227,240,236,0.5);
+	color: inherit;
+	border:1px solid rgb(201,192,155);
+}
+#form a:visted{
+	color: inherit;
+	border:1px solid rgb(201,192,155);
+}
+#form a:hover{
+	background-color: rgba(227,240,236,1);
+	color: inherit;
+	border:1px solid rgb(201,192,155);
+}
+#form a:active{
+	background-color: rgb(201,192,155);
+	color: inherit;
+	border:1px solid rgb(201,192,155);
+}
+.required{
+	border:1px solid rgb(224,92,73);
+}
