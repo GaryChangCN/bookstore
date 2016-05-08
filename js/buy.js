@@ -30,7 +30,7 @@
             }
         });
     })();
-    //选中标签效果
+    //选中/点击标签效果
     (function() {
         var ul = document.getElementById("book");
         ul.addEventListener("mouseover", function(event) {
@@ -43,7 +43,7 @@
             var tagName = target.tagName.toLowerCase();
             if (tagName != "ul" && tagName == "li") {
                 target.setAttribute("class", "bookHover");
-            } else if (tagName == "span" || tagName == "p") {
+            } else if (tagName == "span" || tagName == "p"||tagName=="img") {
                 target.parentNode.setAttribute("class", "bookHover");
             }
         });
@@ -54,6 +54,19 @@
             for (var i = 0; i < len; i++) {
                 children[i].removeAttribute("class");
             }
+        });
+        ul.addEventListener("click", function(event) {
+            var target = event.target;
+            var children = target.children;
+            var len = children.length;
+            var tagName = target.tagName.toLowerCase();
+            var id;
+            if (tagName != "ul" && tagName == "li") {
+                id=target.dataset.id;
+            } else if (tagName == "span" || tagName == "p"||tagName=="img") {
+                id=target.parentNode.dataset.id;
+            }
+            window.open("bookDetail.html?id="+id)
         });
     })();
     /////
