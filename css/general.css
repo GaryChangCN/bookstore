@@ -145,7 +145,7 @@ body {
 	display: block;;
 	width: 90px;
 	height: 40px;	
-	background-color: rgba(244,92,73,0.5);
+	background-color: rgba(244,92,73,1);
 	border:2px solid transprant;
 }
 .Tbutton:visited{
@@ -160,5 +160,5 @@ body {
 .Tbutton:active{
 	color: #fff;
 	text-decoration: none;
-	background-color: rgba(244,92,73,1);
+	background-color: rgba(244,92,73,0.5);
 }
