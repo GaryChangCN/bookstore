@@ -26,13 +26,14 @@
                 var od = parseFloat(json.oldDiscount) / 10;
                 document.getElementById("hr").innerText = json.name;
                 document.querySelector("#bookDetail li:nth-child(1)").innerText = json.name;
-                bookData.name=json.name;
+                document.title = json.name;
+                bookData.name = json.name;
                 document.querySelector("#bookDetail li:nth-child(2)").innerText = "出版社：" + json.publish;
-                bookData.publish=json.publish;
+                bookData.publish = json.publish;
                 document.querySelector("#bookDetail li:nth-child(3)").innerText = "作者：" + json.editor;
-                bookData.editor=json.editor;
+                bookData.editor = json.editor;
                 document.querySelector("#bookDetail li:nth-child(4)").innerText = "ISBN" + json.isbn;
-                bookData.isbn=json.isbn;
+                bookData.isbn = json.isbn;
                 if (nd == 0) {
                     document.querySelector("#bookDetail li:nth-child(5)").innerHTML = "新书价格：<span></span><span>￥" + np.toFixed(2) + "</span>";
                     bookData.newPrice = np.toFixed(2);
@@ -48,7 +49,7 @@
                     bookData.oldPrice = (op * od).toFixed(2);
                 }
                 document.getElementById("imgContent").style.backgroundImage = "url(./img/book/" + json.picPath + ")";
-                bookData.picPath=json.picPath;
+                bookData.picPath = json.picPath;
             } else {
                 a.Talert("错误", "错误代码：" + json.code);
                 document.querySelector(".Talert .Tbutton").onclick = function() {
@@ -76,7 +77,6 @@
                         a.close();
                     }
                 }
-                bookData.number = v.value;
             } else {
                 a.Talert("提示", "请先选择种类。");
                 document.querySelector(".Talert .Tbutton").onclick = function() {
@@ -95,7 +95,6 @@
                         a.close();
                     }
                 }
-                bookData.number = v.value;
             } else {
                 a.Talert("提示", "请先选择种类。");
                 document.querySelector(".Talert .Tbutton").onclick = function() {
@@ -110,32 +109,40 @@
             this.style.borderColor = "rgb(224,92,73)";
             v.value = '1';
             bookData.kind = 'new';
-            bookData.price=bookData.newPrice;
+            bookData.price = bookData.newPrice;
         }
         oldBook.onclick = function() {
             newBook.style.borderColor = "#eee";
             this.style.borderColor = "rgb(224,92,73)";
             v.value = '1';
             bookData.kind = 'old';
-            bookData.price=bookData.oldPrice;
+            bookData.price = bookData.oldPrice;
         }
         var addShopcar = document.querySelector("#bookDetail li a.Tbutton");
         addShopcar.onclick = function() {
-            var list = localStorage.list;
-            if (list) {
-                var a = JSON.parse(list);
-                a.list.push(bookData);
-                localStorage.list = JSON.stringify(a);
-            } else {
-                var a = {
-                    'list': [bookData]
+            var b = new T();
+            if (bookData.kind) {
+                bookData.number = v.value;
+                var list = localStorage.list;
+                if (list) {
+                    var a = JSON.parse(list);
+                    a.list.push(bookData);
+                    localStorage.list = JSON.stringify(a);
+                } else {
+                    var a = {
+                        'list': [bookData]
+                    }
+                    localStorage.list = JSON.stringify(a);
                 }
-                localStorage.list = JSON.stringify(a);
-            }
-            var b=new T();
-            b.Talert("提示", "添加到购物车成功，请到上方购物车查看。");
-            document.querySelector(".Talert .Tbutton").onclick = function() {
-                b.close();
+                b.Talert("提示", "添加到购物车成功，请到上方购物车查看。");
+                document.querySelector(".Talert .Tbutton").onclick = function() {
+                    b.close();
+                }
+            } else {
+                b.Talert("提示", "请先选择图书种类");
+                document.querySelector(".Talert .Tbutton").onclick = function() {
+                    b.close();
+                }
             }
         }
     })();
