@@ -36,7 +36,7 @@ T.prototype.prompt = function(title) {
     textarea.placeholder = "140字内,建议留下联系方式";
     var a = document.createElement("a");
     a.className = "Tbutton";
-    a.href = "#";
+    a.href = "#1";
     a.innerText = "确定";
     var divC = document.createElement("div");
     divC.className = "Tprompt";
@@ -57,7 +57,7 @@ T.prototype.Talert = function(title, content) {
     var p = document.createElement("p");
     p.innerText = content;
     var a = document.createElement("a");
-    a.href = "#";
+    a.href = "#1";
     a.className = "Tbutton";
     a.innerText = "确定";
     divC.appendChild(div);

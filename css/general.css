@@ -41,6 +41,7 @@ body {
     height: 90px;
     background-color: rgb(224, 92, 73);
     float: left;
+    background-image: url("../img/main/logo.png");
 }
 
 #headerContentLogo::after {

@@ -20,4 +20,5 @@ $q2=$link->query("SELECT last_insert_id() AS id");
 $r2=$q2->fetch_row();
 $data['id']=$r2[0];
 echo json_encode($data);
+$link->close();
 ?>
