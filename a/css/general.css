@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: "黑体"
+}
+li,
+ol,
+ul {
+    list-style: none outside;
+}
+
+html {
+    font-size: 62.5%;
+}
+.Tbutton{
+	margin: 0px auto 0px auto;
+	text-align: center;
+	line-height: 40px;
+	font-size:1.5rem;
+}
+.Tbutton:link{
+	color: #fff;
+	text-decoration: none;
+	display: block;;
+	width: 90px;
+	height: 40px;	
+	background-color: rgba(244,92,73,1);
+	border:2px solid transprant;
+}
+.Tbutton:visited{
+	color: #fff;
+	text-decoration: none;
+}
+.Tbutton:hover{
+	color: #fff;
+	text-decoration: none;
+	background-color: rgba(244,92,73,0.7);
+}
+.Tbutton:active{
+	color: #fff;
+	text-decoration: none;
+	background-color: rgba(244,92,73,0.5);
+}

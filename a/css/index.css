@@ -1,0 +1,53 @@
+
+.header{
+	height: 60px;
+	border-bottom: 2px solid #eee;
+}
+.header div{
+	background-color: rgb(224,92,73);
+	height: inherit;
+	float: left;
+	background-image: url("../../img/main/logo.png");
+	width: 200px;
+	background-repeat: no-repeat;
+	background-size: 150px auto;
+	background-position: center center;
+}
+.container{
+	overflow: auto;
+}
+.header p{
+	height: inherit;
+	display: inline-block;
+	font-size: 2rem;
+	line-height: 60px;
+	margin-left: 50px;
+}
+.header p:last-child{
+	float: right;
+}
+.header .Tbutton{
+	float: right;
+	margin:10px 20px auto 20px;
+}
+.left{
+	width: 200px;
+	border-right: 2px solid #eee;
+	overflow: auto;
+	float: left;
+}
+.left li{
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #eee;
+	padding-left: 15px;
+	font-size: 1.4rem;
+	cursor: pointer;
+}
+.right{
+	width: calc(100% - 202px);
+	float: left;
+}
+.right iframe{
+	width: 100%;
+}
