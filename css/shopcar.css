@@ -94,9 +94,12 @@
 #address{
 	float: left;
 	height: 30px;
+	position: fixed;
+	bottom: 0px;
 	background-color: transparent;
 	width: 360px;
 	border-left:20px solid rgb(224,91,73);
+	border-top:5px solid rgb(224,91,73);
 	padding: 10px 10px 10px 10px;
 	cursor: pointer;
 }

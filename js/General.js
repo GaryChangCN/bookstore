@@ -1,26 +1,20 @@
 function myBrowser() {
-    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
-    var isOpera = userAgent.indexOf("Opera") > -1;
-    if (isOpera) {
-        return "Opera"
-    }; //判断是否Opera浏览器
-    if (userAgent.indexOf("Edge") > -1) {
-        return "Edge";
+    var userAgent = navigator.userAgent;
+    var state=true;
+    if (localStorage) {
+        state = true;
     }
-    if (userAgent.indexOf("Firefox") > -1) {
-        return "FF";
-    } //判断是否Firefox浏览器
-    if (userAgent.indexOf("Chrome") > -1) {
-        return "Chrome";
+    if (/MSIE ([^;]+)/.test(userAgent)) {
+        state = false;
     }
-    if (userAgent.indexOf("Safari") > -1) {
-        return "Safari";
-    } //判断是否Safari浏览器
-    if (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera) {
-        return "IE";
-    } //判断是否IE浏览器
+    return  state;
 }
-
+if(!myBrowser()){//不支持ie
+    var header=document.getElementById("header");
+    var div=document.createElement("div");
+    div.innerHTML="<div style='height:50px;border-bottom:2px solid #eee;font-size:1.5rem;text-align:center;line-height:50px;color:rgb(84,186,236)'>浏览器不支持该网站，请切换成极速内核或更换为Chrome、FireFox等高级浏览器并确保允许用户缓存</div>"
+    document.body.insertBefore(div,header);
+}
 function T() {}
 T.prototype.prompt = function(title) {
     var p = document.createElement("p");

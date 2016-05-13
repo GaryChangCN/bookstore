@@ -49,6 +49,9 @@
 	height: 150px;
 	width: 370px!important;
 	background-color: rgb(247,239,200);
+	background-position: center center;
+	background-size: 370px 150px;
+	background-repeat: no-repeat;
 }
 #bottomContentUl>li:nth-child(3){
 	width: 255px!important;
