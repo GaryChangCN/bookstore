@@ -12,11 +12,12 @@ spam {
     line-height: 60px;
     border-bottom: 4px solid #eee;
     border-top: 2px solid #eee;
+    background-color: #fff;
+    z-index: 99;
 }
 
 ul {
     width: 100%;
-    /*margin-top: 66px;*/
     margin-top: 76px;
 }
 
@@ -29,16 +30,38 @@ ul li {
 }
 
 ul li:nth-child(even) {
-    background-color: rgb(249, 247, 237);
+    background-color:rgb(250,250,250);
 }
-ul>li:first-child>div{
-	width: 320px;
+ul>li>div{
+	width: 330px;
 	background-color: #eee;
 	height: 40px;
 	margin:auto;
 	position: relative;
 	top: 5px;
 	border-radius: 5px;
+	padding: 0px 5px 0px 5px;
+}
+.required{
+	/*background-color: rgb(224,92,73);*/
+	border:1px solid rgb(224,92,73);
+	color: rgb(224,92,73);
+}
+ul>li>div>span{
+	display:block;
+	height: 40px;
+	width: 45px;
+	float: left;
+	line-height: 40px;
+	font-size: 1.3rem;
+}
+ul>li>div>input{
+	height: 38px;
+	width: 275px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding:0px 5px 0px 5px;
+	float: left; 
 }
 ul>li:first-child>div>input{
 	height: 38px;
@@ -53,8 +76,53 @@ ul>li:first-child>div>span{
 	height: 40px;
 	width: 40px;
 	float: left;
-	line-height: 40px;
-	font-size: 1.5rem;
-	border-radius: 0px 5px 5px 0px;
 }
-
+ul>li:first-child>div>span:hover{
+	background-color: rgb(200,200,200);
+}
+ul>li:first-child>div>span:first-child{
+	padding-right: 5px;
+	background-image: url("../../img/main/cam.gif");
+	background-position: 40% 50%;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+ul>li:first-child>div>span:last-child{
+	padding-left: 5px;
+	background-image: url("../../img/main/search.gif");
+	background-position: 60% 50%;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+ul>li:last-child{
+	height: 200px;
+}
+ul>li:last-child>div{
+	height: 180px;
+}
+ul>li:last-child>div>img{
+	float: left;
+	height: 180px;
+	width: 130px;
+}
+ul>li:last-child>div>p{
+	width: 150px;
+	height: 48px;
+	margin-top:65px;
+	float: left;
+	line-height: 48px;
+	text-align: center;
+}
+ul>li:last-child>div>input{
+	width: 100px;
+	height: 48px;
+	margin-top:65px;
+	display: none;
+}
+.submit{
+	position: fixed;
+	bottom: 40px;
+	right: 10%;
+	box-shadow: 2px 2px 5px 0px rgb(150,150,150);
+	width: 50px;
+}

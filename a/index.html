@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <title>后台管理</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script type="text/javascript">
+    	if(typeof sessionStorage){
+    		if(!sessionStorage.token){
+    			window.location.href="login.html";
+    		}
+    	}else{
+    		alert("不支持此浏览器请切换极速模式或更换为chrome等高级浏览器");
+    		window.close();
+    	}
+    </script>
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>

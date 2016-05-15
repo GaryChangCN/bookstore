@@ -4,9 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>上架</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script>
+    	if(typeof sessionStorage){
+    		if(sessionStorage.token&&(window.frames.length!=window.parent.frames.length)){
+    		}else{
+    			window.location.href="index.html";
+    		}
+    	}else{
+    		alert("不支持此浏览器请切换极速模式或更换为chrome等高级浏览器");
+    		window.close();
+    	}
+    </script>
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/shangjia.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
+    <script type="text/javascript" src="js/fileupload.js"></script>
     <script type="text/javascript" src="js/shangjia.js"></script>
 </head>
 
@@ -14,20 +28,76 @@
     <p class="title">输入ISBN号快速上架</p>
     <ul>
         <li>
-            <div>
-                <span>搜</span>
-                <input type="text" />
-                <span id="ok">ok</span>
+            <div class="needisbn">
+                <span></span>
+                <input id="isbn" type="text" placeholder="必填！请输入13位ISBN" />
+                <span id="search"></span>
             </div>
         </li>
-        <li>2</li>
-        <li>3</li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>
+        	<div class="needname">
+                <span>书名</span>
+                <input id="name" type="text" placeholder="必填！" />
+            </div>
+        </li>
+        <li>
+        	<div class="needpublisher">
+                <span>出版社</span>
+                <input id="publisher" type="text" placeholder="必填！" />
+            </div>
+        </li>
+        <li>
+        	<div class="neededitor">
+                <span>作者</span>
+                <input id="editor" type="text" placeholder="必填！" />
+            </div>
+        </li>
+        <li>
+        	<div class="needprice">
+                <span>新书价</span>
+                <input id="newPrice" type="text" placeholder="必填！默认为定价" />
+            </div>
+        </li>
+        <li>
+        	<div>
+                <span>旧书价</span>
+                <input id="oldPrice" type="text" placeholder="默认为定价的一半减一元" />
+            </div>
+        </li>
+        <li>
+        	<div>
+                <span>折扣新</span>
+                <input id="newDiscount" type="text" placeholder="默认为0（不打折）" />
+            </div>
+        </li>
+        <li>
+        	<div>
+                <span>折扣旧</span>
+                <input id="oldDiscount" type="text" placeholder="默认为0（不打折）"  />
+            </div>
+        </li>
+        <li>
+        	<div>
+                <span>库存新</span>
+                <input id="newStock" type="text"  placeholder="默认为999" />
+            </div>
+        </li>
+        <li>
+        	<div>
+                <span>库存旧</span>
+                <input id="oldStock" type="text" placeholder="默认为999" />
+            </div>
+        </li>
+        <li>
+        	<div class="needPic">
+        		<span>图片</span>
+        		<img id="imgPic">
+        		<p>点击更换图片</p>
+        		<input id="img" name="img" type="file"/>
+        	</div>
+        </li>
     </ul>
+    <a href="#1" class="Tbutton submit">上架</a>
 </body>
 
 </html>

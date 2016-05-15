@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>管理系统登录</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+</head>
+<style>
+* {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    font-family: "黑体";
+    font-weight: 100;
+}
+
+.headerContainer {
+    height: 60px;
+    border-bottom: 2px solid #eee;
+}
+
+.header {
+    width: 330px;
+    margin: 0px auto 0px auto;
+    font-size: 1.3em;
+    line-height: 60px;
+    text-align: center;
+}
+
+.content {
+    width: 320px;
+    margin: 0px auto 0px auto;
+    margin-top: calc(10% + 30px);
+    overflow: auto;
+}
+
+input {
+    border: 1px solid #eee;
+    height: 50px;
+    width: calc(80% - 11px);
+    float: left;
+    border-left-width: 0px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+span {
+    width: calc(20% - 1px);
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #eee;
+    line-height: 50px;
+    float: left;
+    border-right-width: 0px;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 40%;
+    height: 40px;
+    margin-left: 30%;
+    margin-top: 10%;
+    float: left;
+    background-color: rgb(244, 92, 73);
+    color: #fff;
+}
+
+button:hover {
+    background-color: rgba(244, 92, 73, 0.5);
+}
+</style>
+
+<body>
+    <div class="headerContainer">
+        <div class="header">
+            管理系统登录
+        </div>
+    </div>
+    <div class="contentContainer">
+        <div class="content">
+            <span>帐号</span>
+            <input type="text">
+            <span>密码</span>
+            <input type="password">
+            <button>登录</button>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../js/_Ajax.min.js"></script>
+<script type="text/javascript">
+if (typeof sessionStorage == "object") {
+    var button = document.getElementsByTagName("button")[0];
+    button.onclick = function() {
+        var name = document.getElementsByTagName("input")[0].value;
+        var password = document.getElementsByTagName("input")[1].value;
+        if (name && password) {
+            _Ajax({
+                "url": "php/login.php",
+                "method": "post", //默认get
+                "async": false, //默认为false
+                "data": {
+                    "name": name,
+                    "password": password
+                },
+                "header": {},
+                "cache": false, //默认为false
+                "dataType": "json", //"text"  "json"  "xml"  默认为text
+                success: function(data) {
+                    var json = JSON.parse(data);
+                    if (json.code == '0') {
+                        sessionStorage.token = json.token;
+                        window.location.href="index.html";
+                    } else {
+                        alert("请正确完整帐号密码");
+                        window.location.reload();
+                    }
+                },
+                beforeSend: function() {}
+            })
+
+        } else {
+            alert("请输入完整帐号密码");
+        }
+    }
+} else {
+    alert("不支持此浏览器请切换极速模式或更换为chrome等高级浏览器");
+}
+</script>
+
+</html>
