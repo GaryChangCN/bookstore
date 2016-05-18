@@ -9,7 +9,7 @@ include "conn.php";
 $type=$_GET['type'];
 switch ($type) {
 	case '1' :
-		$q1 = $link -> query("SELECT * FROM b_category_grade");
+		$q1 = $link -> query("SELECT * FROM b_category_grade ORDER BY id");
 		$arr = array();
 		$arr['grade'] = array();
 		$arr['code'] = 0;
@@ -25,15 +25,15 @@ switch ($type) {
 	case '2' :
 		$gradeId=$_GET['gradeId'];
 		$arr = array();
-		$q2 = $link -> query("SELECT COUNT(id_category_col) FROM b_rel_col_grade WHERE id_category_grade='$gradeId'");
+		$q2 = $link -> query("SELECT COUNT(id_category_col) FROM b_rel_col_grade WHERE id_category_grade='$gradeId' ORDER BY id");
 		$r2 = $q2 -> fetch_row();
 		if ($r2[0] <= 0) {
 			$arr['code'] = 1;
 		} else {
-			$q1 = $link -> query("SELECT id_category_col FROM b_rel_col_grade WHERE id_category_grade='$gradeId'");
+			$q1 = $link -> query("SELECT id_category_col FROM b_rel_col_grade WHERE id_category_grade='$gradeId' ORDER BY id");
 			while ($r1 = $q1 -> fetch_row()) {
 				$tmp = $r1[0];
-				$q3 = $link -> query("SELECT college FROM b_category_college WHERE id='$tmp'");
+				$q3 = $link -> query("SELECT college FROM b_category_college WHERE id='$tmp' ORDER BY id");
 				$r3 = $q3 -> fetch_row();
 				$arr['college'][] = array("id" => $r1[0], "name" => $r3[0]);
 			}
@@ -44,15 +44,15 @@ switch ($type) {
 	case '3' :
 		$arr = array();
 		$collegeId = $_GET['collegeId'];
-		$q2 = $link -> query("SELECT COUNT(id_category_major) FROM b_rel_maj_col WHERE id_category_college='$collegeId'");
+		$q2 = $link -> query("SELECT COUNT(id_category_major) FROM b_rel_maj_col WHERE id_category_college='$collegeId' ORDER BY id");
 		$r2 = $q2 -> fetch_row();
 		if ($r2[0] <= 0) {
 			$arr['code'] = 1;
 		} else {
-			$q1 = $link -> query("SELECT id_category_major FROM b_rel_maj_col WHERE id_category_college='$collegeId'");
+			$q1 = $link -> query("SELECT id_category_major FROM b_rel_maj_col WHERE id_category_college='$collegeId' ORDER BY id");
 			while ($r1 = $q1 -> fetch_row()) {
 				$tmp = $r1[0];
-				$q3 = $link -> query("SELECT major FROM b_category_major WHERE id='$tmp'");
+				$q3 = $link -> query("SELECT major FROM b_category_major WHERE id='$tmp' ORDER BY id");
 				$r3 = $q3 -> fetch_row();
 				$arr['major'][] = array("id" => $r1[0], "name" => $r3[0]);
 			}
@@ -65,15 +65,15 @@ switch ($type) {
 		$collegeId=$_GET['collegeId'];
 		$gradeId=$_GET['gradeId'];
 		$arr = array();
-		$q2 = $link -> query("SELECT COUNT(id_product) FROM b_rel_pro_maj WHERE id_category_major='$majorId' AND id_category_college='$collegeId' AND id_category_grade='$gradeId'");
+		$q2 = $link -> query("SELECT COUNT(id_product) FROM b_rel_pro_maj WHERE id_category_major='$majorId' AND id_category_college='$collegeId' AND id_category_grade='$gradeId' ORDER BY id");
 		$r2 = $q2 -> fetch_row();
 		if ($r2[0] <= 0) {
 			$arr['code'] = 1;
 		} else {
-			$q1 = $link -> query("SELECT id_product FROM b_rel_pro_maj WHERE id_category_major='$majorId' AND id_category_college='$collegeId' AND id_category_grade='$gradeId'");
+			$q1 = $link -> query("SELECT id_product FROM b_rel_pro_maj WHERE id_category_major='$majorId' AND id_category_college='$collegeId' AND id_category_grade='$gradeId' ORDER BY id");
 			while ($r1 = $q1 -> fetch_row()) {
 				$tmp = $r1[0];
-				$q3 = $link -> query("SELECT * FROM b_product WHERE id='$tmp'");
+				$q3 = $link -> query("SELECT * FROM b_product WHERE id='$tmp' ORDER BY id");
 				$r3 = $q3 -> fetch_row();
 				$arr['product'][] = array("id" => $r3[0], "name" => $r3[1], "publish" => $r3[2], "editor" => $r3[3], "oldPrice" => $r3[6], "newPrice" => $r3[5], "oldDiscount" => $r3[8], "newDiscount" => $r3[7], "hot" => $r3[11], "pic" => $r3[12]);
 			}
@@ -83,15 +83,15 @@ switch ($type) {
 		break;
 	case '5' :
 		$arr = array();
-		$q1 = $link -> query("SELECT COUNT(id_product) FROM b_hot_goods");
+		$q1 = $link -> query("SELECT COUNT(id_product) FROM b_hot_goods ORDER BY id");
 		$r1 = $q1 -> fetch_row();
 		if ($r1[0] <= 0) {
 			$arr['code'] = -1;
 		} else {
-			$q2 = $link -> query("SELECT id_product FROM b_hot_goods");
+			$q2 = $link -> query("SELECT id_product FROM b_hot_goods ORDER BY id");
 			while ($r2 = $q2 -> fetch_row()) {
 				$tmp = $r2[0];
-				$q3 = $link -> query("SELECT * FROM b_product WHERE id='$tmp'");
+				$q3 = $link -> query("SELECT * FROM b_product WHERE id='$tmp' ORDER BY id");
 				$r3 = $q3 -> fetch_row();
 				$arr['product'][] = array("id" => $r3[0], "name" => $r3[1], "publish" => $r3[2], "editor" => $r3[3], "oldPrice" => $r3[6], "newPrice" => $r3[5], "oldDiscount" => $r3[8], "newDiscount" => $r3[7], "hot" => $r3[11], "pic" => $r3[12]);
 			}

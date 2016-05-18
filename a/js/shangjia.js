@@ -23,7 +23,7 @@ $(document).ready(function() {
                     $("#oldDiscount").val("0");
                     $("#newStock").val("999");
                     $("#oldStock").val("999");
-                    $("#imgPic").attr('src', data.images.medium);
+                    $("#imgPic").attr('src', data.images.large);
                     imgBase64 = false;
                 },
                 error: function() {

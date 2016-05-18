@@ -20,35 +20,35 @@ switch ($type) {
 		$data['callback']="反馈成功";
 		break;
 	case '2':
-	$q=$link->query("SELECT text FROM b_our WHERE type=4 AND display=1");
+	$q=$link->query("SELECT text FROM b_our WHERE type=4 AND display=1 ORDER BY id");
 	$r=$q->fetch_row();
 	if($r[0]){
 		$data['text']=$r[0];
 	}else{
 		$data['code']=1;
 	}
-	$q=$link->query("SELECT text FROM b_our WHERE type=1 AND display=1");
+	$q=$link->query("SELECT text FROM b_our WHERE type=1 AND display=1 ORDER BY id");
 	$r=$q->fetch_row();
 	if($r[0]){
 		$data['indexMain']=$r[0];
 	}else{
 		$data['code']=1;
 	}
-	$q=$link->query("SELECT text FROM b_our WHERE type=2 AND display=1");
+	$q=$link->query("SELECT text FROM b_our WHERE type=2 AND display=1 ORDER BY id");
 	$r=$q->fetch_row();
 	if($r[0]){
 		$data['publish']=$r[0];
 	}else{
 		$data['code']=1;
 	}
-	$q=$link->query("SELECT text FROM b_our WHERE type=3 AND display=1");
+	$q=$link->query("SELECT text FROM b_our WHERE type=3 AND display=1 ORDER BY id");
 	$r=$q->fetch_row();
 	if($r[0]){
 		$data['midPic']=$r[0];
 	}else{
 		$data['code']=1;
 	}
-	$q=$link->query("SELECT text FROM b_our WHERE type=5 AND display=1");
+	$q=$link->query("SELECT text FROM b_our WHERE type=5 AND display=1 ORDER BY id");
 	$r=$q->fetch_row();
 	if($r[0]){
 		$data['qrcode']=$r[0];

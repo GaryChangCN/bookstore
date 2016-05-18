@@ -3,7 +3,7 @@ include "conn.php";
 $id=$_GET['id'];
 $data= array();
 $data['code']='0';
-$q=$link->query("SELECT * FROM b_product WHERE id=$id");
+$q=$link->query("SELECT * FROM b_product WHERE id=$id ORDER BY id");
 $r=$q->fetch_row();
 $data['name']=$r[1];
 $data['publish']=$r[2];

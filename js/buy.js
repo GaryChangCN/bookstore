@@ -342,7 +342,7 @@
             var span1 = document.createElement("span");
             var newDiscount = parseFloat(productI.newDiscount);
             if (newDiscount == 0) {
-                newDiscount = 0.1;
+                newDiscount = 1;
             } else {
                 newDiscount = newDiscount / 10;
             }
@@ -355,7 +355,7 @@
             var span3 = document.createElement("span");
             var oldDiscount = parseFloat(productI.oldDiscount);
             if (oldDiscount == 0) {
-                oldDiscount = 0.1;
+                oldDiscount = 1;
             } else {
                 oldDiscount = oldDiscount / 10;
             }

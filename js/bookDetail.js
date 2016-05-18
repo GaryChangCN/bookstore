@@ -32,7 +32,7 @@
                 bookData.publish = json.publish;
                 document.querySelector("#bookDetail li:nth-child(3)").innerText = "作者：" + json.editor;
                 bookData.editor = json.editor;
-                document.querySelector("#bookDetail li:nth-child(4)").innerText = "ISBN" + json.isbn;
+                document.querySelector("#bookDetail li:nth-child(4)").innerText = "ISBN：" + json.isbn;
                 bookData.isbn = json.isbn;
                 if (nd == 0) {
                     document.querySelector("#bookDetail li:nth-child(5)").innerHTML = "新书价格：<span></span><span>￥" + np.toFixed(2) + "</span>";

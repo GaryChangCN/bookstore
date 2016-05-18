@@ -10,4 +10,8 @@ $(document).ready(function() {
 		$("iframe").attr('src', 'shangjia.html');
 	});
 	$(".left li:first-child").click();
+	$(".header .Tbutton").click(function(){
+		sessionStorage.removeItem("token");
+		window.location.reload();
+	});
 });
