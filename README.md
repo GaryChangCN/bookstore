@@ -3,6 +3,7 @@
 `[php|javascript|mysql]`
 
 #### 本项目旨在搭建一个二手图书类CMS，我会记录我每天开发的历程。前端使用了jQuery，后端使用了PHP，数据库采用mysql，字符集全部为UTF-8 ###
+#### 目前正在重写中
 
 ####Demo地址 `http://book.shouedu.cn`
 ----------
