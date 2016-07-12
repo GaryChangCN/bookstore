@@ -5,7 +5,7 @@
 #### 本项目旨在搭建一个二手图书类CMS，我会记录我每天开发的历程。前端使用了jQuery，后端使用了PHP，数据库采用mysql，字符集全部为UTF-8 ###
 #### 目前正在重写中
 #### 重写时候放弃使用jQuery了 同时前后端分离
-####Demo地址 `http://book.shouedu.cn`
+####Demo地址 `http://book.garychang.cn`
 ----------
 ##2016-05-15
 #####用户页面全部完成 后台管理系统使用豆瓣api根据isbn快速上架完成，此处有个问题，若把图片转换成base64在通过ajax get方式提交uri会过长 通过post方式ff没问题 chrome打开会爆炸卡
